@@ -1,6 +1,6 @@
 # PlantGuide
 
-![Screenshot0](/Screenshot0.png) ![Screenshot1](/Screenshot1.png) ![Screenshot2](/Screenshot2.png) ![Screenshot3](/Screenshot3.png)
+<img src="/Screenshot0.png" width="200"> <img src="/Screenshot1.png" width="200"> <img src="/Screenshot2.png" width="200"> <img src="/Screenshot3.png" width="200">
 
 ## Privacy Policy
 Hendrik Schuette built the Plant Room app as a Free app. This SERVICE is provided by Hendrik Schuette at no cost and is intended for use as is. This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service. If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy. The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at Plant Room unless otherwise defined in this Privacy Policy. 
