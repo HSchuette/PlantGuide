@@ -11,7 +11,7 @@ import SwiftUI
 struct PlantGuideApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(selected: nil, lightMeter: nil, waterMeter: nil, humidityMeter: nil, learnMore: false, isMenuOpen: false)
         }
     }
 }
