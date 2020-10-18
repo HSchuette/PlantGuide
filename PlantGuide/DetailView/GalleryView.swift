@@ -52,12 +52,15 @@ struct GalleryView: View {
                 
             }
             if self.moreInfo == "moreGallery" {
-                ScrollView(.horizontal, showsIndicators: true) {
-                     HStack {
-                        ForEach(pictureData, id: \.id) { picture in
-                            self.pictureAsset(picture: String(plantData[self.selected!].imageName) + picture.name)
+                VStack {
+                    ScrollView(.horizontal, showsIndicators: true) {
+                         HStack {
+                            ForEach(pictureData, id: \.id) { picture in
+                                self.pictureAsset(picture: String(plantData[self.selected!].imageName) + picture.name)
+                            }
+                         }
                     }
-                }
+                    InstagramHandleView()
             }
             
             // pictureAsset(picture: pictureData[self.selected!].name)
@@ -72,7 +75,7 @@ struct GalleryView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             GalleryView(selected: Binding.constant(1), moreInfo: Binding.constant(nil))
-            GalleryView(selected: Binding.constant(1), moreInfo: Binding.constant("moreGallery"))
+            GalleryView(selected: Binding.constant(0), moreInfo: Binding.constant("moreGallery"))
         }
     }
 }
