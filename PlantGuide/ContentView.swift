@@ -124,7 +124,25 @@ struct ContentView: View {
                             .offset(x: 100, y: 60)
                     }
                     
-                }.navigationBarTitle("The Plant Room", displayMode: .large)
+                }.navigationBarTitleDisplayMode(.large)
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        HStack{
+                            Text("Plant Room")
+                                .font(.system(size: 35))
+                                .fontWeight(.bold)
+                                .kerning(-2)
+                            
+                            LogoAsset()
+                                .stroke(lineWidth: 5)
+                                .frame(width: 35, height: 35)
+                                .offset(y: -5)
+                            
+                            Spacer()
+                        }.offset(y: 45)
+                    }
+                }
+                //.navigationBarTitle("The Plant Room", displayMode: .large)
                 .onAppear() {
                     withAnimation(Animation.easeInOut(duration: 1).delay(1)) {
                         

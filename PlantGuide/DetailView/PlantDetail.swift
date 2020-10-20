@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SafariServices
 
 struct PlantDetail: View {
     
@@ -185,7 +186,16 @@ struct PlantDetail: View {
                                     
                                     InfoButton(moreString: "moreToxicity")
                                 }.padding()
+                                
+                                Divider().padding(.horizontal)
                             }
+                            
+                            Group {
+                                ZStack(alignment: .top) {
+                                    WikipediaView(selected: $selected, moreInfo: $moreInfo)
+                                }.padding()
+                            }
+                            
                             Spacer()
                         }
                     }
@@ -204,4 +214,5 @@ struct PlantDetail_Previews: PreviewProvider {
         PlantDetail(selected: Binding.constant(0))
     }
 }
+
 
