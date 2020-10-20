@@ -12,7 +12,10 @@ struct GalleryView: View {
     @Binding var selected: Int?
     @Binding var moreInfo: String?
     
-    var green = Color(red: 112/256, green: 191/256, blue: 92/256)
+    let green = Color(red: 112/256, green: 191/256, blue: 92/256)
+    
+    // Some pictures have been provided by terra botanika
+    private let terraBot = [0, 9, 10, 11, 15]
     
     func pictureAsset(picture: String?) -> some View {
         return ZStack {
@@ -22,9 +25,9 @@ struct GalleryView: View {
                 ZStack {
                     Image(picture!)
                         .resizable()
-                        .cornerRadius(25)
+                        .aspectRatio(contentMode: .fill)
                         .frame(width: 125, height: 125)
-                        .scaledToFill()
+                        .cornerRadius(25)
                         .shadow(color: Color(UIColor.black).opacity( 0.25), radius: 2, x: 2, y: 4)
                     
                     RoundedRectangle(cornerRadius: 25)
@@ -60,7 +63,11 @@ struct GalleryView: View {
                             }
                          }
                     }
-                    InstagramHandleView()
+                    // if the plant pictures have been provided by
+                    // terra botanika, display a link to the instagram
+                    if terraBot.contains(self.selected!) {
+                        InstagramHandleView()
+                    }
             }
             
             // pictureAsset(picture: pictureData[self.selected!].name)
@@ -75,7 +82,7 @@ struct GalleryView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             GalleryView(selected: Binding.constant(1), moreInfo: Binding.constant(nil))
-            GalleryView(selected: Binding.constant(0), moreInfo: Binding.constant("moreGallery"))
+            GalleryView(selected: Binding.constant(11), moreInfo: Binding.constant("moreGallery"))
         }
     }
 }
