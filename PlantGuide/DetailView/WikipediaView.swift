@@ -14,7 +14,7 @@ struct WikipediaView: View {
     @Binding var moreInfo: String?
     
     @State var showSafari: Bool = false
-    @State var urlString: String = ""
+    @State var urlString: URL = URL(string: "https://www.apple.com")!
     
     var body: some View {
         VStack {
@@ -32,14 +32,22 @@ struct WikipediaView: View {
                     .foregroundColor(.blue)
                 
             }.padding(.trailing)
-            .sheet(isPresented: $showSafari) {
-                SafariView(url:URL(string: self.urlString)!)
-            }.onTapGesture {
-                self.urlString = plantData[selected!].wikipediaLink
-                            
-                self.showSafari = true
             }
-        }
+            .onAppear() {
+                print(urlString)
+                self.urlString = URL(string: plantData[selected!].wikipediaLink)!
+            }
+            .onTapGesture {
+                print(urlString)
+                self.urlString = URL(string: plantData[selected!].wikipediaLink)!
+                            
+                    self.showSafari = true
+
+                print(urlString)
+            }
+            .sheet(isPresented: $showSafari) {
+                SafariView(url: URL(string: plantData[selected!].wikipediaLink)!)
+            }
     }
 }
 
