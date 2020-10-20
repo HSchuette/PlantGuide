@@ -14,6 +14,7 @@
 		B1A1D25B2538F5FA006BEB9D /* Screenshot1.png in Resources */ = {isa = PBXBuildFile; fileRef = B1A1D2562538F5FA006BEB9D /* Screenshot1.png */; };
 		B1A1D25C2538F5FA006BEB9D /* Screenshot2.png in Resources */ = {isa = PBXBuildFile; fileRef = B1A1D2572538F5FA006BEB9D /* Screenshot2.png */; };
 		B1A1D25D2538F5FA006BEB9D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B1A1D2582538F5FA006BEB9D /* README.md */; };
+		B1A1D261253C8154006BEB9D /* InstagramHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1D260253C8154006BEB9D /* InstagramHandleView.swift */; };
 		B1B260842538D90B00841FBB /* PlantGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B260832538D90B00841FBB /* PlantGuideApp.swift */; };
 		B1B260862538D90B00841FBB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B260852538D90B00841FBB /* ContentView.swift */; };
 		B1B260882538D90C00841FBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B260872538D90C00841FBB /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		B1A1D2562538F5FA006BEB9D /* Screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot1.png; sourceTree = SOURCE_ROOT; };
 		B1A1D2572538F5FA006BEB9D /* Screenshot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot2.png; sourceTree = SOURCE_ROOT; };
 		B1A1D2582538F5FA006BEB9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		B1A1D260253C8154006BEB9D /* InstagramHandleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramHandleView.swift; sourceTree = "<group>"; };
 		B1B260802538D90B00841FBB /* PlantGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1B260832538D90B00841FBB /* PlantGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantGuideApp.swift; sourceTree = "<group>"; };
 		B1B260852538D90B00841FBB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				B1E7787B2538E73F007A6440 /* BarMeter.swift */,
 				B1E778802538E740007A6440 /* FertilizationView.swift */,
 				B1E778822538E740007A6440 /* GalleryView.swift */,
+				B1A1D260253C8154006BEB9D /* InstagramHandleView.swift */,
 				B1E7787C2538E73F007A6440 /* HumidityView.swift */,
 				B1E778832538E740007A6440 /* PlantDetail.swift */,
 				B1E778812538E740007A6440 /* SunView.swift */,
@@ -331,6 +334,7 @@
 				B1E778592538E659007A6440 /* OptionWheel.swift in Sources */,
 				B1E7788C2538E740007A6440 /* PlantDetail.swift in Sources */,
 				B1B260C12538D9DB00841FBB /* MailHandler.swift in Sources */,
+				B1A1D261253C8154006BEB9D /* InstagramHandleView.swift in Sources */,
 				B1E778882538E740007A6440 /* TempView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,7 +473,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.PlantGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -492,7 +496,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.PlantGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
