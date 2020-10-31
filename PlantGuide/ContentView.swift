@@ -18,6 +18,9 @@ struct ContentView: View {
     @State var isMenuOpen: Bool = true
     @State var showClassification: Bool = false
 
+    // Variable to trigger WhatsNew Screen
+    @State private var showWelcome: Bool = false
+    
     let feedback = UIImpactFeedbackGenerator(style: .light)
 
     var body : some View {
@@ -122,7 +125,8 @@ struct ContentView: View {
                         
                         OptionWheel(isMenuOpen: self.$isMenuOpen)
                             .offset(x: 100, y: 60)
-                    }
+                    }.sheet(isPresented: $showWelcome, content: { WelcomeView() })
+                    .onAppear(perform: checkForUpdate)
                     
                 }.navigationBarTitleDisplayMode(.large)
                 .toolbar{
@@ -159,7 +163,30 @@ struct ContentView: View {
         Color.black
             .opacity(isMenuOpen ? 0.1 : 0)
             .edgesIgnoringSafeArea(.all)
-        
+    }
+    
+    // I use this to display the onboarding screen
+    // Get current Version of the App
+    func getCurrentAppVersion() -> String {
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
+        let version = (appVersion as! String)
+
+        return version
+    }
+
+    // Check if app if app has been started after update
+    func checkForUpdate() {
+        let version = getCurrentAppVersion()
+        let savedVersion = UserDefaults.standard.string(forKey: "savedVersion")
+
+        if savedVersion == version {
+            print("App was already used")
+        } else {
+            print("App started the first time")
+            // Toogle to show Welcome Screen as Modal
+            self.showWelcome.toggle()
+            UserDefaults.standard.set(version, forKey: "savedVersion")
+        }
     }
 }
 

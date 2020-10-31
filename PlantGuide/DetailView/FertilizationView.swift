@@ -26,6 +26,7 @@ struct FertilizationView: View {
                     .bold()
                     .padding()
                 
+                
                 Spacer()
             }
             

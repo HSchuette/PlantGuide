@@ -26,6 +26,9 @@
 		B1B260C12538D9DB00841FBB /* MailHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B260C02538D9DB00841FBB /* MailHandler.swift */; };
 		B1B260C62538D9F800841FBB /* LogoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B260C52538D9F800841FBB /* LogoAsset.swift */; };
 		B1B260CB2538DA1700841FBB /* IdleScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B260CA2538DA1700841FBB /* IdleScanView.swift */; };
+		B1E1548E2547F18500E5546D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E1548D2547F18500E5546D /* WelcomeView.swift */; };
+		B1E15495254D518100E5546D /* IllustrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E15494254D518100E5546D /* IllustrationView.swift */; };
+		B1E15498254D51CA00E5546D /* HowToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E15497254D51CA00E5546D /* HowToView.swift */; };
 		B1E778582538E659007A6440 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E778552538E659007A6440 /* ImagePicker.swift */; };
 		B1E778592538E659007A6440 /* OptionWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E778562538E659007A6440 /* OptionWheel.swift */; };
 		B1E7785D2538E6A4007A6440 /* BarGraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E7785C2538E6A3007A6440 /* BarGraphs.swift */; };
@@ -74,6 +77,9 @@
 		B1B260C02538D9DB00841FBB /* MailHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailHandler.swift; sourceTree = "<group>"; };
 		B1B260C52538D9F800841FBB /* LogoAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAsset.swift; sourceTree = "<group>"; };
 		B1B260CA2538DA1700841FBB /* IdleScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdleScanView.swift; sourceTree = "<group>"; };
+		B1E1548D2547F18500E5546D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		B1E15494254D518100E5546D /* IllustrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustrationView.swift; sourceTree = "<group>"; };
+		B1E15497254D51CA00E5546D /* HowToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToView.swift; sourceTree = "<group>"; };
 		B1E778552538E659007A6440 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		B1E778562538E659007A6440 /* OptionWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionWheel.swift; sourceTree = "<group>"; };
 		B1E7785C2538E6A3007A6440 /* BarGraphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraphs.swift; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 				B1B260C02538D9DB00841FBB /* MailHandler.swift */,
 				B1B260C52538D9F800841FBB /* LogoAsset.swift */,
 				B1B260CA2538DA1700841FBB /* IdleScanView.swift */,
+				B1E154912547F18F00E5546D /* WelcomeScreen */,
 				B1E7786F2538E705007A6440 /* Data Model */,
 				B1E778532538E641007A6440 /* OptionWheelViews */,
 				B1E7787A2538E731007A6440 /* DetailView */,
@@ -178,6 +185,16 @@
 				B1B260A22538D90C00841FBB /* Info.plist */,
 			);
 			path = PlantGuideUITests;
+			sourceTree = "<group>";
+		};
+		B1E154912547F18F00E5546D /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B1E1548D2547F18500E5546D /* WelcomeView.swift */,
+				B1E15494254D518100E5546D /* IllustrationView.swift */,
+				B1E15497254D51CA00E5546D /* HowToView.swift */,
+			);
+			path = WelcomeScreen;
 			sourceTree = "<group>";
 		};
 		B1E778532538E641007A6440 /* OptionWheelViews */ = {
@@ -218,12 +235,12 @@
 		B1E7787A2538E731007A6440 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
+				B1E778832538E740007A6440 /* PlantDetail.swift */,
 				B1E7787B2538E73F007A6440 /* BarMeter.swift */,
 				B1E778802538E740007A6440 /* FertilizationView.swift */,
 				B1E778822538E740007A6440 /* GalleryView.swift */,
 				B1A1D260253C8154006BEB9D /* InstagramHandleView.swift */,
 				B1E7787C2538E73F007A6440 /* HumidityView.swift */,
-				B1E778832538E740007A6440 /* PlantDetail.swift */,
 				B1E778812538E740007A6440 /* SunView.swift */,
 				B1E7787F2538E740007A6440 /* TempView.swift */,
 				B1E7787E2538E740007A6440 /* ToxicityView.swift */,
@@ -315,6 +332,7 @@
 				B1E778872538E740007A6440 /* ToxicityView.swift in Sources */,
 				B1B260C62538D9F800841FBB /* LogoAsset.swift in Sources */,
 				B1B260842538D90B00841FBB /* PlantGuideApp.swift in Sources */,
+				B1E1548E2547F18500E5546D /* WelcomeView.swift in Sources */,
 				B1B260CB2538DA1700841FBB /* IdleScanView.swift in Sources */,
 				B1E778862538E740007A6440 /* WaterView.swift in Sources */,
 				B1B260B72538D99400841FBB /* PlantPreview.swift in Sources */,
@@ -331,6 +349,8 @@
 				B1E778642538E6B0007A6440 /* Buffer.swift in Sources */,
 				B1E7788B2538E740007A6440 /* GalleryView.swift in Sources */,
 				B1E778672538E6B0007A6440 /* ClassificationView.swift in Sources */,
+				B1E15498254D51CA00E5546D /* HowToView.swift in Sources */,
+				B1E15495254D518100E5546D /* IllustrationView.swift in Sources */,
 				B1E778892538E740007A6440 /* FertilizationView.swift in Sources */,
 				B1E7785D2538E6A4007A6440 /* BarGraphs.swift in Sources */,
 				B1E778662538E6B0007A6440 /* ClassificationPlantDetail.swift in Sources */,
