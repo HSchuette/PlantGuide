@@ -13,11 +13,23 @@ struct HowToView: View {
             
             Spacer()
         
-            Text("Welcome to Plant Room!")
-                .font(.system(size: 35))
-                .fontWeight(.bold)
-                .kerning(-2)
-                .foregroundColor(Color(.white))
+            HStack {
+                Text("Features")
+                    .font(.system(size: 35))
+                    .fontWeight(.bold)
+                    .kerning(-2)
+                    .foregroundColor(Color(.white))
+                    .padding(.leading)
+                
+                LogoAsset()
+                    .stroke(lineWidth: 5)
+                    .frame(width: 35, height: 35)
+                    .offset(y: -5)
+
+                    .foregroundColor(Color(.white))
+                
+                Spacer()
+            }.padding()
             
             VStack(alignment: .leading) {
                         InformationDetailView(title: "Identify", subTitle: "Instantly identify your plant at home by taking a picture of it.", imageName: "viewfinder")
