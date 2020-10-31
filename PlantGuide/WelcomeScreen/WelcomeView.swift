@@ -28,7 +28,7 @@ struct WelcomeView: View {
                     Spacer()
                     
                     Button(action: {
-                        withAnimation(.easeIn(duration: 1)) {
+                        withAnimation(.easeIn(duration: 0.2)) {
                             self.presentationMode.wrappedValue.dismiss()
                             self.feedback.impactOccurred()
                         }
@@ -58,7 +58,7 @@ struct WelcomeView: View {
                
                 
                 Button(action: {
-                    withAnimation(.easeIn(duration: 1)) {
+                    withAnimation(.easeIn(duration: 0.4)) {
                         if self.stage == "one" {
                             
                             self.stage = "two"

@@ -180,9 +180,9 @@ struct ContentView: View {
         let savedVersion = UserDefaults.standard.string(forKey: "savedVersion")
 
         if savedVersion == version {
-            print("App is up to date!")
+            print("App was already used")
         } else {
-
+            print("App started the first time")
             // Toogle to show Welcome Screen as Modal
             self.showWelcome.toggle()
             UserDefaults.standard.set(version, forKey: "savedVersion")
