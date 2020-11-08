@@ -21,45 +21,47 @@ struct ListView: View {
     @State var showAddNewSheet = false
     
     var body: some View {
-        NavigationView {
-            VStack {
-                List {
-                    ForEach(storePlants) { plant in
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Image(uiImage: ImageStore.retrieve(imageNamed: "\(plant.id!).png") ?? UIImage(imageLiteralResourceName: "placeHolder"))
-                                    .resizable()
-                                    .frame(width: 35, height: 35)
-                                    .cornerRadius(5)
-                                
-                                Text("\(plant.name!)")
-                                    .bold()
-                                
-                                Spacer()
-                                
-                                Text("\(plant.room!)")
-                                    .font(.caption)
-                            }
-                            Text("\(plant.type!)")
-                        }
-                    }
-                    .onDelete(perform: deleteItems)
-                }
-                .listStyle(DefaultListStyle())
-                .sheet(isPresented: $showAddNewSheet) {
-                    AddNewSheet()
-                }
+        VStack {
+            HStack {
+                Spacer()
+                
+                Button(action: {
+                    print("Open Plant")
+                    showAddNewSheet = true
+                }, label: {
+                    Image(systemName: "plus.circle")
+                        .imageScale(.large)
+                })
             }
-        .navigationTitle("My Plants")
-        .navigationBarItems(trailing: Button(action: {
-            print("Open Plant")
-            showAddNewSheet = true
-        }, label: {
-            Image(systemName: "plus.circle")
-                .imageScale(.large)
-        }))
+            
+            List {
+                ForEach(storePlants) { plant in
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Image(uiImage: ImageStore.retrieve(imageNamed: "\(plant.id!).png") ?? UIImage(imageLiteralResourceName: "placeHolder"))
+                                .resizable()
+                                .frame(width: 35, height: 35)
+                                .cornerRadius(5)
+                            
+                            Text("\(plant.name!)")
+                                .bold()
+                            
+                            Spacer()
+                            
+                            Text("\(plant.room!)")
+                                .font(.caption)
+                        }
+                        Text("\(plant.type!)")
+                    }
+                }
+                .onDelete(perform: deleteItems)
+            }
+            .listStyle(DefaultListStyle())
+            .sheet(isPresented: $showAddNewSheet) {
+                AddNewSheet()
+            }
+        }
     }
-}
 
     private func addItem() {
         withAnimation {

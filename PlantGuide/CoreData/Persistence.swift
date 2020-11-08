@@ -14,7 +14,7 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
+        for _ in 0..<5 {
             let newPlant = StorePlantEntity(context: viewContext)
             newPlant.id = String()
             newPlant.name = String("PlaceHolder")
