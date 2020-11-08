@@ -16,6 +16,13 @@
 		B1A1D25C2538F5FA006BEB9D /* Screenshot2.png in Resources */ = {isa = PBXBuildFile; fileRef = B1A1D2572538F5FA006BEB9D /* Screenshot2.png */; };
 		B1A1D25D2538F5FA006BEB9D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B1A1D2582538F5FA006BEB9D /* README.md */; };
 		B1A1D261253C8154006BEB9D /* InstagramHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1D260253C8154006BEB9D /* InstagramHandleView.swift */; };
+		B1AC9FDF2557E8B5001BF9EE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC9FDE2557E8B5001BF9EE /* Persistence.swift */; };
+		B1AC9FE32557E8F1001BF9EE /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC9FE22557E8F1001BF9EE /* ImageStore.swift */; };
+		B1AC9FEB2557E986001BF9EE /* AddNewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC9FEA2557E986001BF9EE /* AddNewSheet.swift */; };
+		B1AC9FEE2557E9A2001BF9EE /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC9FED2557E9A2001BF9EE /* ListView.swift */; };
+		B1AC9FF22557E9EA001BF9EE /* StorePlantEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1AC9FF02557E9EA001BF9EE /* StorePlantEntity.xcdatamodeld */; };
+		B1AC9FF52557EF7D001BF9EE /* StoreImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC9FF42557EF7D001BF9EE /* StoreImagePicker.swift */; };
+		B1AC9FF92557F133001BF9EE /* StoreImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC9FF82557F133001BF9EE /* StoreImagePickerView.swift */; };
 		B1B260842538D90B00841FBB /* PlantGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B260832538D90B00841FBB /* PlantGuideApp.swift */; };
 		B1B260862538D90B00841FBB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B260852538D90B00841FBB /* ContentView.swift */; };
 		B1B260882538D90C00841FBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B260872538D90C00841FBB /* Assets.xcassets */; };
@@ -61,6 +68,13 @@
 		B1A1D2572538F5FA006BEB9D /* Screenshot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot2.png; sourceTree = SOURCE_ROOT; };
 		B1A1D2582538F5FA006BEB9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		B1A1D260253C8154006BEB9D /* InstagramHandleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramHandleView.swift; sourceTree = "<group>"; };
+		B1AC9FDE2557E8B5001BF9EE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B1AC9FE22557E8F1001BF9EE /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		B1AC9FEA2557E986001BF9EE /* AddNewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewSheet.swift; sourceTree = "<group>"; };
+		B1AC9FED2557E9A2001BF9EE /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		B1AC9FF12557E9EA001BF9EE /* StorePlantsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StorePlantsModel.xcdatamodel; sourceTree = "<group>"; };
+		B1AC9FF42557EF7D001BF9EE /* StoreImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StoreImagePicker.swift; path = PlantGuide/OptionWheelViews/StoreImagePicker.swift; sourceTree = SOURCE_ROOT; };
+		B1AC9FF82557F133001BF9EE /* StoreImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreImagePickerView.swift; sourceTree = "<group>"; };
 		B1B260802538D90B00841FBB /* PlantGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1B260832538D90B00841FBB /* PlantGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantGuideApp.swift; sourceTree = "<group>"; };
 		B1B260852538D90B00841FBB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +129,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1AC9FE12557E8BA001BF9EE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B1AC9FED2557E9A2001BF9EE /* ListView.swift */,
+				B1AC9FEA2557E986001BF9EE /* AddNewSheet.swift */,
+				B1AC9FF82557F133001BF9EE /* StoreImagePickerView.swift */,
+				B1AC9FF42557EF7D001BF9EE /* StoreImagePicker.swift */,
+				B1AC9FE22557E8F1001BF9EE /* ImageStore.swift */,
+				B1AC9FDE2557E8B5001BF9EE /* Persistence.swift */,
+				B1AC9FF02557E9EA001BF9EE /* StorePlantEntity.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		B1B260772538D90B00841FBB = {
 			isa = PBXGroup;
 			children = (
@@ -151,9 +179,10 @@
 				B1B260C52538D9F800841FBB /* LogoAsset.swift */,
 				B1B260CA2538DA1700841FBB /* IdleScanView.swift */,
 				B1E154912547F18F00E5546D /* WelcomeScreen */,
-				B1E7786F2538E705007A6440 /* Data Model */,
 				B1E778532538E641007A6440 /* OptionWheelViews */,
 				B1E7787A2538E731007A6440 /* DetailView */,
+				B1E7786F2538E705007A6440 /* Data Model */,
+				B1AC9FE12557E8BA001BF9EE /* CoreData */,
 				B1B260872538D90C00841FBB /* Assets.xcassets */,
 				B1B2608C2538D90C00841FBB /* Info.plist */,
 				B1B260892538D90C00841FBB /* Preview Content */,
@@ -334,10 +363,12 @@
 				B1B260842538D90B00841FBB /* PlantGuideApp.swift in Sources */,
 				B1E1548E2547F18500E5546D /* WelcomeView.swift in Sources */,
 				B1B260CB2538DA1700841FBB /* IdleScanView.swift in Sources */,
+				B1AC9FF22557E9EA001BF9EE /* StorePlantEntity.xcdatamodeld in Sources */,
 				B1E778862538E740007A6440 /* WaterView.swift in Sources */,
 				B1B260B72538D99400841FBB /* PlantPreview.swift in Sources */,
 				B1B260B22538D97800841FBB /* PlantOverview.swift in Sources */,
 				B1B260BC2538D9BE00841FBB /* MailView.swift in Sources */,
+				B1AC9FEE2557E9A2001BF9EE /* ListView.swift in Sources */,
 				B1E778772538E71A007A6440 /* Data.swift in Sources */,
 				B1E778842538E740007A6440 /* BarMeter.swift in Sources */,
 				B1E778682538E6B0007A6440 /* ResultPreview.swift in Sources */,
@@ -345,7 +376,10 @@
 				B172BE5F253F1AD300FB6CDB /* WikipediaView.swift in Sources */,
 				B1E7788A2538E740007A6440 /* SunView.swift in Sources */,
 				B1E778652538E6B0007A6440 /* PicturePreview.swift in Sources */,
+				B1AC9FF52557EF7D001BF9EE /* StoreImagePicker.swift in Sources */,
 				B1E778582538E659007A6440 /* ImagePicker.swift in Sources */,
+				B1AC9FDF2557E8B5001BF9EE /* Persistence.swift in Sources */,
+				B1AC9FEB2557E986001BF9EE /* AddNewSheet.swift in Sources */,
 				B1E778642538E6B0007A6440 /* Buffer.swift in Sources */,
 				B1E7788B2538E740007A6440 /* GalleryView.swift in Sources */,
 				B1E778672538E6B0007A6440 /* ClassificationView.swift in Sources */,
@@ -359,6 +393,8 @@
 				B1E7788C2538E740007A6440 /* PlantDetail.swift in Sources */,
 				B1B260C12538D9DB00841FBB /* MailHandler.swift in Sources */,
 				B1A1D261253C8154006BEB9D /* InstagramHandleView.swift in Sources */,
+				B1AC9FE32557E8F1001BF9EE /* ImageStore.swift in Sources */,
+				B1AC9FF92557F133001BF9EE /* StoreImagePickerView.swift in Sources */,
 				B1E778882538E740007A6440 /* TempView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,6 +588,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B1AC9FF02557E9EA001BF9EE /* StorePlantEntity.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B1AC9FF12557E9EA001BF9EE /* StorePlantsModel.xcdatamodel */,
+			);
+			currentVersion = B1AC9FF12557E9EA001BF9EE /* StorePlantsModel.xcdatamodel */;
+			path = StorePlantEntity.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B1B260782538D90B00841FBB /* Project object */;
 }

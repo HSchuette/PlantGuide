@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HowToView: View {
     var body: some View {
-        VStack {
+        VStack {
             
             Spacer()
         
