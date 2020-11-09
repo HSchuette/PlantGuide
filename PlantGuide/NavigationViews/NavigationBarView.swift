@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NavigationBarView: View {
     
-    @Binding var navigationSelection: String
+    @EnvironmentObject var navigationRouter: NavigationRouter
     
     var blue = Color("welcomeBlue")
     var yellow = Color("yellow")
@@ -21,15 +21,15 @@ struct NavigationBarView: View {
                 Spacer()
                 Spacer()
                 
-                NavigationItemView(navigationSelection: $navigationSelection, title: "Home", imageName: "house", color: blue)
+                NavigationItemView(title: "Home", imageName: "house", color: blue, inputCase: .homePage)
                 
                 Spacer()
                 
-                NavigationItemView(navigationSelection: $navigationSelection, title: "Scan", imageName: "viewfinder", color: yellow)
+                NavigationItemView(title: "Scan", imageName: "viewfinder", color: yellow, inputCase: .scanPage)
                   
                 Spacer()
                 
-                NavigationItemView(navigationSelection: $navigationSelection, title: "Overview", imageName: "chart.bar", color: green)
+                NavigationItemView(title: "Overview", imageName: "chart.bar", color: green, inputCase: .overViewPage)
                 
                 Spacer()
                 Spacer()
@@ -42,38 +42,39 @@ struct NavigationBarView: View {
 
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBarView(navigationSelection: Binding.constant("Home"))
+        NavigationBarView().environmentObject(NavigationRouter())
     }
 }
 
 
 struct NavigationItemView: View {
-    @Binding var navigationSelection: String
+    @EnvironmentObject var navigationRouter: NavigationRouter
     
     var title: String = "title"
     var imageName: String = "house"
     var color: Color = Color("welcomeBlue")
+    var inputCase: Page
 
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                .frame(width: navigationSelection != title ? 0 : 120, height: 50, alignment: .center)
+                .frame(width: navigationRouter.currentPage != inputCase ? 0 : 120, height: 50, alignment: .center)
                 .foregroundColor(color).opacity(0.2)
                 .transition(.opacity)
             
             HStack(alignment: .center) {
                 Image(systemName: imageName)
                 
-                Text(navigationSelection != title ? "" : title)
+                Text(navigationRouter.currentPage != inputCase ? "" : title)
                     .bold()
                     .font(.caption)
                 
             }
-            .foregroundColor(navigationSelection != title ? .black : color)
+            .foregroundColor(navigationRouter.currentPage != inputCase ? .black : color)
             .padding()
         }.onTapGesture {
             withAnimation(.easeInOut(duration: 0.5)) {
-                navigationSelection = title
+                navigationRouter.currentPage = inputCase
             }
         }
     }

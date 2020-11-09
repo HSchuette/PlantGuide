@@ -11,10 +11,16 @@ import SwiftUI
 struct PlantGuideApp: App {
     let persistenceController = PersistenceController.shared
     
+    @StateObject var navigationRouter = NavigationRouter()
+    @StateObject var selectedPlant = SelectedPlant()
+    
     var body: some Scene {
         WindowGroup {
             ContentView(selected: nil, lightMeter: nil, waterMeter: nil, humidityMeter: nil, learnMore: false, isMenuOpen: false)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(navigationRouter)
+                .environmentObject(selectedPlant)
+                
         }
     }
 }

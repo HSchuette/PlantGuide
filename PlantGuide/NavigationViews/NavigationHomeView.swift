@@ -8,26 +8,34 @@
 import SwiftUI
 
 struct NavigationHomeView: View {
-    @State var navigationSelection: String = "Home"
+    @EnvironmentObject var navigationRouter: NavigationRouter
+    @EnvironmentObject var selectedPlant: SelectedPlant
     
     var body: some View {        
         NavigationView {
             ZStack{
                 VStack {
                     Spacer()
-                    
-                    if navigationSelection == "Overview" {
-                        NavigationTestView()
-                    } else if navigationSelection == "Home" {
-                        
-                        
-                    } else if navigationSelection == "Scan" {
-                        
-                    }
+                    switch navigationRouter.currentPage {
+                                case .homePage:
+                                    Text("home")
+                                case .scanPage:
+                                    Text("scan")
+                                case .overViewPage:
+                                    NavigationTestView()
+                            }
+//                    if navigationSelection == "Overview" {
+//                        NavigationTestView()
+//                    } else if navigationSelection == "Home" {
+//                        
+//                        
+//                    } else if navigationSelection == "Scan" {
+//                        
+//                    }
                     
                     Spacer()
                     
-                    NavigationBarView(navigationSelection: $navigationSelection)
+                    NavigationBarView()
                 }
             }.navigationBarTitleDisplayMode(.large)
             .toolbar{
@@ -54,5 +62,7 @@ struct NavigationHomeView: View {
 struct NavigationHomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationHomeView()
+            .environmentObject(NavigationRouter())
+            .environmentObject(SelectedPlant())
     }
 }

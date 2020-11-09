@@ -30,7 +30,7 @@ struct Plant: Hashable, Codable, Identifiable {
     var toxicityText: String
     var wikipediaLink: String
     var description: String
-    var imageName:String
+    var imageName: String
     
     enum Category: String, CaseIterable, Codable, Hashable {
         case low = "low light"
