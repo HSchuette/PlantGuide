@@ -141,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B17CB6F92559CE7D004A3751 /* OverviewViews */ = {
+			isa = PBXGroup;
+			children = (
+				B17CB6F22559175C004A3751 /* SelectedPlant.swift */,
+				B17CB6EE2559173E004A3751 /* CarousselView.swift */,
+			);
+			path = OverviewViews;
+			sourceTree = "<group>";
+		};
 		B1AC9FE12557E8BA001BF9EE /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,8 +195,7 @@
 				B1B260852538D90B00841FBB /* ContentView.swift */,
 				B1B260B12538D97800841FBB /* PlantOverview.swift */,
 				B1B260B62538D99400841FBB /* PlantPreview.swift */,
-				B17CB6EE2559173E004A3751 /* CarousselView.swift */,
-				B17CB6F22559175C004A3751 /* SelectedPlant.swift */,
+				B17CB6F92559CE7D004A3751 /* OverviewViews */,
 				B1B260BB2538D9BE00841FBB /* MailView.swift */,
 				B1B260C02538D9DB00841FBB /* MailHandler.swift */,
 				B1B260C52538D9F800841FBB /* LogoAsset.swift */,

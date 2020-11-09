@@ -68,48 +68,48 @@ struct ContentView: View {
                             .padding(.bottom, -15)
                             
                             
-                            ScrollView(.horizontal, showsIndicators: true) {
-                                HStack {
-                                    
-                                    IdleScanView(showClassification: $showClassification, selected: $selected)
-                                    
-                                    ForEach(plantData, id: \.id) { plant in
-                                        PlantPreview(plants: plant, selected: self.$selected)
-                                            .onTapGesture {
-                                                // TapGesture
-                                                if self.selected == plant.id {
-                                                    
-                                                    // Animation of the exit motion
-                                                    withAnimation(.easeInOut(duration: 0.4)) {
-                                                        self.selected = nil
-                                                    }
-                                                    
-                                                } else if self.selected == nil {
-                                                    withAnimation(.easeInOut(duration: 0.4)) {
-                                                        
-                                                        self.selected = plant.id
-                                                        self.lightMeter = plant.lightFactor
-                                                        self.waterMeter = plant.waterFactor
-                                                        self.humidityMeter = plant.humidityFactor
-                                                    }
-                                                } else {
-                                                    withAnimation(.default) {
-                                                        self.selected = plant.id
-                                                    }
-                                                    
-                                                    // Animation of the meters
-                                                    withAnimation(.default) {
-                                                        self.lightMeter = plant.lightFactor
-                                                        self.waterMeter = plant.waterFactor
-                                                        self.humidityMeter = plant.humidityFactor
-                                                    }
-                                                }
-                                        }
-                                    }
-                                MailView()
-                                    
-                                }.padding(.leading, 15.0)
-                            }
+//                            ScrollView(.horizontal, showsIndicators: true) {
+//                                HStack {
+//
+//                                    IdleScanView(showClassification: $showClassification, selected: $selected)
+//
+//                                    ForEach(plantData, id: \.id) { plant in
+//                                        PlantPreview(plants: plant, selected: self.$selected)
+//                                            .onTapGesture {
+//                                                // TapGesture
+//                                                if self.selected == plant.id {
+//
+//                                                    // Animation of the exit motion
+//                                                    withAnimation(.easeInOut(duration: 0.4)) {
+//                                                        self.selected = nil
+//                                                    }
+//
+//                                                } else if self.selected == nil {
+//                                                    withAnimation(.easeInOut(duration: 0.4)) {
+//
+//                                                        self.selected = plant.id
+//                                                        self.lightMeter = plant.lightFactor
+//                                                        self.waterMeter = plant.waterFactor
+//                                                        self.humidityMeter = plant.humidityFactor
+//                                                    }
+//                                                } else {
+//                                                    withAnimation(.default) {
+//                                                        self.selected = plant.id
+//                                                    }
+//
+//                                                    // Animation of the meters
+//                                                    withAnimation(.default) {
+//                                                        self.lightMeter = plant.lightFactor
+//                                                        self.waterMeter = plant.waterFactor
+//                                                        self.humidityMeter = plant.humidityFactor
+//                                                    }
+//                                                }
+//                                            }
+//                                    }
+//                                    MailView()
+//
+//                                }.padding(.leading, 15.0)
+//                            }
                         }
                     }
                     

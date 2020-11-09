@@ -16,13 +16,7 @@ struct NavigationTestView: View {
         VStack {
             PlantOverView(selected: Binding.constant(0),  lightMeter: Binding.constant(0), waterMeter: Binding.constant(0), humidityMeter: Binding.constant(0))
            
-            ScrollView(.horizontal, showsIndicators: true) {
-                HStack() {
-                    ForEach(plantData, id: \.id) { plant in
-                        PlantPreview(plants: plant, selected: Binding.constant(nil))
-                    }
-                }
-            }
+            CarousselView()
         }
     }
 }
