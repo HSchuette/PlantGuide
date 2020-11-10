@@ -9,17 +9,14 @@ import SwiftUI
 
 struct PlantOverView: View {
     
-    @Binding var selected: Int?
-    @Binding var lightMeter: Int?
-    @Binding var waterMeter: Double?
-    @Binding var humidityMeter: Int?
+    @EnvironmentObject var selectedPlant: SelectedPlant
         
     var body: some View {
         VStack {
             
             HStack {
                 // big name title
-                Text(selected == nil ? "" : plantData[selected!].name)
+                Text(selectedPlant.name)
                     .font(.title)
                     .fontWeight(.regular)
                     .padding(.leading, 25)
@@ -33,7 +30,7 @@ struct PlantOverView: View {
                 
                 // small latin undertitle
                 
-                Text(selected == nil ? "" : "latin: " + plantData[selected!].latin)
+                Text( "latin: " + selectedPlant.latin)
                     .font(.subheadline)
                     .fontWeight(.regular)
                     .italic()
@@ -50,7 +47,7 @@ struct PlantOverView: View {
             
             // Graphs and Bar Charts
             HStack{
-                BarGraphs(selected: $selected, lightMeter: $lightMeter, waterMeter: $waterMeter, humidityMeter: $humidityMeter)
+                BarGraphs()
             }
             
            
@@ -58,7 +55,7 @@ struct PlantOverView: View {
             
             VStack(alignment: .leading) {
                 HStack {
-                    Text(selected == nil ? "" : plantData[selected!].description).font(.footnote)
+                    Text(selectedPlant.description).font(.footnote)
                     
                     Spacer()
                 }
@@ -77,9 +74,8 @@ struct PlantOverView: View {
 struct PlantOverView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PlantOverView(selected: Binding.constant(0), lightMeter: Binding.constant(3), waterMeter: Binding.constant(2), humidityMeter: Binding.constant(3))
-            PlantOverView(selected: Binding.constant(1), lightMeter: Binding.constant(4), waterMeter: Binding.constant(2), humidityMeter: Binding.constant(3))
-            PlantOverView(selected: Binding.constant(nil), lightMeter: Binding.constant(nil), waterMeter: Binding.constant(nil), humidityMeter: Binding.constant(nil))
+            PlantOverView()
+                .environmentObject(SelectedPlant())
         }.previewLayout(.fixed(width: 400, height: 550))
     }
 }

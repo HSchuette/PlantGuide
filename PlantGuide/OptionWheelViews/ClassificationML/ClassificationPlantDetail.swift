@@ -19,7 +19,7 @@ struct ClassificationPlantDetail: View {
         NavigationView {
             ScrollView {
                 ZStack {
-                    PlantDetail(selected: self.$selected)
+                    PlantDetail()
                     
                     VStack {
                         HStack {

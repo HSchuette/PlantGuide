@@ -57,10 +57,16 @@ struct NavigationItemView: View {
 
     var body: some View {
         ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color(.systemBackground), Color(.systemGray5)]), startPoint: .top, endPoint: .bottom)
+                .frame(width: navigationRouter.currentPage != inputCase ? 0 : 120, height: 50, alignment: .center)
+                .cornerRadius(25)
+                .opacity(0.2)
+            
             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                 .frame(width: navigationRouter.currentPage != inputCase ? 0 : 120, height: 50, alignment: .center)
                 .foregroundColor(color).opacity(0.2)
                 .transition(.opacity)
+                .shadow(color: Color(UIColor.black).opacity(0.4), radius: 4, x: 2, y: 2)
             
             HStack(alignment: .center) {
                 Image(systemName: imageName)
@@ -72,7 +78,9 @@ struct NavigationItemView: View {
             }
             .foregroundColor(navigationRouter.currentPage != inputCase ? .black : color)
             .padding()
-        }.onTapGesture {
+            
+        }
+        .onTapGesture {
             withAnimation(.easeInOut(duration: 0.5)) {
                 navigationRouter.currentPage = inputCase
             }

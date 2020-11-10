@@ -30,7 +30,7 @@ struct ContentView: View {
                     
                     VStack {
                             // Plant Detail Screen
-                            PlantOverView(selected: $selected,  lightMeter: $lightMeter, waterMeter: $waterMeter, humidityMeter: $humidityMeter)
+                            PlantOverView()
                         
                         
                         
@@ -60,7 +60,7 @@ struct ContentView: View {
                                             .font(.subheadline)
                                     }
                                 }).sheet(isPresented: $learnMore, content: {
-                                    PlantDetail(selected: self.$selected)
+                                    PlantDetail()
                                 })
                                 
                             }.padding(.leading, 25)

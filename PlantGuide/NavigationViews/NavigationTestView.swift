@@ -12,10 +12,14 @@ struct NavigationTestView: View {
     @EnvironmentObject var navigationRouter: NavigationRouter
     @EnvironmentObject var selectedPlant: SelectedPlant
     
+    @Binding var showLearnMoreSheet: Bool
+    
     var body: some View {
         VStack {
-            PlantOverView(selected: Binding.constant(0),  lightMeter: Binding.constant(0), waterMeter: Binding.constant(0), humidityMeter: Binding.constant(0))
+            PlantOverView()
            
+            CarousselToppingView(showLearnMoreSheet: $showLearnMoreSheet)
+            
             CarousselView()
         }
     }
@@ -23,7 +27,7 @@ struct NavigationTestView: View {
 
 struct NavigationTestView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationTestView()
+        NavigationTestView(showLearnMoreSheet: Binding.constant(false))
             .environmentObject(NavigationRouter())
             .environmentObject(SelectedPlant())
     }

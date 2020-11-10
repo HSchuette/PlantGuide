@@ -11,6 +11,8 @@ struct NavigationHomeView: View {
     @EnvironmentObject var navigationRouter: NavigationRouter
     @EnvironmentObject var selectedPlant: SelectedPlant
     
+    @State var showLearnMoreSheet: Bool = false
+    
     var body: some View {        
         NavigationView {
             ZStack{
@@ -22,16 +24,8 @@ struct NavigationHomeView: View {
                                 case .scanPage:
                                     Text("scan")
                                 case .overViewPage:
-                                    NavigationTestView()
+                                    NavigationTestView(showLearnMoreSheet: $showLearnMoreSheet)
                             }
-//                    if navigationSelection == "Overview" {
-//                        NavigationTestView()
-//                    } else if navigationSelection == "Home" {
-//                        
-//                        
-//                    } else if navigationSelection == "Scan" {
-//                        
-//                    }
                     
                     Spacer()
                     

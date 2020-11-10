@@ -9,7 +9,8 @@ import SwiftUI
 
 struct GalleryView: View {
     
-    @Binding var selected: Int?
+    @EnvironmentObject var selectedPlant: SelectedPlant
+    
     @Binding var moreInfo: String?
     
     let green = Color(red: 112/256, green: 191/256, blue: 92/256)
@@ -59,13 +60,13 @@ struct GalleryView: View {
                     ScrollView(.horizontal, showsIndicators: true) {
                          HStack {
                             ForEach(pictureData, id: \.id) { picture in
-                                self.pictureAsset(picture: String(plantData[self.selected!].imageName) + picture.name)
+                                self.pictureAsset(picture: String(selectedPlant.imageName) + picture.name)
                             }
                          }
                     }
                     // if the plant pictures have been provided by
                     // terra botanika, display a link to the instagram
-                    if terraBot.contains(self.selected!) {
+                    if terraBot.contains(selectedPlant.id) {
                         InstagramHandleView()
                     }
             }
@@ -81,8 +82,10 @@ struct GalleryView: View {
 struct GalleryView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            GalleryView(selected: Binding.constant(1), moreInfo: Binding.constant(nil))
-            GalleryView(selected: Binding.constant(11), moreInfo: Binding.constant("moreGallery"))
+            GalleryView(moreInfo: Binding.constant(nil))
+                .environmentObject(SelectedPlant())
+            GalleryView(moreInfo: Binding.constant("moreGallery"))
+                .environmentObject(SelectedPlant())
         }
     }
 }

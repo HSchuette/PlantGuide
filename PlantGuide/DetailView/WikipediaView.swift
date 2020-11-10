@@ -10,7 +10,8 @@ import SafariServices
 
 struct WikipediaView: View {
     
-    @Binding var selected: Int?
+    @EnvironmentObject var selectedPlant: SelectedPlant
+
     @Binding var moreInfo: String?
     
     @State var showSafari: Bool = false
@@ -35,25 +36,26 @@ struct WikipediaView: View {
             }
             .onAppear() {
                 print(urlString)
-                self.urlString = URL(string: plantData[selected!].wikipediaLink)!
+                self.urlString = URL(string: plantData[selectedPlant.id].wikipediaLink)!
             }
             .onTapGesture {
                 print(urlString)
-                self.urlString = URL(string: plantData[selected!].wikipediaLink)!
+                self.urlString = URL(string: plantData[selectedPlant.id].wikipediaLink)!
                             
                     self.showSafari = true
 
                 print(urlString)
             }
             .sheet(isPresented: $showSafari) {
-                SafariView(url: URL(string: plantData[selected!].wikipediaLink)!)
+                SafariView(url: URL(string: plantData[selectedPlant.id].wikipediaLink)!)
             }
     }
 }
 
 struct WikipediaView_Previews: PreviewProvider {
     static var previews: some View {
-        WikipediaView(selected: Binding.constant(2), moreInfo: Binding.constant(nil))
+        WikipediaView(moreInfo: Binding.constant(nil))
+            .environmentObject(SelectedPlant())
     }
 }
 

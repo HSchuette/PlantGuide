@@ -24,6 +24,7 @@ struct CarousselView: View {
                                         }
                             }
                     }
+                    MailView()
                 }.padding(.leading)
             }
         }
@@ -31,6 +32,12 @@ struct CarousselView: View {
     func updateAllValues(id: Int) {
         selectedPlant.id = plantData[id].id
         selectedPlant.name = plantData[id].name
+        selectedPlant.latin = plantData[id].latin
+        selectedPlant.lightFactor = plantData[id].lightFactor
+        selectedPlant.waterFactor = plantData[id].waterFactor
+        selectedPlant.humidityFactor = plantData[id].humidityFactor
+        selectedPlant.description = plantData[id].description
+        selectedPlant.imageName = plantData[id].imageName
     }
 }
 

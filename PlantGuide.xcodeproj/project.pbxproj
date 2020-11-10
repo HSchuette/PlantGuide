@@ -11,6 +11,7 @@
 		B17CB6EC255910AE004A3751 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CB6EB255910AE004A3751 /* NavigationRouter.swift */; };
 		B17CB6EF2559173E004A3751 /* CarousselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CB6EE2559173E004A3751 /* CarousselView.swift */; };
 		B17CB6F32559175C004A3751 /* SelectedPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CB6F22559175C004A3751 /* SelectedPlant.swift */; };
+		B187FEA9255A643A00F5D266 /* CarousselToppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187FEA8255A643A00F5D266 /* CarousselToppingView.swift */; };
 		B1A1D24E2538F08C006BEB9D /* PlantGuide.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B1E7786A2538E6B3007A6440 /* PlantGuide.mlmodel */; };
 		B1A1D2512538F112006BEB9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A1D2502538F111006BEB9D /* LaunchScreen.storyboard */; };
 		B1A1D2592538F5FA006BEB9D /* Screenshot3.png in Resources */ = {isa = PBXBuildFile; fileRef = B1A1D2542538F5FA006BEB9D /* Screenshot3.png */; };
@@ -70,6 +71,7 @@
 		B17CB6EB255910AE004A3751 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		B17CB6EE2559173E004A3751 /* CarousselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarousselView.swift; sourceTree = "<group>"; };
 		B17CB6F22559175C004A3751 /* SelectedPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPlant.swift; sourceTree = "<group>"; };
+		B187FEA8255A643A00F5D266 /* CarousselToppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarousselToppingView.swift; sourceTree = "<group>"; };
 		B1A1D2502538F111006BEB9D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1A1D2542538F5FA006BEB9D /* Screenshot3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot3.png; sourceTree = SOURCE_ROOT; };
 		B1A1D2552538F5FA006BEB9D /* Screenshot0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot0.png; sourceTree = SOURCE_ROOT; };
@@ -145,7 +147,11 @@
 			isa = PBXGroup;
 			children = (
 				B17CB6F22559175C004A3751 /* SelectedPlant.swift */,
+				B1B260B12538D97800841FBB /* PlantOverview.swift */,
+				B1E7785C2538E6A3007A6440 /* BarGraphs.swift */,
+				B1B260B62538D99400841FBB /* PlantPreview.swift */,
 				B17CB6EE2559173E004A3751 /* CarousselView.swift */,
+				B187FEA8255A643A00F5D266 /* CarousselToppingView.swift */,
 			);
 			path = OverviewViews;
 			sourceTree = "<group>";
@@ -193,8 +199,6 @@
 				B1A1D2502538F111006BEB9D /* LaunchScreen.storyboard */,
 				B1B260832538D90B00841FBB /* PlantGuideApp.swift */,
 				B1B260852538D90B00841FBB /* ContentView.swift */,
-				B1B260B12538D97800841FBB /* PlantOverview.swift */,
-				B1B260B62538D99400841FBB /* PlantPreview.swift */,
 				B17CB6F92559CE7D004A3751 /* OverviewViews */,
 				B1B260BB2538D9BE00841FBB /* MailView.swift */,
 				B1B260C02538D9DB00841FBB /* MailHandler.swift */,
@@ -266,7 +270,6 @@
 				B1E7785B2538E693007A6440 /* ClassificationML */,
 				B1E778552538E659007A6440 /* ImagePicker.swift */,
 				B1E778562538E659007A6440 /* OptionWheel.swift */,
-				B1E7785C2538E6A3007A6440 /* BarGraphs.swift */,
 				B1E7786A2538E6B3007A6440 /* PlantGuide.mlmodel */,
 			);
 			path = OptionWheelViews;
@@ -432,6 +435,7 @@
 				B1E7788C2538E740007A6440 /* PlantDetail.swift in Sources */,
 				B17CB6EC255910AE004A3751 /* NavigationRouter.swift in Sources */,
 				B1B260C12538D9DB00841FBB /* MailHandler.swift in Sources */,
+				B187FEA9255A643A00F5D266 /* CarousselToppingView.swift in Sources */,
 				B1A1D261253C8154006BEB9D /* InstagramHandleView.swift in Sources */,
 				B1AC9FE32557E8F1001BF9EE /* ImageStore.swift in Sources */,
 				B1AC9FF92557F133001BF9EE /* StoreImagePickerView.swift in Sources */,
