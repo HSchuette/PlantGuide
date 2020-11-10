@@ -132,7 +132,7 @@ struct IdleScanView: View {
             }
             
             Text("").sheet(isPresented: $showClassification) {
-                ClassificationView(selected: self.$selected, image: self.$image)
+                ClassificationView(image: self.$image)
             }
         }
         .frame(width: 120, height: 150.0)

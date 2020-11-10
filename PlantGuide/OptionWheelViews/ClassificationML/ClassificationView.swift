@@ -10,7 +10,8 @@ import CoreML
 
 struct ClassificationView: View {
     
-    @Binding var selected: Int?
+    @EnvironmentObject var selectedPlant: SelectedPlant
+
     @Binding var image: UIImage?
     
     @State private var classificationLabel: Array = [999]
@@ -129,6 +130,7 @@ struct ClassificationView: View {
 
 struct ClassificationView_Previews: PreviewProvider {
     static var previews: some View {
-        ClassificationView(selected: Binding.constant(10), image: Binding.constant(UIImage(named: "test")))
+        ClassificationView(image: Binding.constant(UIImage(named: "test")))
+            .environmentObject(SelectedPlant())
     }
 }

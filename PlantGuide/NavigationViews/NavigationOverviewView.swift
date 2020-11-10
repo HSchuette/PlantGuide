@@ -1,5 +1,5 @@
 //
-//  NavigationTestView.swift
+//  NavigationOverviewView.swift
 //  PlantGuide
 //
 //  Created by (non work) on 08.11.20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NavigationTestView: View {
+struct NavigationOverviewView: View {
     
     @EnvironmentObject var navigationRouter: NavigationRouter
     @EnvironmentObject var selectedPlant: SelectedPlant
@@ -25,9 +25,9 @@ struct NavigationTestView: View {
     }
 }
 
-struct NavigationTestView_Previews: PreviewProvider {
+struct NavigationOverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationTestView(showLearnMoreSheet: Binding.constant(false))
+        NavigationOverviewView(showLearnMoreSheet: Binding.constant(false))
             .environmentObject(NavigationRouter())
             .environmentObject(SelectedPlant())
     }

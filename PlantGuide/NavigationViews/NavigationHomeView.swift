@@ -22,9 +22,9 @@ struct NavigationHomeView: View {
                                 case .homePage:
                                     Text("home")
                                 case .scanPage:
-                                    Text("scan")
+                                    CompleteScanView()
                                 case .overViewPage:
-                                    NavigationTestView(showLearnMoreSheet: $showLearnMoreSheet)
+                                    NavigationOverviewView(showLearnMoreSheet: $showLearnMoreSheet)
                             }
                     
                     Spacer()
@@ -34,19 +34,14 @@ struct NavigationHomeView: View {
             }.navigationBarTitleDisplayMode(.large)
             .toolbar{
                 ToolbarItem(placement: .navigationBarLeading) {
-                    HStack{
-                        Text("Plant Room")
-                            .font(.system(size: 35))
-                            .fontWeight(.bold)
-                            .kerning(-2)
-                        
-                        LogoAsset()
-                            .stroke(lineWidth: 5)
-                            .frame(width: 35, height: 35)
-                            .offset(y: -5)
-                        
-                        Spacer()
-                    }.offset(x: 10, y: 45)
+                        switch navigationRouter.currentPage {
+                                    case .homePage:
+                                       LogoView()
+                                    case .scanPage:
+                                        Text("")
+                                    case .overViewPage:
+                                        LogoView()
+                                }
                 }
             }
         }
@@ -58,5 +53,24 @@ struct NavigationHomeView_Previews: PreviewProvider {
         NavigationHomeView()
             .environmentObject(NavigationRouter())
             .environmentObject(SelectedPlant())
+    }
+}
+
+
+struct LogoView: View {
+    var body: some View {
+        HStack {
+            Text("Plant Room")
+                .font(.system(size: 35))
+                .fontWeight(.bold)
+                .kerning(-2)
+            
+            LogoAsset()
+                .stroke(lineWidth: 5)
+                .frame(width: 35, height: 35)
+                .offset(y: -5)
+        
+            Spacer()
+        }.offset(x: 10, y: 45)
     }
 }
