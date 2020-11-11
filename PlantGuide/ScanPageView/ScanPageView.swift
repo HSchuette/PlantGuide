@@ -62,10 +62,16 @@ struct ScanPageView: View {
             )
             .animation(Animation.linear(duration: 3).delay(6).repeatForever(autoreverses: false))
             
+            LogoAsset()
+                .stroke(lineWidth: 8)
+                .frame(width: 60, height: 60)
+                .foregroundColor(Color(.systemBackground))
+                
             
         }
         .clipped()
-        .shadow(color: Color(UIColor.black).opacity( 0.6), radius: 8, x: 5, y: 5)
+        .shadow(color: Color(UIColor.black).opacity( 0.2), radius: 8, x: 5, y: 5)
+        .shadow(color: Color(.systemGray4).opacity(0.1), radius: 8, x: -5, y: -5)
         .onAppear() {
             self.isAnimating = true
         }

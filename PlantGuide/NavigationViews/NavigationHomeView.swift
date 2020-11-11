@@ -10,6 +10,7 @@ import SwiftUI
 struct NavigationHomeView: View {
     @EnvironmentObject var navigationRouter: NavigationRouter
     @EnvironmentObject var selectedPlant: SelectedPlant
+    @Environment(\.managedObjectContext) private var viewContext
     
     @State var showLearnMoreSheet: Bool = false
     
@@ -20,9 +21,9 @@ struct NavigationHomeView: View {
                     Spacer()
                     switch navigationRouter.currentPage {
                                 case .homePage:
-                                    Text("home")
+                                    NavigationListView()
                                 case .scanPage:
-                                    CompleteScanView()
+                                    NavigationScanView()
                                 case .overViewPage:
                                     NavigationOverviewView(showLearnMoreSheet: $showLearnMoreSheet)
                             }
@@ -36,11 +37,11 @@ struct NavigationHomeView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                         switch navigationRouter.currentPage {
                                     case .homePage:
-                                       LogoView()
+                                        NavigationBarTitleView(title: "Plant Room")
                                     case .scanPage:
-                                        Text("")
+                                        NavigationBarTitleView(title: "Identify your Plant")
                                     case .overViewPage:
-                                        LogoView()
+                                        NavigationBarTitleView(title: "Overview")
                                 }
                 }
             }
@@ -53,24 +54,9 @@ struct NavigationHomeView_Previews: PreviewProvider {
         NavigationHomeView()
             .environmentObject(NavigationRouter())
             .environmentObject(SelectedPlant())
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 
 
-struct LogoView: View {
-    var body: some View {
-        HStack {
-            Text("Plant Room")
-                .font(.system(size: 35))
-                .fontWeight(.bold)
-                .kerning(-2)
-            
-            LogoAsset()
-                .stroke(lineWidth: 5)
-                .frame(width: 35, height: 35)
-                .offset(y: -5)
-        
-            Spacer()
-        }.offset(x: 10, y: 45)
-    }
-}
+
