@@ -16,7 +16,7 @@ struct ScanButton: View {
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: colorSelected), startPoint: .top, endPoint: .bottom)
-                .frame(width: 125.0, height: 100.0)
+                .frame(height: 100.0)
                 .foregroundColor(Color(.systemGray5))
                 .cornerRadius(20)
             

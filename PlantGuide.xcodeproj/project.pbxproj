@@ -20,6 +20,8 @@
 		B187FECE255B430900F5D266 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187FECD255B430900F5D266 /* CardView.swift */; };
 		B187FED6255BB76100F5D266 /* PlantCardCarousselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187FED5255BB76100F5D266 /* PlantCardCarousselView.swift */; };
 		B187FEDB255BBE3300F5D266 /* CardCarousselToppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187FEDA255BBE3300F5D266 /* CardCarousselToppingView.swift */; };
+		B187FEE2255D0C2300F5D266 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187FEE1255D0C2300F5D266 /* DeleteButton.swift */; };
+		B187FEEB255E5A1000F5D266 /* EditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187FEEA255E5A1000F5D266 /* EditButton.swift */; };
 		B1A1D24E2538F08C006BEB9D /* PlantGuide.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B1E7786A2538E6B3007A6440 /* PlantGuide.mlmodel */; };
 		B1A1D2512538F112006BEB9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A1D2502538F111006BEB9D /* LaunchScreen.storyboard */; };
 		B1A1D2592538F5FA006BEB9D /* Screenshot3.png in Resources */ = {isa = PBXBuildFile; fileRef = B1A1D2542538F5FA006BEB9D /* Screenshot3.png */; };
@@ -88,6 +90,8 @@
 		B187FECD255B430900F5D266 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		B187FED5255BB76100F5D266 /* PlantCardCarousselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardCarousselView.swift; sourceTree = "<group>"; };
 		B187FEDA255BBE3300F5D266 /* CardCarousselToppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCarousselToppingView.swift; sourceTree = "<group>"; };
+		B187FEE1255D0C2300F5D266 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
+		B187FEEA255E5A1000F5D266 /* EditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButton.swift; sourceTree = "<group>"; };
 		B1A1D2502538F111006BEB9D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1A1D2542538F5FA006BEB9D /* Screenshot3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot3.png; sourceTree = SOURCE_ROOT; };
 		B1A1D2552538F5FA006BEB9D /* Screenshot0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot0.png; sourceTree = SOURCE_ROOT; };
@@ -186,9 +190,11 @@
 		B187FED2255B431300F5D266 /* HomePageViews */ = {
 			isa = PBXGroup;
 			children = (
-				B187FEDA255BBE3300F5D266 /* CardCarousselToppingView.swift */,
 				B187FECD255B430900F5D266 /* CardView.swift */,
+				B187FEE1255D0C2300F5D266 /* DeleteButton.swift */,
+				B187FEDA255BBE3300F5D266 /* CardCarousselToppingView.swift */,
 				B187FED5255BB76100F5D266 /* PlantCardCarousselView.swift */,
+				B187FEEA255E5A1000F5D266 /* EditButton.swift */,
 			);
 			path = HomePageViews;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 				B1A1D24E2538F08C006BEB9D /* PlantGuide.mlmodel in Sources */,
 				B1B260862538D90B00841FBB /* ContentView.swift in Sources */,
 				B187FEBC255B28C700F5D266 /* CompleteScanView.swift in Sources */,
+				B187FEE2255D0C2300F5D266 /* DeleteButton.swift in Sources */,
 				B1E778872538E740007A6440 /* ToxicityView.swift in Sources */,
 				B1B260C62538D9F800841FBB /* LogoAsset.swift in Sources */,
 				B1B260842538D90B00841FBB /* PlantGuideApp.swift in Sources */,
@@ -484,6 +491,7 @@
 				B187FEB1255B142900F5D266 /* ScanPageView.swift in Sources */,
 				B1B260C12538D9DB00841FBB /* MailHandler.swift in Sources */,
 				B187FEA9255A643A00F5D266 /* CarousselToppingView.swift in Sources */,
+				B187FEEB255E5A1000F5D266 /* EditButton.swift in Sources */,
 				B1A1D261253C8154006BEB9D /* InstagramHandleView.swift in Sources */,
 				B1AC9FE32557E8F1001BF9EE /* ImageStore.swift in Sources */,
 				B1AC9FF92557F133001BF9EE /* StoreImagePickerView.swift in Sources */,

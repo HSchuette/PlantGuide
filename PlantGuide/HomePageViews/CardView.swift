@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CardView: View {
     
+
+    
     var plantName: String
     var plantType: String
     var plantID: String?
@@ -17,53 +19,58 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            VStack {
-                Image(uiImage: ImageStore.retrieve(imageNamed: "\(String(describing: plantID)).png") ?? UIImage(imageLiteralResourceName: "placeHolder"))
-                    .resizable()
-                    .scaledToFit()
-                    .offset(y: -55)
-            }
-            VStack {
-                Spacer()
-                
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(Color(.systemBackground))
-                        .cornerRadius(25)
+            ZStack {
+                VStack {
+                    Image(uiImage: ImageStore.retrieve(imageNamed: "\(String(describing: plantID)).png") ?? UIImage(imageLiteralResourceName: "placeHolder"))
+                        .resizable()
+                        .scaledToFit()
+                        .offset(y: -55)
+                }
+                VStack {
+                    Spacer()
                     
-                    VStack(alignment: .leading) {
-                        Text(plantName)
-                            .font(.system(size: 18))
-                            .fontWeight(.bold)
-                            .kerning(-1)
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(Color(.systemBackground))
+                            .cornerRadius(25)
                         
-                        Text(plantType)
-                            .font(.system(size: 12))
-                            .italic()
-                            .opacity(0.7)
-                                                
-                        HStack(alignment: .bottom) {
-                            Spacer()
+                        VStack(alignment: .leading) {
+                            Text(plantName)
+                                .font(.system(size: 18))
+                                .fontWeight(.bold)
+                                .kerning(-1)
                             
-                            CircleIcon(color: blue, image: "cloud.rain.fill")
-                            Spacer()
-                            CircleIcon(color: Color(.systemGray2), image: "cloud.fog.fill")
-                            Spacer()
-                        }.scaleEffect(0.8)
-                    }.padding(.horizontal, 15)
-                    .frame(width: 140)
+                            Text(plantType)
+                                .font(.system(size: 12))
+                                .italic()
+                                .opacity(0.7)
+                                                    
+                            HStack(alignment: .bottom) {
+                                Spacer()
+                                
+                                CircleIcon(color: blue, image: "cloud.rain.fill")
+                                Spacer()
+                                CircleIcon(color: Color(.systemGray2), image: "cloud.fog.fill")
+                                Spacer()
+                            }.scaleEffect(0.8)
+                        }.padding(.horizontal, 15)
+                        .frame(width: 140)
+                        
+                        
+                    }.frame(width: 150, height: 112.5)
+                    .clipped()
+                    .shadow(color: Color(UIColor.black).opacity(0.2), radius: 4, x: 0, y: -5)
                     
-                    
-                }.frame(width: 150, height: 112.5)
-                .clipped()
-                .shadow(color: Color(UIColor.black).opacity(0.2), radius: 4, x: 0, y: -5)
+                }
                 
-            }
+                
+                
+            }.cornerRadius(25)
+            .frame(width: 150, height: 225)
+            .shadow(color: Color(UIColor.black).opacity(0.2), radius: 4, x: 5, y: 5)
+            .shadow(color: Color(.systemGray4).opacity(0.1), radius: 4, x: -5, y: -5)
             
-        }.cornerRadius(25)
-        .frame(width: 150, height: 225)
-        .shadow(color: Color(UIColor.black).opacity(0.2), radius: 4, x: 5, y: 5)
-        .shadow(color: Color(.systemGray4).opacity(0.1), radius: 4, x: -5, y: -5)
+        }.frame(width: 165, height: 240)
     }
 }
 

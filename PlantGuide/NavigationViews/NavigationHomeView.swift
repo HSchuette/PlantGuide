@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct NavigationHomeView: View {
     @EnvironmentObject var navigationRouter: NavigationRouter
@@ -13,6 +14,13 @@ struct NavigationHomeView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State var showLearnMoreSheet: Bool = false
+    
+    @FetchRequest(
+        entity: StorePlantEntity.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \StorePlantEntity.name, ascending: false)],
+        animation: .default)
+    
+    private var storePlants: FetchedResults<StorePlantEntity>
     
     var body: some View {        
         NavigationView {

@@ -11,6 +11,8 @@ struct NavigationScanView: View {
     var body: some View {
         VStack {
             
+            Spacer()
+            
             ScanPageView()
             
             VStack(alignment: .leading) {

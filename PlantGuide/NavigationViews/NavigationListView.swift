@@ -15,6 +15,7 @@ struct NavigationListView: View {
             Spacer()
             
             CardCarousselToppingView()
+            
             PlantCardCarousselView()
         }
     }
