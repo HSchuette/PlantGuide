@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct EditButton: View {
+    @Binding var onEdit: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Button(action: {
+            onEdit.toggle()
+        }, label: {
+            Text(onEdit ? "Done" : "Edit")
+        })
     }
 }
 
 struct EditButton_Previews: PreviewProvider {
     static var previews: some View {
-        EditButton()
+        EditButton(onEdit: Binding.constant(true))
     }
 }

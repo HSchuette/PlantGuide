@@ -22,6 +22,8 @@ struct NavigationHomeView: View {
     
     private var storePlants: FetchedResults<StorePlantEntity>
     
+    @State var onEdit: Bool = false
+    
     var body: some View {        
         NavigationView {
             ZStack{
@@ -29,7 +31,7 @@ struct NavigationHomeView: View {
                     Spacer()
                     switch navigationRouter.currentPage {
                                 case .homePage:
-                                    NavigationListView()
+                                    NavigationListView(onEdit: $onEdit)
                                 case .scanPage:
                                     NavigationScanView()
                                 case .overViewPage:
@@ -51,6 +53,11 @@ struct NavigationHomeView: View {
                                     case .overViewPage:
                                         NavigationBarTitleView(title: "Overview")
                                 }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    if navigationRouter.currentPage == .homePage {
+                        EditButton(onEdit: $onEdit)
+                    }
                 }
             }
         }

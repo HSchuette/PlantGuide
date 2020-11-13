@@ -23,6 +23,7 @@ struct NavigationBarTitleView: View {
                 .offset(y: -5)
         
             Spacer()
+            
         }.offset(x: 10, y: 45)
     }
 }
