@@ -34,7 +34,8 @@ struct NavigationListView: View {
             } else {
             
                 CardCarousselToppingView(onEdit: $onEdit, seeAll: $seeAll)
-                ScrollView(.vertical, showsIndicators: true) {
+                
+                ScrollView(seeAll ? .vertical : .horizontal, showsIndicators: true) {
                     PlantCardCarousselView(onEdit: $onEdit, seeAll: $seeAll)
                         .padding(.leading, 15)
                 }
@@ -45,7 +46,7 @@ struct NavigationListView: View {
 
 struct NavigationListView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationListView(onEdit: Binding.constant(true), seeAll: Binding.constant(true))
+        NavigationListView(onEdit: Binding.constant(true), seeAll: Binding.constant(false))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

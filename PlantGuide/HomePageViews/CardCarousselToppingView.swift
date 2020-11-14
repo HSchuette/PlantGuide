@@ -24,6 +24,8 @@ struct CardCarousselToppingView: View {
     
     var body: some View {
         VStack {
+            Spacer()
+            
             HStack {
                 Text("Your Plant Gallery")
                     .font(.callout)
@@ -49,7 +51,6 @@ struct CardCarousselToppingView: View {
             }
             
         }.padding(.horizontal, 25)
-        .frame(height: 80)
     }
 }
 

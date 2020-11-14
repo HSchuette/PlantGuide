@@ -101,7 +101,7 @@ struct PlantCardCarousselView: View {
 
 struct PlantCardCarousselView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantCardCarousselView(onEdit: Binding.constant(true), seeAll: Binding.constant(true))
+        PlantCardCarousselView(onEdit: Binding.constant(true), seeAll: Binding.constant(false))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
