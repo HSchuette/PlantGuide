@@ -28,7 +28,7 @@ struct DeleteButton: View {
             }
             
             Spacer()
-        }
+        }.frame(height: 240)
     }
 }
 

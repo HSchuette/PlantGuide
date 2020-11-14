@@ -12,42 +12,50 @@ struct CardCarousselToppingView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    @State var showAddNewSheet = false
+    @FetchRequest(
+        entity: StorePlantEntity.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \StorePlantEntity.name, ascending: false)],
+        animation: .default)
+    
+    private var storePlants: FetchedResults<StorePlantEntity>
+    
+    @Binding var onEdit: Bool
+    @Binding var seeAll: Bool
     
     var body: some View {
-        VStack{
+        VStack {
             HStack {
-                Text("Your Plant Gallery:")
+                Text("Your Plant Gallery")
                     .font(.callout)
-                    .fontWeight(.regular)
-                    .foregroundColor(Color(.systemGray))
+                    .fontWeight(.medium)
                 
                 Spacer()
                 
-                Button(action: {
-                    withAnimation(.easeInOut) {
-                        self.showAddNewSheet.toggle()
-                    }
-                    
-                }, label: {
-                    Text("Add more")
-                        .font(.subheadline)
-                    
-                    Image(systemName: "plus.circle")
-                        .font(.subheadline)
-                }).sheet(isPresented: $showAddNewSheet, content: {
-                    AddNewSheet()
-                })
+                CardCarousselAddMoreButton()
                 
-            }.padding(.leading, 25)
-            .padding(.trailing, 40)
-        }
+            }.padding(.bottom, 5)
+            
+            Divider()
+            
+            HStack {
+                
+                CardCarousselOnEditButton(onEdit: $onEdit)
+                
+                Spacer()
+                if self.storePlants.count < 3 {
+                } else {
+                    CardCarousselSeeAllButton(seeAll: $seeAll)
+                }
+            }
+            
+        }.padding(.horizontal, 25)
+        .frame(height: 80)
     }
 }
 
 struct CardCarousselToppingView_Previews: PreviewProvider {
     static var previews: some View {
-        CardCarousselToppingView()
+        CardCarousselToppingView(onEdit: Binding.constant(false), seeAll: Binding.constant(false))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlantCardCarousselView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         entity: StorePlantEntity.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \StorePlantEntity.name, ascending: false)],
@@ -21,47 +21,36 @@ struct PlantCardCarousselView: View {
     @State private var showActionSheet: Bool = false
     
     @Binding var onEdit: Bool
+    @Binding var seeAll: Bool
     
     let feedback = UIImpactFeedbackGenerator(style: .light)
     
     var actionSheet: ActionSheet {
         ActionSheet(
-         title: Text("Are you sure you want to delete this plant?"),
+            title: Text("Are you sure you want to delete this plant?"),
             buttons:[
                 .destructive(Text("Delete")){
                     deleteItems(toDelete: deleteEntitiy!)
                 },
                 .cancel()
-        ])
+            ])
     }
     
     var body: some View {
         VStack {
-            
-            ScrollView(.horizontal, showsIndicators: true) {
-                HStack {
-                    ForEach(storePlants) { plant in
-                        ZStack {
-                            CardView(plantName: plant.name!, plantType: plant.type!, plantID: plant.id!)
-                                .padding(5)
-                            
-                            if onEdit == true {
-                                DeleteButton()
-                                    .onTapGesture(perform: {
-                                        self.deleteEntitiy = plant
-                                        withAnimation(Animation.easeInOut.delay(1)) {
-                                            self.showActionSheet = true
-                                            self.feedback.impactOccurred()
-                                        }
-                                    })
-                                    .actionSheet(isPresented: $showActionSheet, content: {
-                                    self.actionSheet })
-                            }
-                        }
+            ScrollView(seeAll ? .vertical : .horizontal, showsIndicators: true) {
+                if seeAll == true {
+                    LazyVGrid(columns: [
+                        GridItem(.fixed(160)),
+                        GridItem(.fixed(160))
+                    ], alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0, content: {
+                        completeGridView()
+                    })
+                } else {
+                    HStack {
+                        completeGridView()
                     }
                 }
-                .frame(height: 220)
-                .padding(15)
             }
         }
     }
@@ -75,7 +64,7 @@ struct PlantCardCarousselView: View {
             
             
             viewContext.delete(toDelete)
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -86,11 +75,34 @@ struct PlantCardCarousselView: View {
             }
         }
     }
+    
+    private func completeGridView() -> some View {
+        ForEach(storePlants, id: \.self) { plant in
+            ZStack {
+                CardView(plantName: plant.name!, plantType: plant.type!, plantID: plant.id!)
+                    .padding(5)
+                
+                if onEdit == true {
+                    DeleteButton()
+                        .onTapGesture(perform: {
+                            self.deleteEntitiy = plant
+                            withAnimation(Animation.easeInOut.delay(1)) {
+                                self.showActionSheet = true
+                                self.feedback.impactOccurred()
+                            }
+                        })
+                        .actionSheet(isPresented: $showActionSheet, content: {
+                                        self.actionSheet })
+                }
+            }
+        }
+    }
 }
 
 struct PlantCardCarousselView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantCardCarousselView(onEdit: Binding.constant(true))
+        PlantCardCarousselView(onEdit: Binding.constant(true), seeAll: Binding.constant(true))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+

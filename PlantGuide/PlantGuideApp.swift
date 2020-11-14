@@ -16,7 +16,7 @@ struct PlantGuideApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(selected: nil, lightMeter: nil, waterMeter: nil, humidityMeter: nil, learnMore: false, isMenuOpen: false)
+            NavigationHomeView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(navigationRouter)
                 .environmentObject(selectedPlant)

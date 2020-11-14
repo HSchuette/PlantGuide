@@ -11,6 +11,7 @@ struct NavigationBarTitleView: View {
     var title: String
     
     var body: some View {
+
         HStack {
             Text(title)
                 .font(.system(size: 35))
@@ -23,8 +24,7 @@ struct NavigationBarTitleView: View {
                 .offset(y: -5)
         
             Spacer()
-            
-        }.offset(x: 10, y: 45)
+        }.offset(y:45)
     }
 }
 

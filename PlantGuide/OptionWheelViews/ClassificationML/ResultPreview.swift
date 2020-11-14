@@ -77,6 +77,6 @@ struct ResultPreview: View {
 
 struct ResultPreview_Previews: PreviewProvider {
     static var previews: some View {
-        ResultPreview(selected: Binding.constant(999))
+        ResultPreview(selected: Binding.constant(2))
     }
 }

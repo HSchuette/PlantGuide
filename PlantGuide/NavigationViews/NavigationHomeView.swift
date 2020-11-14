@@ -23,15 +23,40 @@ struct NavigationHomeView: View {
     private var storePlants: FetchedResults<StorePlantEntity>
     
     @State var onEdit: Bool = false
+    @State var seeAll: Bool = false
+    
+    init() {
+            // this is not the same as manipulating the proxy directly
+            let appearance = UINavigationBarAppearance()
+            // this overrides everything you have set up earlier.
+            appearance.configureWithTransparentBackground()
+            
+            // this only applies to big titles
+            appearance.largeTitleTextAttributes = [
+                .font : UIFont.systemFont(ofSize: 35, weight: .bold),
+                NSAttributedString.Key.kern: -2
+            ]
+            // this only applies to small titles
+            appearance.titleTextAttributes = [
+                .font : UIFont.systemFont(ofSize: 35, weight: .bold),
+                NSAttributedString.Key.kern: -2
+                
+            ]
+            
+            //In the following two lines you make sure that you apply the style for good
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            UINavigationBar.appearance().standardAppearance = appearance
+            
+        }
     
     var body: some View {        
         NavigationView {
-            ZStack{
+            ZStack{                                
                 VStack {
                     Spacer()
                     switch navigationRouter.currentPage {
                                 case .homePage:
-                                    NavigationListView(onEdit: $onEdit)
+                                    NavigationListView(onEdit: $onEdit, seeAll: $seeAll)
                                 case .scanPage:
                                     NavigationScanView()
                                 case .overViewPage:
@@ -52,12 +77,7 @@ struct NavigationHomeView: View {
                                         NavigationBarTitleView(title: "Identify your Plant")
                                     case .overViewPage:
                                         NavigationBarTitleView(title: "Overview")
-                                }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    if navigationRouter.currentPage == .homePage {
-                        EditButton(onEdit: $onEdit)
-                    }
+                        }
                 }
             }
         }
