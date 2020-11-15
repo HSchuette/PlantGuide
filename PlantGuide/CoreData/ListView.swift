@@ -48,8 +48,6 @@ struct ListView: View {
                             
                             Spacer()
                             
-                            Text("\(plant.room!)")
-                                .font(.caption)
                         }
                         Text("\(plant.type!)")
                     }
@@ -58,7 +56,7 @@ struct ListView: View {
             }
             .listStyle(DefaultListStyle())
             .sheet(isPresented: $showAddNewSheet) {
-                AddNewSheet()
+                AddNewPlantSheetView()
             }
         }
     }
@@ -70,12 +68,12 @@ struct ListView: View {
             newPlant.name = String("PlaceHolder")
             newPlant.type = String("Monstera")
             newPlant.imagePath = String()
-            newPlant.room = String("Kitchen")
-            newPlant.dateAdded = Date()
-            newPlant.sunConditions = String()
-            newPlant.isHumidityReminder = Bool()
+            newPlant.lightCategory = String()
+            newPlant.lightFactor = Double()
             newPlant.isWaterReminder = Bool()
-            newPlant.dateWatering = Date()
+            newPlant.dateLastWatering = Date()
+            newPlant.isHumidityReminder = Bool()
+            newPlant.dateAdded = Date()
 
             do {
                 try viewContext.save()

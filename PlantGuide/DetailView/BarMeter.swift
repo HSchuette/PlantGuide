@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-func BarMeter(width: CGFloat, color: Color, image: String) -> some View {
+func BarMeter(width: CGFloat, color: Color, image: String, isWide: Bool) -> some View {
     return VStack {
         HStack(alignment: .center) {
             Spacer()
@@ -22,7 +22,21 @@ func BarMeter(width: CGFloat, color: Color, image: String) -> some View {
                 Rectangle()
                     .cornerRadius(15.0)
                     .foregroundColor(color)
-                    .padding(.leading, 180-width*45)
+                    .padding(.leading, (isWide ? 300 : 180)-width*(isWide ? 75 : 45))
+                
+                if isWide == false {
+                } else {
+                    HStack {
+                        Rectangle()
+                            .cornerRadius(5.0)
+                            .foregroundColor(Color(.systemGray))
+                            .opacity(0.5)
+                            .frame(width: 5, height: 25)
+                            .padding(.leading, 320-width*75)
+                        Spacer()
+                    }
+                }
+                    
                 
                 HStack {
                     Spacer()
@@ -32,9 +46,14 @@ func BarMeter(width: CGFloat, color: Color, image: String) -> some View {
                 }
             }
         }
-        Spacer()
-    }.frame(width: 180, height: 40)
+    }.frame(width: isWide ? 300 : 180, height: 40)
     .cornerRadius(15.0)
+}
+
+struct BarMeter_Previews: PreviewProvider {
+    static var previews: some View {
+        BarMeter(width: 2, color: .yellow, image: "sun.max.fill", isWide: true)
+    }
 }
 
 func CircleIcon(color: Color, image: String)

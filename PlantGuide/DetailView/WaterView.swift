@@ -50,7 +50,7 @@ struct WaterView: View {
                         
                         Spacer()
                         
-                        BarMeter(width: self.waterValue, color: blue, image: "cloud.rain.fill")
+                        BarMeter(width: self.waterValue, color: blue, image: "cloud.rain.fill", isWide: false)
                             .onAppear() {
                                 withAnimation(Animation.easeInOut(duration:1).delay(0.4)) {
                                     self.waterValue = 0

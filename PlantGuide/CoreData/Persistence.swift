@@ -17,15 +17,15 @@ struct PersistenceController {
         for _ in 0..<5 {
             let newPlant = StorePlantEntity(context: viewContext)
             newPlant.id = String()
-            newPlant.name = String("PlaceHolder")
-            newPlant.type = String("Monstera")
+            newPlant.name = String("Pflanziska")
+            newPlant.type = String("Monstera Deliciosa")
             newPlant.imagePath = String()
-            newPlant.room = String("Kitchen")
-            newPlant.dateAdded = Date()
-            newPlant.sunConditions = String()
-            newPlant.isHumidityReminder = Bool()
+            newPlant.lightCategory = String()
+            newPlant.lightFactor = Double()
             newPlant.isWaterReminder = Bool()
-            newPlant.dateWatering = Date()
+            newPlant.dateLastWatering = Date()
+            newPlant.isHumidityReminder = Bool()
+            newPlant.dateAdded = Date()
         }
         do {
             try viewContext.save()

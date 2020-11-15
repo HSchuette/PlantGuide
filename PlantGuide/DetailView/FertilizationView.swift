@@ -49,7 +49,7 @@ struct FertilizationView: View {
                         
                         Spacer()
                         
-                        BarMeter(width: self.fertilizationValue, color: green, image: "leaf.arrow.circlepath")
+                        BarMeter(width: self.fertilizationValue, color: green, image: "leaf.arrow.circlepath", isWide: false)
                             .onAppear() {
                                 withAnimation(Animation.easeInOut(duration:1).delay(0.4)) {
                                     self.fertilizationValue = 0

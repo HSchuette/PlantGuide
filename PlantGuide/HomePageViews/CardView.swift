@@ -21,10 +21,15 @@ struct CardView: View {
         ZStack {
             ZStack {
                 VStack {
-                    Image(uiImage: ImageStore.retrieve(imageNamed: "\(String(describing: plantID)).png") ?? UIImage(imageLiteralResourceName: "placeHolder"))
+                    Image(uiImage: ImageStore.retrieve(imageNamed: "\(plantID!).png") ?? UIImage(imageLiteralResourceName: "placeHolder"))
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
+                        .frame(width: 150, height: 225)
                         .offset(y: -55)
+                        .onAppear() {
+                            print("\(plantID!).png")
+                        }
+                        
                 }
                 VStack {
                     Spacer()

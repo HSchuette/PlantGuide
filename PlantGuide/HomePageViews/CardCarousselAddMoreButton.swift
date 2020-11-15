@@ -24,7 +24,7 @@ struct CardCarousselAddMoreButton: View {
             Image(systemName: "plus.circle")
                 .font(.subheadline)
         }).sheet(isPresented: $showAddNewSheet, content: {
-            AddNewSheet()
+            AddNewPlantSheetView()
         })
     }
 }

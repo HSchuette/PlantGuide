@@ -44,7 +44,7 @@ struct SunView: View {
                         
                         Spacer()
                         
-                        BarMeter(width: self.sunValue, color: yellow, image: "sun.max.fill")
+                        BarMeter(width: self.sunValue, color: yellow, image: "sun.max.fill", isWide: false)
                             .onAppear() {
                                 withAnimation(Animation.easeInOut(duration:1).delay(0.4)) {
                                     self.sunValue = 0

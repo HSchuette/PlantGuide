@@ -50,7 +50,7 @@ struct TempView: View {
                         
                         Spacer()
                         
-                        BarMeter(width: self.tempValue, color: red, image: "thermometer")
+                        BarMeter(width: self.tempValue, color: red, image: "thermometer", isWide: false)
                             .onAppear() {
                                 withAnimation(Animation.easeInOut(duration:1).delay(0.4)) {
                                     self.tempValue = 0

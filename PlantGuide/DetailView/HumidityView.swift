@@ -49,7 +49,7 @@ struct HumidityView: View {
                         
                         Spacer()
                         
-                        BarMeter(width: humidityValue, color: Color(.systemGray2), image: "cloud.fog.fill")
+                        BarMeter(width: humidityValue, color: Color(.systemGray2), image: "cloud.fog.fill", isWide: false)
                             .onAppear() {
                                 withAnimation(Animation.easeInOut(duration:1).delay(0.4)) {
                                     self.humidityValue = 0

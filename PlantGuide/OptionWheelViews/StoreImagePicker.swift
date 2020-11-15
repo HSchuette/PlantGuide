@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class storeImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @Binding var image: UIImage?
     @Binding var isStoreImagePickerVisible: Bool
@@ -22,7 +22,7 @@ class storeImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UII
         _imagePath = imagePath
     }
     
-    func storeImagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             image = uiImage
@@ -31,6 +31,8 @@ class storeImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UII
         
         do {
             try imagePath = ImageStore.store(image: image!, name: "\(plantID)", filepath: imagePath)
+            
+            print(imagePath)
         } catch {
             print(error.localizedDescription)
         }
@@ -42,10 +44,10 @@ class storeImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UII
     
 }
 
-struct storeImagePicker: UIViewControllerRepresentable {
+struct ImagePicker: UIViewControllerRepresentable {
     
     typealias UIViewControllerType = UIImagePickerController
-    typealias Coordinator = storeImagePickerCoordinator
+    typealias Coordinator = ImagePickerCoordinator
     
     @Binding var image: UIImage?
     @Binding var isStoreImagePickerVisible: Bool
@@ -54,14 +56,14 @@ struct storeImagePicker: UIViewControllerRepresentable {
     
     var sourceType: UIImagePickerController.SourceType = .camera
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<storeImagePicker>) {
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
     }
     
-    func makeCoordinator() -> storeImagePicker.Coordinator {
-        return storeImagePickerCoordinator(image: $image, isStoreImagePickerVisible: $isStoreImagePickerVisible, plantID: $plantID, imagePath: $imagePath)
+    func makeCoordinator() -> ImagePicker.Coordinator {
+        return ImagePickerCoordinator(image: $image, isStoreImagePickerVisible: $isStoreImagePickerVisible, plantID: $plantID, imagePath: $imagePath)
     }
     
-    func makeUIViewController(context: UIViewControllerRepresentableContext<storeImagePicker>) -> UIImagePickerController {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
         
         let selector = UIImagePickerController()
         selector.sourceType = sourceType

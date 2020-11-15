@@ -70,7 +70,7 @@ struct GetStartedButton: View {
 
             
         }).sheet(isPresented: $showAddFirstSheet, content: {
-            AddNewSheet()
+            AddNewPlantSheetView()
         })
     }
 }

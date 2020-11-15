@@ -47,7 +47,7 @@ struct storeImagePickerView: View {
                     }.actionSheet(isPresented: $showActionSheet, content: {
                     self.actionSheet })
                     .sheet(isPresented: $showImageSelector) {
-                        storeImagePicker(image: self.$image, isStoreImagePickerVisible: self.$showImageSelector, plantID: $plantID, imagePath: $imagePath, sourceType: self.sourceType).edgesIgnoringSafeArea(.all)
+                        ImagePicker(image: self.$image, isStoreImagePickerVisible: self.$showImageSelector, plantID: $plantID, imagePath: $imagePath, sourceType: self.sourceType).edgesIgnoringSafeArea(.all)
                 }
             
             Spacer()

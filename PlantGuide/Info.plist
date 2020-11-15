@@ -22,6 +22,8 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSMainNibFile</key>
+	<string>PlantGuide</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Plant Room can use photos to identify your houseplants with the help of an machine learing algorithm</string>
 	<key>UIApplicationSceneManifest</key>
