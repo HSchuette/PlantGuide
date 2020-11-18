@@ -53,7 +53,6 @@ struct NavigationHomeView: View {
         NavigationView {
             ZStack{                                
                 VStack {
-                    Spacer()
                     switch navigationRouter.currentPage {
                                 case .homePage:
                                     NavigationListView(onEdit: $onEdit, seeAll: $seeAll)

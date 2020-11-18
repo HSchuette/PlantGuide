@@ -11,26 +11,26 @@ struct NavigationScanView: View {
     var body: some View {
         VStack {
             
-            Spacer()
-            
             ScanPageView()
+                .padding(-25)
             
+            Text("Identify your favourite plant by snapping a picture with your phone.")
+                .font(.callout)
+                .lineLimit(nil)
+                .multilineTextAlignment(.leading)
+                .padding(.horizontal)
+            
+            HStack {
+                Text("Choose your input:")
+                    .font(.callout)
+                    .fontWeight(.regular)
+                    .foregroundColor(Color(.systemGray))
+                    
+                
+                Spacer()
+            }.padding()
+                
             VStack {
-                
-                Text("Identify your favourite plant by snapping a picture with your phone.")
-                    .padding()
-                
-                HStack {
-                    Text("Choose your input:")
-                        .font(.callout)
-                        .fontWeight(.regular)
-                        .foregroundColor(Color(.systemGray))
-                    
-                    Spacer()
-                    
-                }.padding()
-                
-                
                 Button(action: {
 
                     
@@ -54,9 +54,9 @@ struct NavigationScanView: View {
                     }
                 }).buttonStyle(CustomButtonStyle())
                 
-               
+                Spacer()
             }
-            Spacer()
+            
         }.padding(.horizontal, 25)
     }
 }

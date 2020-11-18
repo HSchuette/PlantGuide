@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="StorePlantEntity" representedClassName="StorePlantEntity" syncable="YES" codeGenerationType="class">
         <attribute name="dateAdded" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateLastWatering" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateNextWatering" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="String"/>
         <attribute name="imagePath" attributeType="String"/>
         <attribute name="isHumidityReminder" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -13,6 +14,6 @@
         <attribute name="type" attributeType="String"/>
     </entity>
     <elements>
-        <element name="StorePlantEntity" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="StorePlantEntity" positionX="-63" positionY="-18" width="128" height="208"/>
     </elements>
 </model>

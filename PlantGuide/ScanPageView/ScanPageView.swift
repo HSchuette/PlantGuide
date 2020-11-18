@@ -75,7 +75,7 @@ struct ScanPageView: View {
         .onAppear() {
             self.isAnimating = true
         }
-        .scaleEffect(0.75)
+        .scaleEffect(0.70)
     }
     
 }

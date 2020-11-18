@@ -23,7 +23,11 @@ struct NavigationListView: View {
     var body: some View {
         VStack {
             
-            Spacer()
+            if seeAll == true {
+            } else {
+                TaskNotificationCenter()
+            }
+            TaskList()
             
             if storePlants.isEmpty {
                 
@@ -46,7 +50,7 @@ struct NavigationListView: View {
 
 struct NavigationListView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationListView(onEdit: Binding.constant(true), seeAll: Binding.constant(false))
+        NavigationListView(onEdit: Binding.constant(true), seeAll: Binding.constant(true))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

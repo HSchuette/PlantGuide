@@ -24,6 +24,7 @@ struct PersistenceController {
             newPlant.lightFactor = Double()
             newPlant.isWaterReminder = Bool()
             newPlant.dateLastWatering = Date()
+            newPlant.dateNextWatering = Date()
             newPlant.isHumidityReminder = Bool()
             newPlant.dateAdded = Date()
         }

@@ -44,7 +44,6 @@ struct GetStartedButton: View {
                         Text("Get Started!")
                             .font(.system(size: 20))
                             .bold()
-                            .foregroundColor(Color.black)
                             
                         Spacer()
                     }.frame(width: 200.0)
@@ -55,7 +54,6 @@ struct GetStartedButton: View {
                             .font(.footnote)
                             .italic()
                             .opacity(0.7)
-                            .foregroundColor(Color.black)
                         Spacer()
                     }
                 }.padding(25)

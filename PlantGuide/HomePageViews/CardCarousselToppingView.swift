@@ -24,12 +24,11 @@ struct CardCarousselToppingView: View {
     
     var body: some View {
         VStack {
-            Spacer()
             
             HStack {
                 Text("Your Plant Gallery")
-                    .font(.callout)
-                    .fontWeight(.medium)
+                    .font(.title3)
+                    .fontWeight(.semibold)
                 
                 Spacer()
                 

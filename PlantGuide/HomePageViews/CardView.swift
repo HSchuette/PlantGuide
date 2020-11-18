@@ -72,7 +72,7 @@ struct CardView: View {
                 
             }.cornerRadius(25)
             .frame(width: 150, height: 225)
-            .shadow(color: Color(UIColor.black).opacity(0.2), radius: 4, x: 5, y: 5)
+            .shadow(color: Color(UIColor.black).opacity(0.05), radius: 4, x: 5, y: 5)
             .shadow(color: Color(.systemGray4).opacity(0.1), radius: 4, x: -5, y: -5)
             
         }.frame(width: 165, height: 240)
