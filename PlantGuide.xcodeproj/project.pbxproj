@@ -80,6 +80,7 @@
 		B1EADCA12562567700CB0F74 /* TaskNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */; };
 		B1EADCA52563A19500CB0F74 /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA42563A19500CB0F74 /* TaskListRow.swift */; };
 		B1EADCA82563A3F500CB0F74 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA72563A3F500CB0F74 /* TaskList.swift */; };
+		B1FF58592566444A00F79E50 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FF58582566444A00F79E50 /* NotificationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +163,7 @@
 		B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNotificationCenter.swift; sourceTree = "<group>"; };
 		B1EADCA42563A19500CB0F74 /* TaskListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
 		B1EADCA72563A3F500CB0F74 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		B1FF58582566444A00F79E50 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			children = (
 				B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */,
 				B1EADCA72563A3F500CB0F74 /* TaskList.swift */,
+				B1FF58582566444A00F79E50 /* NotificationHelper.swift */,
 				B1EADCA42563A19500CB0F74 /* TaskListRow.swift */,
 				B187FECD255B430900F5D266 /* CardView.swift */,
 				B187FEE1255D0C2300F5D266 /* DeleteButton.swift */,
@@ -470,6 +473,7 @@
 				B1B260CB2538DA1700841FBB /* IdleScanView.swift in Sources */,
 				B187FEDB255BBE3300F5D266 /* CardCarousselToppingView.swift in Sources */,
 				B1AC9FF22557E9EA001BF9EE /* StorePlantEntity.xcdatamodeld in Sources */,
+				B1FF58592566444A00F79E50 /* NotificationHelper.swift in Sources */,
 				B1E778862538E740007A6440 /* WaterView.swift in Sources */,
 				B1B260B72538D99400841FBB /* PlantPreview.swift in Sources */,
 				B1B260B22538D97800841FBB /* PlantOverview.swift in Sources */,

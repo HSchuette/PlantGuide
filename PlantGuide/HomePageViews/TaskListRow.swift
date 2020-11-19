@@ -15,7 +15,7 @@ struct TaskListRow: View {
     
     var body: some View {
         HStack {
-            Button(action: {
+            Button(action: {                
                 self.feedback.impactOccurred()
             }, label: {
                 Circle()

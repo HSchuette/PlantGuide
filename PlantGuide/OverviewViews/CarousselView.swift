@@ -29,7 +29,7 @@ struct CarousselView: View {
             }
         }
     }
-    func updateAllValues(id: Int) {
+    func updateAllValues(id: Int) {
         selectedPlant.id = plantData[id].id
         selectedPlant.name = plantData[id].name
         selectedPlant.latin = plantData[id].latin

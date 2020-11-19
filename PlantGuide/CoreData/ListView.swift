@@ -73,6 +73,7 @@ struct ListView: View {
             newPlant.isWaterReminder = Bool()
             newPlant.dateLastWatering = Date()
             newPlant.dateNextWatering = Date()
+            newPlant.waterCategory = String()
             newPlant.isHumidityReminder = Bool()
             newPlant.dateAdded = Date()
 

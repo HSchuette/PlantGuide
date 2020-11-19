@@ -14,18 +14,35 @@ struct TaskList: View {
     @FetchRequest(
         entity: StorePlantEntity.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \StorePlantEntity.name, ascending: false)],
-        predicate: NSPredicate(format: "(dateNextWatering => %@) AND (dateNextWatering <= %@)", DateHelper.startOfDay(day: NSDate()), DateHelper.endOfDay(day: NSDate())), animation: .default)
+        animation: .default)
     
     private var storePlants: FetchedResults<StorePlantEntity>
+    
+    let feedback = UIImpactFeedbackGenerator(style: .light)
     
     var body: some View {
         List {
             ForEach(storePlants) { plant in
-                VStack(alignment: .leading) {
-                    TaskListRow(plantName: plant.name!)
+                HStack {
+                    Button(action: {
+                        NotificationHelper.addNotification(for: plant)
+                        self.feedback.impactOccurred()
+                    }, label: {
+                        Circle()
+                            .frame(width: 25, height: 25)
+                    })
+                    
+                    VStack(alignment: .leading) {
+                        Text(plant.name!)
+                            .bold()
+                        
+                        Text("Check on your plant if it needs water")
+                            .font(.caption2)
+                            .foregroundColor(Color(.systemGray))
+                    }
                 }
             }
-        }.listStyle(DefaultListStyle())
+        }.listStyle(GroupedListStyle())
         .padding()
     }
 }

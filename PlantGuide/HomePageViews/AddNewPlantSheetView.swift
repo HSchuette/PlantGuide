@@ -165,6 +165,7 @@ struct AddNewPlantSheetView: View {
                     newPlant.isWaterReminder = self.waterBool
                     newPlant.dateLastWatering = self.waterDate
                     newPlant.dateNextWatering = Date()
+                    newPlant.waterCategory = plantData[selectedPlantTypeIndex].waterCategory
                     newPlant.isHumidityReminder = self.humidityBool
                     newPlant.dateAdded = Date()
                     do {
