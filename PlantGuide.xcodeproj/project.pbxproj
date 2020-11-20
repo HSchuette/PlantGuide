@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B172BE5F253F1AD300FB6CDB /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B172BE5E253F1AD300FB6CDB /* WikipediaView.swift */; };
+		B17A1D07256867B400FF76A9 /* OverdueTaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A1D06256867B400FF76A9 /* OverdueTaskList.swift */; };
+		B17A1D0B256867CD00FF76A9 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A1D0A256867CD00FF76A9 /* TaskList.swift */; };
+		B17A1D0E25686A3A00FF76A9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A1D0D25686A3A00FF76A9 /* DateHelper.swift */; };
 		B17CB6EC255910AE004A3751 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CB6EB255910AE004A3751 /* NavigationRouter.swift */; };
 		B17CB6EF2559173E004A3751 /* CarousselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CB6EE2559173E004A3751 /* CarousselView.swift */; };
 		B17CB6F32559175C004A3751 /* SelectedPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CB6F22559175C004A3751 /* SelectedPlant.swift */; };
@@ -79,12 +82,15 @@
 		B1E7788C2538E740007A6440 /* PlantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E778832538E740007A6440 /* PlantDetail.swift */; };
 		B1EADCA12562567700CB0F74 /* TaskNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */; };
 		B1EADCA52563A19500CB0F74 /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA42563A19500CB0F74 /* TaskListRow.swift */; };
-		B1EADCA82563A3F500CB0F74 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA72563A3F500CB0F74 /* TaskList.swift */; };
+		B1EADCA82563A3F500CB0F74 /* TodayTaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */; };
 		B1FF58592566444A00F79E50 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FF58582566444A00F79E50 /* NotificationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B172BE5E253F1AD300FB6CDB /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
+		B17A1D06256867B400FF76A9 /* OverdueTaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverdueTaskList.swift; sourceTree = "<group>"; };
+		B17A1D0A256867CD00FF76A9 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		B17A1D0D25686A3A00FF76A9 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		B17CB6EB255910AE004A3751 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		B17CB6EE2559173E004A3751 /* CarousselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarousselView.swift; sourceTree = "<group>"; };
 		B17CB6F22559175C004A3751 /* SelectedPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPlant.swift; sourceTree = "<group>"; };
@@ -162,7 +168,7 @@
 		B1E778832538E740007A6440 /* PlantDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetail.swift; sourceTree = "<group>"; };
 		B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNotificationCenter.swift; sourceTree = "<group>"; };
 		B1EADCA42563A19500CB0F74 /* TaskListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
-		B1EADCA72563A3F500CB0F74 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTaskList.swift; sourceTree = "<group>"; };
 		B1FF58582566444A00F79E50 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,19 +209,8 @@
 		B187FED2255B431300F5D266 /* HomePageViews */ = {
 			isa = PBXGroup;
 			children = (
-				B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */,
-				B1EADCA72563A3F500CB0F74 /* TaskList.swift */,
-				B1FF58582566444A00F79E50 /* NotificationHelper.swift */,
-				B1EADCA42563A19500CB0F74 /* TaskListRow.swift */,
-				B187FECD255B430900F5D266 /* CardView.swift */,
-				B187FEE1255D0C2300F5D266 /* DeleteButton.swift */,
-				B180931225603D5B00FC4B92 /* GetStartedButton.swift */,
-				B187FEDA255BBE3300F5D266 /* CardCarousselToppingView.swift */,
-				B187FED5255BB76100F5D266 /* PlantCardCarousselView.swift */,
-				B18093002560197200FC4B92 /* CardCarousselAddMoreButton.swift */,
-				B180930B25602DA300FC4B92 /* CardCarousselSeeAllButton.swift */,
-				B187FEEA255E5A1000F5D266 /* CardCarousselOnEditButton.swift */,
-				B18093162561693400FC4B92 /* AddNewPlantSheetView.swift */,
+				B1D72D0B256863AC00C58D63 /* TaskListViews */,
+				B1D72D0C256863CB00C58D63 /* CarousselViews */,
 			);
 			path = HomePageViews;
 			sourceTree = "<group>";
@@ -305,6 +300,36 @@
 				B1B260A22538D90C00841FBB /* Info.plist */,
 			);
 			path = PlantGuideUITests;
+			sourceTree = "<group>";
+		};
+		B1D72D0B256863AC00C58D63 /* TaskListViews */ = {
+			isa = PBXGroup;
+			children = (
+				B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */,
+				B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */,
+				B17A1D0A256867CD00FF76A9 /* TaskList.swift */,
+				B17A1D06256867B400FF76A9 /* OverdueTaskList.swift */,
+				B17A1D0D25686A3A00FF76A9 /* DateHelper.swift */,
+				B1FF58582566444A00F79E50 /* NotificationHelper.swift */,
+				B1EADCA42563A19500CB0F74 /* TaskListRow.swift */,
+			);
+			path = TaskListViews;
+			sourceTree = "<group>";
+		};
+		B1D72D0C256863CB00C58D63 /* CarousselViews */ = {
+			isa = PBXGroup;
+			children = (
+				B187FECD255B430900F5D266 /* CardView.swift */,
+				B187FEE1255D0C2300F5D266 /* DeleteButton.swift */,
+				B180931225603D5B00FC4B92 /* GetStartedButton.swift */,
+				B187FEDA255BBE3300F5D266 /* CardCarousselToppingView.swift */,
+				B187FED5255BB76100F5D266 /* PlantCardCarousselView.swift */,
+				B18093002560197200FC4B92 /* CardCarousselAddMoreButton.swift */,
+				B180930B25602DA300FC4B92 /* CardCarousselSeeAllButton.swift */,
+				B187FEEA255E5A1000F5D266 /* CardCarousselOnEditButton.swift */,
+				B18093162561693400FC4B92 /* AddNewPlantSheetView.swift */,
+			);
+			path = CarousselViews;
 			sourceTree = "<group>";
 		};
 		B1DF4C91255802130029FD03 /* NavigationViews */ = {
@@ -472,6 +497,7 @@
 				B180930C25602DA300FC4B92 /* CardCarousselSeeAllButton.swift in Sources */,
 				B1B260CB2538DA1700841FBB /* IdleScanView.swift in Sources */,
 				B187FEDB255BBE3300F5D266 /* CardCarousselToppingView.swift in Sources */,
+				B17A1D0B256867CD00FF76A9 /* TaskList.swift in Sources */,
 				B1AC9FF22557E9EA001BF9EE /* StorePlantEntity.xcdatamodeld in Sources */,
 				B1FF58592566444A00F79E50 /* NotificationHelper.swift in Sources */,
 				B1E778862538E740007A6440 /* WaterView.swift in Sources */,
@@ -482,7 +508,7 @@
 				B1AC9FEE2557E9A2001BF9EE /* ListView.swift in Sources */,
 				B1E778772538E71A007A6440 /* Data.swift in Sources */,
 				B1E778842538E740007A6440 /* BarMeter.swift in Sources */,
-				B1EADCA82563A3F500CB0F74 /* TaskList.swift in Sources */,
+				B1EADCA82563A3F500CB0F74 /* TodayTaskList.swift in Sources */,
 				B1E778682538E6B0007A6440 /* ResultPreview.swift in Sources */,
 				B1E778742538E71A007A6440 /* Plant.swift in Sources */,
 				B17CB6EF2559173E004A3751 /* CarousselView.swift in Sources */,
@@ -513,7 +539,9 @@
 				B1E7788C2538E740007A6440 /* PlantDetail.swift in Sources */,
 				B17CB6EC255910AE004A3751 /* NavigationRouter.swift in Sources */,
 				B187FED6255BB76100F5D266 /* PlantCardCarousselView.swift in Sources */,
+				B17A1D0E25686A3A00FF76A9 /* DateHelper.swift in Sources */,
 				B187FEB1255B142900F5D266 /* ScanPageView.swift in Sources */,
+				B17A1D07256867B400FF76A9 /* OverdueTaskList.swift in Sources */,
 				B180931325603D5B00FC4B92 /* GetStartedButton.swift in Sources */,
 				B1B260C12538D9DB00841FBB /* MailHandler.swift in Sources */,
 				B187FEA9255A643A00F5D266 /* CarousselToppingView.swift in Sources */,
