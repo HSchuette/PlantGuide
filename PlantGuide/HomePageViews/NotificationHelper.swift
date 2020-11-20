@@ -16,7 +16,7 @@ import UserNotifications
 //}
 
 struct NotificationHelper {
-    static func addNotification(for plant: StorePlantEntity) {
+    static func addNotification(for plant: StorePlantEntity, setDay: Int?, setWeekday: Int?, setHour: Int, setMinute: Int, isRepeat: Bool) {
         
         let center = UNUserNotificationCenter.current()
 
@@ -26,11 +26,15 @@ struct NotificationHelper {
             content.body = "Check on \(plant.name!) and remember to only water \(plant.waterCategory!)."
             content.sound = UNNotificationSound.default
 
-    //        var dateComponents = DateComponents()
-    //        dateComponents.hour = 9
-    //        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            var dateComponents = DateComponents()
+            dateComponents.day = setDay
+            dateComponents.weekday = setWeekday
+            dateComponents.hour = setHour
+            dateComponents.minute = setMinute
             
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: isRepeat)
+            
+//            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
 
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request)
@@ -52,4 +56,14 @@ struct NotificationHelper {
             }
         }
     }
+    
+    static func setNotification(plant: StorePlantEntity, waterFactor: Double) {
+        if 0.0 ... 2.0 ~= waterFactor {
+            addNotification(for: plant, setDay: nil, setWeekday: 6, setHour: 10, setMinute: 0, isRepeat: true)
+        } else if 2.1 ... 9.9 ~= waterFactor {
+            addNotification(for: plant, setDay: nil, setWeekday: 2, setHour: 10, setMinute: 0, isRepeat: true)
+            addNotification(for: plant, setDay: nil, setWeekday: 6, setHour: 10, setMinute: 0, isRepeat: true)
+        }
+    }
 }
+

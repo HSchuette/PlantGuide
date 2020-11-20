@@ -25,7 +25,7 @@ struct TaskList: View {
             ForEach(storePlants) { plant in
                 HStack {
                     Button(action: {
-                        NotificationHelper.addNotification(for: plant)
+                        NotificationHelper.addNotification(for: plant, setDay: 2, setWeekday: 5, setHour: 7, setMinute: 24, isRepeat: true)
                         self.feedback.impactOccurred()
                     }, label: {
                         Circle()
