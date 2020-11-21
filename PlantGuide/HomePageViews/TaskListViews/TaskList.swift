@@ -11,6 +11,7 @@ struct TaskList: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
+    
     var body: some View {
         VStack {
             HStack {
@@ -20,14 +21,14 @@ struct TaskList: View {
                 
                 Spacer()
                 
-            }.padding(.bottom, 5)
-            .padding(.horizontal, 25)
+            }.padding(.horizontal, 25)
             
             Divider()
+                .padding(.horizontal, 25)
             
             TodayTaskList()
+                .padding(.horizontal, 10)
             
-            OverdueTaskList()
         }
     }
 }

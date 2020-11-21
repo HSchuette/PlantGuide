@@ -14,9 +14,7 @@ struct TodayTaskList: View {
     @FetchRequest(
              entity: StorePlantEntity.entity(),
              sortDescriptors: [NSSortDescriptor(keyPath: \StorePlantEntity.name, ascending: false)],
-             predicate: NSPredicate(format: "(dateNextWatering => %@) AND (dateNextWatering <= %@)", DateHelper.startOfDay(day: NSDate()), DateHelper.endOfDay(day: NSDate())), animation: .default)
-    
-
+             predicate: NSPredicate(format: "(dateNextWatering <= %@)", DateHelper.endOfDay(day: NSDate())), animation: .default)
     
     private var storePlants: FetchedResults<StorePlantEntity>
     
@@ -24,29 +22,27 @@ struct TodayTaskList: View {
     
     var body: some View {
         List {
-            Section(header: Text("Today")) {
-                ForEach(storePlants) { plant in
+            Section(header: ListHeader(text: "TODAY", imageName: storePlants.isEmpty ? "calendar" : "calendar.badge.exclamationmark")) {
+                if storePlants.isEmpty {
                     HStack {
-                        Button(action: {
-                            NotificationHelper.addNotification(for: plant, setDay: 2, setWeekday: 5, setHour: 7, setMinute: 24, isRepeat: true)
-                            self.feedback.impactOccurred()
-                        }, label: {
-                            Circle()
-                                .frame(width: 25, height: 25)
-                        })
+                        Spacer()
                         
-                        VStack(alignment: .leading) {
-                            Text(plant.name!)
-                                .bold()
+                        Text("All Done!")
+                        
+                        Image(systemName: "hands.clap.fill")
+                        
+                        Spacer()
+                    }.opacity(0.5)
+                    
+                } else {
+                
+                    ForEach(storePlants) { plant in
+                        TaskListRow(plantID: plant.id!, plantName: plant.name!, waterDate: plant.dateNextWatering!, isOverdue: plant.dateNextWatering! <= DateHelper.startOfDay(day: NSDate()) as Date ? true : false)
                             
-                            Text("Check on your plant if it needs water")
-                                .font(.caption2)
-                                .foregroundColor(Color(.systemGray))
-                        }
                     }
                 }
             }
-        }.listStyle(GroupedListStyle())
+        }.listStyle(PlainListStyle())        
     }
 }
 
@@ -57,5 +53,6 @@ struct TodayTaskList_Previews: PreviewProvider {
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+
 
 

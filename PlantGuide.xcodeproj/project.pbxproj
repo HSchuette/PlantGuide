@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B15D52D92569317E0098248D /* WaterReminderDateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D52D82569317E0098248D /* WaterReminderDateHelper.swift */; };
+		B15D52E32569C0800098248D /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D52E22569C0800098248D /* ListHeader.swift */; };
 		B172BE5F253F1AD300FB6CDB /* WikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B172BE5E253F1AD300FB6CDB /* WikipediaView.swift */; };
-		B17A1D07256867B400FF76A9 /* OverdueTaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A1D06256867B400FF76A9 /* OverdueTaskList.swift */; };
 		B17A1D0B256867CD00FF76A9 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A1D0A256867CD00FF76A9 /* TaskList.swift */; };
 		B17A1D0E25686A3A00FF76A9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A1D0D25686A3A00FF76A9 /* DateHelper.swift */; };
 		B17CB6EC255910AE004A3751 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CB6EB255910AE004A3751 /* NavigationRouter.swift */; };
@@ -87,8 +88,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B15D52D82569317E0098248D /* WaterReminderDateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterReminderDateHelper.swift; sourceTree = "<group>"; };
+		B15D52E22569C0800098248D /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
 		B172BE5E253F1AD300FB6CDB /* WikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaView.swift; sourceTree = "<group>"; };
-		B17A1D06256867B400FF76A9 /* OverdueTaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverdueTaskList.swift; sourceTree = "<group>"; };
 		B17A1D0A256867CD00FF76A9 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 		B17A1D0D25686A3A00FF76A9 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		B17CB6EB255910AE004A3751 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
@@ -306,12 +308,13 @@
 			isa = PBXGroup;
 			children = (
 				B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */,
-				B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */,
 				B17A1D0A256867CD00FF76A9 /* TaskList.swift */,
-				B17A1D06256867B400FF76A9 /* OverdueTaskList.swift */,
+				B15D52E22569C0800098248D /* ListHeader.swift */,
+				B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */,
+				B1EADCA42563A19500CB0F74 /* TaskListRow.swift */,
+				B15D52D82569317E0098248D /* WaterReminderDateHelper.swift */,
 				B17A1D0D25686A3A00FF76A9 /* DateHelper.swift */,
 				B1FF58582566444A00F79E50 /* NotificationHelper.swift */,
-				B1EADCA42563A19500CB0F74 /* TaskListRow.swift */,
 			);
 			path = TaskListViews;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				B1B260862538D90B00841FBB /* ContentView.swift in Sources */,
 				B187FEBC255B28C700F5D266 /* CompleteScanView.swift in Sources */,
 				B187FEE2255D0C2300F5D266 /* DeleteButton.swift in Sources */,
+				B15D52D92569317E0098248D /* WaterReminderDateHelper.swift in Sources */,
 				B1E778872538E740007A6440 /* ToxicityView.swift in Sources */,
 				B1B260C62538D9F800841FBB /* LogoAsset.swift in Sources */,
 				B1B260842538D90B00841FBB /* PlantGuideApp.swift in Sources */,
@@ -503,6 +507,7 @@
 				B1E778862538E740007A6440 /* WaterView.swift in Sources */,
 				B1B260B72538D99400841FBB /* PlantPreview.swift in Sources */,
 				B1B260B22538D97800841FBB /* PlantOverview.swift in Sources */,
+				B15D52E32569C0800098248D /* ListHeader.swift in Sources */,
 				B187FEC4255B3DC900F5D266 /* NavigationBarTitleView.swift in Sources */,
 				B1B260BC2538D9BE00841FBB /* MailView.swift in Sources */,
 				B1AC9FEE2557E9A2001BF9EE /* ListView.swift in Sources */,
@@ -541,7 +546,6 @@
 				B187FED6255BB76100F5D266 /* PlantCardCarousselView.swift in Sources */,
 				B17A1D0E25686A3A00FF76A9 /* DateHelper.swift in Sources */,
 				B187FEB1255B142900F5D266 /* ScanPageView.swift in Sources */,
-				B17A1D07256867B400FF76A9 /* OverdueTaskList.swift in Sources */,
 				B180931325603D5B00FC4B92 /* GetStartedButton.swift in Sources */,
 				B1B260C12538D9DB00841FBB /* MailHandler.swift in Sources */,
 				B187FEA9255A643A00F5D266 /* CarousselToppingView.swift in Sources */,

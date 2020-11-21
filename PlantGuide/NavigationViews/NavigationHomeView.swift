@@ -25,29 +25,29 @@ struct NavigationHomeView: View {
     @State var onEdit: Bool = false
     @State var seeAll: Bool = false
     
-    init() {
-            // this is not the same as manipulating the proxy directly
-            let appearance = UINavigationBarAppearance()
-            // this overrides everything you have set up earlier.
-            appearance.configureWithTransparentBackground()
-            
-            // this only applies to big titles
-            appearance.largeTitleTextAttributes = [
-                .font : UIFont.systemFont(ofSize: 35, weight: .bold),
-                NSAttributedString.Key.kern: -2
-            ]
-            // this only applies to small titles
-            appearance.titleTextAttributes = [
-                .font : UIFont.systemFont(ofSize: 35, weight: .bold),
-                NSAttributedString.Key.kern: -2
-                
-            ]
-            
-            //In the following two lines you make sure that you apply the style for good
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-            UINavigationBar.appearance().standardAppearance = appearance
-            
-        }
+//    init() {
+//            // this is not the same as manipulating the proxy directly
+//            let appearance = UINavigationBarAppearance()
+//            // this overrides everything you have set up earlier.
+//            appearance.configureWithTransparentBackground()
+//
+//            // this only applies to big titles
+//            appearance.largeTitleTextAttributes = [
+//                .font : UIFont.systemFont(ofSize: 35, weight: .bold),
+//                NSAttributedString.Key.kern: -2
+//            ]
+//            // this only applies to small titles
+//            appearance.titleTextAttributes = [
+//                .font : UIFont.systemFont(ofSize: 35, weight: .bold),
+//                NSAttributedString.Key.kern: -2
+//
+//            ]
+//
+//            //In the following two lines you make sure that you apply the style for good
+//            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+//            UINavigationBar.appearance().standardAppearance = appearance
+//
+//        }
     
     var body: some View {        
         NavigationView {
@@ -56,6 +56,7 @@ struct NavigationHomeView: View {
                     switch navigationRouter.currentPage {
                                 case .homePage:
                                     NavigationListView(onEdit: $onEdit, seeAll: $seeAll)
+                                        .padding(.top, 25)
                                 case .scanPage:
                                     NavigationScanView()
                                 case .overViewPage:

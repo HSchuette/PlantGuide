@@ -30,7 +30,7 @@ class DateHelper{
     internal class func getDateString(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "d MMM y"
-        let dateString = formatter.string(from: Date())
+        let dateString = formatter.string(from: date)
         
         return dateString
     }

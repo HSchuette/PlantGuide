@@ -24,11 +24,11 @@ struct DeleteButton: View {
                         .foregroundColor(.red)
                         .scaledToFill()
                         
-                }.frame(width: 30, height: 30)
+                }.frame(width: 25, height: 25)
             }
             
             Spacer()
-        }.frame(height: 240)
+        }.frame(height: 145)
     }
 }
 

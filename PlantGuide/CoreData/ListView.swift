@@ -64,7 +64,7 @@ struct ListView: View {
     private func addItem() {
         withAnimation {
             let newPlant = StorePlantEntity(context: viewContext)
-            newPlant.id = String()
+            newPlant.id =  UUID().uuidString
             newPlant.name = String("PlaceHolder")
             newPlant.type = String("Monstera")
             newPlant.imagePath = String()

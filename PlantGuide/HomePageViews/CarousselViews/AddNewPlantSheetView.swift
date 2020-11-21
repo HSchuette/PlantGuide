@@ -164,7 +164,7 @@ struct AddNewPlantSheetView: View {
                     newPlant.lightFactor = self.sliderLightIndex
                     newPlant.isWaterReminder = self.waterBool
                     newPlant.dateLastWatering = self.waterDate
-                    newPlant.dateNextWatering = Date()
+                    newPlant.dateNextWatering = WaterReminderDateHelper.calculateWaterReminder(waterFactor: plantData[selectedPlantTypeIndex].waterFactor, lastWaterDate: waterDate)
                     newPlant.waterCategory = plantData[selectedPlantTypeIndex].waterCategory
                     newPlant.isHumidityReminder = self.humidityBool
                     newPlant.dateAdded = Date()

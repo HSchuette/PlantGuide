@@ -36,7 +36,7 @@ struct NavigationBarView: View {
                 
             }
             
-        }
+        }.padding()
     }
 }
 

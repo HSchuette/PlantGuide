@@ -37,19 +37,19 @@ struct PlantCardCarousselView: View {
     }
     
     var body: some View {
-        VStack {
-            ScrollView(seeAll ? .vertical : .horizontal, showsIndicators: true) {
-                if seeAll == true {
-                    LazyVGrid(columns: [
-                        GridItem(.fixed(160)),
-                        GridItem(.fixed(160))
-                    ], alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0, content: {
-                        completeGridView()
-                    })
-                } else {
-                    HStack {
-                        completeGridView()
-                    }
+        if seeAll == true {
+            ScrollView(.vertical, showsIndicators: true) {
+                LazyVGrid(columns: [
+                    GridItem(.fixed(160)),
+                    GridItem(.fixed(160))
+                ], alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0, content: {
+                    completeGridView()
+                })
+            }
+        } else {
+            ScrollView(.horizontal, showsIndicators: true) {
+                HStack {
+                    completeGridView()
                 }
             }
         }
@@ -79,8 +79,7 @@ struct PlantCardCarousselView: View {
     private func completeGridView() -> some View {
         ForEach(storePlants, id: \.self) { plant in
             ZStack {
-                CardView(plantName: plant.name!, plantType: plant.type!, plantID: plant.id!)
-                    .padding(5)
+                CardView(plantName: plant.name!, plantType: plant.type!, plantID: plant.id!)                   
                 
                 if onEdit == true {
                     DeleteButton()
@@ -94,14 +93,14 @@ struct PlantCardCarousselView: View {
                         .actionSheet(isPresented: $showActionSheet, content: {
                                         self.actionSheet })
                 }
-            }
+            }.padding(.bottom, 5)
         }
     }
 }
 
 struct PlantCardCarousselView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantCardCarousselView(onEdit: Binding.constant(true), seeAll: Binding.constant(false))
+        PlantCardCarousselView(onEdit: Binding.constant(true), seeAll: Binding.constant(true))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

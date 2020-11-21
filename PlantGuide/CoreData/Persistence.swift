@@ -16,7 +16,7 @@ struct PersistenceController {
         let viewContext = result.container.viewContext
         for _ in 0..<5 {
             let newPlant = StorePlantEntity(context: viewContext)
-            newPlant.id = String()
+            newPlant.id = UUID().uuidString
             newPlant.name = String("Pflanziska")
             newPlant.type = String("Monstera Deliciosa")
             newPlant.imagePath = String()
@@ -24,7 +24,7 @@ struct PersistenceController {
             newPlant.lightFactor = Double()
             newPlant.isWaterReminder = Bool()
             newPlant.dateLastWatering = Date()
-            newPlant.dateNextWatering = Date()
+            newPlant.dateNextWatering = WaterReminderDateHelper.calculateWaterReminder(waterFactor: 1.0, lastWaterDate: Date())
             newPlant.waterCategory = String()
             newPlant.isHumidityReminder = Bool()
             newPlant.dateAdded = Date()
