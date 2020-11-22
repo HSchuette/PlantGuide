@@ -21,15 +21,13 @@ struct TaskList: View {
                 
                 Spacer()
                 
-            }.padding(.horizontal, 25)
+            }
             
             Divider()
-                .padding(.horizontal, 25)
             
             TodayTaskList()
-                .padding(.horizontal, 10)
             
-        }
+        }.padding(.horizontal, 25)
     }
 }
 

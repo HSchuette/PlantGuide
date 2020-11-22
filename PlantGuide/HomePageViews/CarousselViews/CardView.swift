@@ -17,7 +17,7 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            Image(uiImage: ImageStore.retrieve(imageNamed: "\(plantID!).png") ?? UIImage(imageLiteralResourceName: "placeHolder"))
+            Image(uiImage: ImageStore.retrieve(imageNamed: "\(plantID!).jpg") ?? UIImage(imageLiteralResourceName: "placeHolder"))
                 .resizable()
                 .scaledToFill()
             
@@ -50,7 +50,7 @@ struct CardView: View {
         .shadow(color: Color(.systemGray4).opacity(0.1), radius: 4, x: -5, y: -5)
         .padding(8)
         .onAppear() {
-            print("\(plantID!).png")
+            print("\(plantID!).jpg")
         }
     }
 }

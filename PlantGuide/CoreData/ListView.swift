@@ -38,7 +38,7 @@ struct ListView: View {
                 ForEach(storePlants) { plant in
                     VStack(alignment: .leading) {
                         HStack {
-                            Image(uiImage: ImageStore.retrieve(imageNamed: "\(plant.id!).png") ?? UIImage(imageLiteralResourceName: "placeHolder"))
+                            Image(uiImage: ImageStore.retrieve(imageNamed: "\(plant.id!).jpg") ?? UIImage(imageLiteralResourceName: "placeHolder"))
                                 .resizable()
                                 .frame(width: 35, height: 35)
                                 .cornerRadius(5)

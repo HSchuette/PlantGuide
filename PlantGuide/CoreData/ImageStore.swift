@@ -32,14 +32,14 @@ struct ImageStore {
     // store an image
     static func store(image: UIImage, name: String, filepath: String) throws -> String {
         
-        guard let imageData = image.pngData() else {
+        guard let imageData = image.jpegData(compressionQuality: 0.8) else {
             throw NSError(domain: "com.thecodedself.imagestore", code: 0, userInfo: [NSLocalizedDescriptionKey: "The image could not be created"])
         }
         
         var counter = 0
         var newFileName = name
         
-        while FileManager.default.fileExists(atPath: ImageStore.path(for: newFileName, fileExtension: "png")!.path) {
+        while FileManager.default.fileExists(atPath: ImageStore.path(for: newFileName, fileExtension: "jpg")!.path) {
             counter += 1
             newFileName =  "\(name)_\(counter)"
         }
@@ -53,7 +53,7 @@ struct ImageStore {
         return finalImagePath.absoluteString
     }
     
-    private static func path(for imageName: String, fileExtension: String = "png") -> URL? {
+    private static func path(for imageName: String, fileExtension: String = "jpg") -> URL? {
         let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         return directory?.appendingPathComponent("\(imageName).\(fileExtension)")
     }

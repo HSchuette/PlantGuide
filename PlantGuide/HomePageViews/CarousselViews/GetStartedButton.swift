@@ -64,7 +64,7 @@ struct GetStartedButton: View {
             .cornerRadius(10)
             .frame(width: 325, height: 100)
             .shadow(radius: 5)
-            .padding(50)
+            .padding(.vertical, 50)
 
             
         }).sheet(isPresented: $showAddFirstSheet, content: {

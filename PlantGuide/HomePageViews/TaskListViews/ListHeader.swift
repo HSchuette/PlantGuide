@@ -12,14 +12,19 @@ struct ListHeader: View {
     var imageName: String
     
     var body: some View {
-        HStack {
-            Image(systemName: imageName)
-            
-            Text(text)
-        }.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-        .padding(UITableView().separatorInset.left)
-        .frame(minWidth: 0, maxWidth: .infinity,alignment: .leading)
-        .background(Color(.systemBackground))
+        VStack(alignment: .leading) {
+            HStack {
+                Image(systemName: imageName)
+                    .font(.subheadline)
+                
+                Text(text)
+                    .font(.subheadline)
+                
+                Spacer()
+            }
+            .opacity(0.5)
+            .padding()
+        }
     }
 }
 

@@ -21,28 +21,28 @@ struct TodayTaskList: View {
     let feedback = UIImpactFeedbackGenerator(style: .light)
     
     var body: some View {
-        List {
+        VStack {
             Section(header: ListHeader(text: "TODAY", imageName: storePlants.isEmpty ? "calendar" : "calendar.badge.exclamationmark")) {
                 if storePlants.isEmpty {
-                    HStack {
-                        Spacer()
-                        
-                        Text("All Done!")
-                        
-                        Image(systemName: "hands.clap.fill")
-                        
-                        Spacer()
-                    }.opacity(0.5)
+                    VStack {
+                        HStack {
+                            
+                            Text("All Done!")
+                            
+                            Image(systemName: "hands.clap.fill")
+                                                    
+                        }.opacity(0.5)
+                    }
                     
                 } else {
                 
                     ForEach(storePlants) { plant in
                         TaskListRow(plantID: plant.id!, plantName: plant.name!, waterDate: plant.dateNextWatering!, isOverdue: plant.dateNextWatering! <= DateHelper.startOfDay(day: NSDate()) as Date ? true : false)
-                            
                     }
                 }
             }
-        }.listStyle(PlainListStyle())        
+            Spacer()
+        }
     }
 }
 
