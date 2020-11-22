@@ -23,7 +23,8 @@ struct ListHeader: View {
                 Spacer()
             }
             .opacity(0.5)
-            .padding()
+            .padding(.bottom)
+            .padding(.top, 5)
         }
     }
 }

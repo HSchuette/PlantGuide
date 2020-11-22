@@ -11,6 +11,7 @@ import SafariServices
 struct PlantDetail: View {
     
     @EnvironmentObject var selectedPlant: SelectedPlant
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     @State private var moreInfo: String?
     
@@ -22,8 +23,8 @@ struct PlantDetail: View {
     // MARK: - Show More Button
     // button for more or less info
     func InfoButton(moreString: String)
-        -> some View {
-            return VStack() {
+    -> some View {
+        return VStack() {
             VStack {
                 Button(action: {
                     withAnimation(.easeInOut) {
@@ -39,15 +40,15 @@ struct PlantDetail: View {
                     
                     HStack(alignment: .top) {
                         Spacer()
-            
+                        
                         Image(systemName: self.moreInfo == moreString ? "chevron.up.circle.fill" : "chevron.down.circle")
                             .font(.subheadline)
                             .scaleEffect(self.moreInfo == moreString ? 1.4 : 1.2)
-                            
+                        
                     }.padding(.top, 20)
-                    })
+                })
             }.padding(.trailing)
-            }
+        }
     }
     
     // MARK: - View
@@ -80,10 +81,10 @@ struct PlantDetail: View {
                                 .font(.system(size: 40))
                                 .fontWeight(.bold)
                                 .kerning(-2)
-                                
+                            
                             Spacer()
                         }.frame(width: 220.0)
-                            
+                        
                         
                         HStack {
                             Text(selectedPlant.latin)
@@ -108,7 +109,7 @@ struct PlantDetail: View {
                 .cornerRadius(10)
                 .clipped()
                 .frame(height: 200.0)
-                                    
+                
                 // text body
                 VStack(alignment: .leading) {
                     // description
@@ -128,7 +129,9 @@ struct PlantDetail: View {
                                 }.padding()
                                 
                                 Divider()
+                                    .background(Color(.label))
                                     .padding(.horizontal)
+                                
                             }
                             Group {
                                 ZStack(alignment: .top) {
@@ -138,16 +141,21 @@ struct PlantDetail: View {
                                 }.padding()
                                 
                                 Divider()
+                                    .background(Color(.label))
                                     .padding(.horizontal)
+                                
                             }
                             Group {
                                 ZStack(alignment: .top) {
                                     WaterView(moreInfo: $moreInfo)
-                                
+                                    
                                     InfoButton(moreString: "moreWater")
                                 }.padding()
                                 
-                                Divider().padding(.horizontal)
+                                Divider()
+                                    .background(Color(.label))
+                                    .padding(.horizontal)
+                                
                             }
                             
                             Group {
@@ -157,7 +165,10 @@ struct PlantDetail: View {
                                     InfoButton(moreString: "moreHumidity")
                                 }.padding()
                                 
-                                Divider().padding(.horizontal)
+                                Divider()
+                                    .background(Color(.label))
+                                    .padding(.horizontal)
+                                
                             }
                             
                             Group {
@@ -167,7 +178,9 @@ struct PlantDetail: View {
                                     InfoButton(moreString: "moreTemp")
                                 }.padding()
                                 
-                                Divider().padding(.horizontal)
+                                Divider()
+                                    .background(Color(.label))
+                                    .padding(.horizontal)
                             }
                             
                             Group {
@@ -177,7 +190,10 @@ struct PlantDetail: View {
                                     InfoButton(moreString: "moreFertilization")
                                 }.padding()
                                 
-                                Divider().padding(.horizontal)
+                                Divider()
+                                    .background(Color(.label))
+                                    .padding(.horizontal)
+                                
                             }
                             
                             Group {
@@ -187,7 +203,9 @@ struct PlantDetail: View {
                                     InfoButton(moreString: "moreToxicity")
                                 }.padding()
                                 
-                                Divider().padding(.horizontal)
+                                Divider()
+                                    .background(Color(.label))
+                                    .padding(.horizontal)
                             }
                             
                             Group {
@@ -199,8 +217,12 @@ struct PlantDetail: View {
                             Spacer()
                         }
                     }
-                .clipped()
-                .shadow(radius: 5)
+                    .clipped()
+                    .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 5, y: 5)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(colorScheme == .light ? .clear : Color(.white), lineWidth: 2)
+                    )
                 }.padding(25)
                 .lineLimit(nil)
             }
@@ -212,6 +234,7 @@ struct PlantDetail: View {
 struct PlantDetail_Previews: PreviewProvider {
     static var previews: some View {
         PlantDetail()
+            .preferredColorScheme(.dark)
             .environmentObject(SelectedPlant())
     }
 }

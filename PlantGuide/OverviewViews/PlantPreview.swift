@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlantPreview: View {
-    
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject var selectedPlant: SelectedPlant
     
     var plants: Plant
@@ -24,6 +24,10 @@ struct PlantPreview: View {
                 .frame(width: 105.0, height: 105.0)
                 .foregroundColor(selectedPlant.id == plants.id ? Color(.systemGray5) : Color(.systemBackground))
                 .cornerRadius(20)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(colorScheme == .light ? .clear : Color(.white), lineWidth: 2)
+                )
             
             VStack() {
                 
@@ -47,12 +51,12 @@ struct PlantPreview: View {
             }.frame(width: 110, height: 140, alignment: .bottom)
             
         }
-        .frame(width: 105, height: 150.0)
+        .frame(width: 107, height: 150.0)
         .clipped()
         .scaleEffect(selectedPlant.id == plants.id ? 1.0 : 0.9)
         .clipped()
-        .shadow(color: Color(UIColor.black).opacity(selectedPlant.id == plants.id ? 0.2 : 0.05), radius: 4, x: 5, y: 5)
-        .shadow(color: Color(.systemGray4).opacity(0.1), radius: 4, x: -5, y: -5)
+        .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 3, y: 3)
+        
     }
 }
 
@@ -60,6 +64,7 @@ struct PlantPreview_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             PlantPreview(plants: plantData[0])
+                .preferredColorScheme(.dark)
                 .environmentObject(SelectedPlant())
             PlantPreview(plants: plantData[1])
                 .environmentObject(SelectedPlant())

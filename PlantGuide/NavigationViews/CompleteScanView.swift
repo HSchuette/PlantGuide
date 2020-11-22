@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct NavigationScanView: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
     var body: some View {
         VStack {
+            Spacer()
             
             ScanPageView()
-                .padding(-25)
+            
+            Spacer()
             
             Text("Identify your favourite plant by snapping a picture with your phone.")
                 .font(.callout)
                 .lineLimit(nil)
                 .multilineTextAlignment(.leading)
                 .padding(.horizontal)
+            
+            Spacer()
             
             HStack {
                 Text("Choose your input:")
@@ -43,6 +49,10 @@ struct NavigationScanView: View {
                     
                     
                 }).buttonStyle(CustomButtonStyle())
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(colorScheme == .light ? .clear : Color(.white))
+                )
                     
                 Button(action: {
                     
@@ -53,9 +63,14 @@ struct NavigationScanView: View {
                         Text("Camera")
                     }
                 }).buttonStyle(CustomButtonStyle())
-                
-                Spacer()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(colorScheme == .light ? .clear : Color(.white))
+                )
+                .padding(5)
+                                
             }
+            Spacer()
             
         }.padding(.horizontal, 25)
     }
@@ -69,14 +84,14 @@ struct NavigationScanView_Previews: PreviewProvider {
 
 
 struct CustomButtonStyle: ButtonStyle {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
  
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .frame(width: 250, height: 50)
             .foregroundColor(configuration.isPressed ? Color(.systemBackground) : /*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-            .background(Color(configuration.isPressed ? .systemBlue : .systemGray6))
+            .background(Color(configuration.isPressed ? .systemBlue : .systemBackground))
             .cornerRadius(10)
-            .padding(5)
-            .shadow(color: Color(UIColor.black).opacity(0.1), radius: 4, x: 2, y: 2)
+            .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 3, y: 3)
     }
 }

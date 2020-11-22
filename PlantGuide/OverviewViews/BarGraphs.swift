@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct BarGraphs: View {
-    
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject var selectedPlant: SelectedPlant
     
-    let height = Int(UIScreen.main.bounds.height/4.8)
+    let height = Int(UIScreen.main.bounds.height/5.5)
     let blue = Color("blue")
     let darkBlue = Color("darkBlue")
     let yellow = Color("yellow")
@@ -24,7 +24,7 @@ struct BarGraphs: View {
                 ZStack{
                     // background
                     Rectangle()
-                        .foregroundColor(Color(.systemGray2)).opacity(0.2)
+                        .foregroundColor(Color(colorScheme == .light ? .systemGray2 : .white)).opacity(0.2)
                     
                     // foreground lightmeter
                     VStack{
@@ -40,12 +40,14 @@ struct BarGraphs: View {
                         Spacer()
                         
                         Image(systemName: imageName)
+                            .font(.callout)
                             .foregroundColor(.white)
-                            .padding(.bottom, 10)
+                            .padding(.bottom, 8)
                     }
                 }
-            }.frame(width: 65, height: CGFloat(height+10))
+            }.frame(width: 65, height: CGFloat(height))
             .cornerRadius(15.0)
+        
     }
     
     //MARK: Graphs

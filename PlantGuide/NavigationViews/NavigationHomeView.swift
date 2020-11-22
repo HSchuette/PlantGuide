@@ -51,22 +51,23 @@ struct NavigationHomeView: View {
     
     var body: some View {        
         NavigationView {
-            ZStack{                                
-                VStack {
-                    switch navigationRouter.currentPage {
-                                case .homePage:
-                                    NavigationListView(onEdit: $onEdit, seeAll: $seeAll)
-                                        .padding(.top, 25)
-                                case .scanPage:
-                                    NavigationScanView()
-                                case .overViewPage:
-                                    NavigationOverviewView(showLearnMoreSheet: $showLearnMoreSheet)
-                            }
-                    
-                    Spacer()
-                    
-                    NavigationBarView()
-                }
+                                            
+            VStack {
+                switch navigationRouter.currentPage {
+                            case .homePage:
+                                NavigationListView(onEdit: $onEdit, seeAll: $seeAll)
+                                    .padding(.top, 25)
+                                    
+                            case .scanPage:
+                                NavigationScanView()
+                            case .overViewPage:
+                                NavigationOverviewView(showLearnMoreSheet: $showLearnMoreSheet)
+                }                                
+                
+                Spacer()
+                
+                NavigationBarView()
+            
             }.navigationBarTitleDisplayMode(.large)
             .toolbar{
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -92,6 +93,4 @@ struct NavigationHomeView_Previews: PreviewProvider {
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
-
-
 

@@ -17,7 +17,7 @@ struct DeleteButton: View {
                 
                 ZStack {
                     Circle()
-                        .foregroundColor(Color(.systemBackground))
+                        .foregroundColor(Color(.white))
                     
                     Image(systemName: "minus.circle.fill")
                         .resizable()

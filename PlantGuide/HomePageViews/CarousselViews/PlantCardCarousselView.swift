@@ -94,13 +94,15 @@ struct PlantCardCarousselView: View {
                                         self.actionSheet })
                 }
             }.padding(.bottom, 5)
+            .padding(.leading, 15)
+            
         }
     }
 }
 
 struct PlantCardCarousselView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantCardCarousselView(onEdit: Binding.constant(true), seeAll: Binding.constant(true))
+        PlantCardCarousselView(onEdit: Binding.constant(true), seeAll: Binding.constant(false))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

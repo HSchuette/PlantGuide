@@ -55,14 +55,14 @@ struct PlantOverView: View {
             
             VStack(alignment: .leading) {
                 HStack {
-                    Text(selectedPlant.description).font(.footnote)
+                    Text(selectedPlant.description).font(.caption)
                     
                     Spacer()
                 }
                 
                 Spacer()
             }.padding(.horizontal, 40)
-                .frame(width: UIScreen.main.bounds.width, height: 100)
+                .frame(width: UIScreen.main.bounds.width, height: 80)
                 .animation(nil)
             
             

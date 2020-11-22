@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ScanPageView: View {
     
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
     @State private var isAnimating: Bool = false
     
     var body: some View {
@@ -16,31 +18,31 @@ struct ScanPageView: View {
             Image("placeHolder")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 300, height: 350)
+                .frame(width: 250, height: 250)
                 .cornerRadius(20)
             
             Group {
                 RoundedRectangle(cornerRadius: 25)
-                    .fill(Color(.systemGray6))
+                    .fill(Color(.white))
                     .opacity(0.4)
                 
                 RoundedRectangle(cornerRadius: 25)
-                    .stroke(style: StrokeStyle(lineWidth: 4.0, lineCap: .round, lineJoin: .round, dash: [120], dashPhase: 180))
+                    .stroke(style: StrokeStyle(lineWidth: 4.0, lineCap: .round, lineJoin: .round, dash: [95], dashPhase: 145))
                     
-                    .foregroundColor(Color(.systemGray6))
-            }.frame(width: 250, height: 250)
+                    .foregroundColor(Color(.white))
+            }.frame(width: 200, height: 200)
         
             ZStack(alignment: .top) {
                 
                 Rectangle()
-                    .fill(Color(.systemGray6))
-                    .frame(width: 250, height: 4)
+                    .fill(Color(.white))
+                    .frame(width: 200, height: 4)
                 
-                LinearGradient(gradient: Gradient(colors: [Color(.systemBackground).opacity(0.1), Color(.systemBackground)]),startPoint:  .bottom, endPoint: .top)
-                    .frame(width: 250, height: 80)
+                LinearGradient(gradient: Gradient(colors: [Color(.white).opacity(0.1), Color(.white)]),startPoint:  .bottom, endPoint: .top)
+                    .frame(width: 200, height: 80)
                 
-            }.offset(y: isAnimating ? -300 : 300)
-            .frame(width: 250, height: 250)
+            }.offset(y: isAnimating ? -250 : 250)
+            .frame(width: 200, height: 200)
             .clipShape(
                 RoundedRectangle(cornerRadius: 25)
             )
@@ -50,32 +52,34 @@ struct ScanPageView: View {
                 
                 Rectangle()
                     .fill(Color(.systemGray6))
-                    .frame(width: 250, height: 4)
+                    .frame(width: 200, height: 4)
                 
-                LinearGradient(gradient: Gradient(colors: [Color(.systemBackground), Color(.systemBackground).opacity(0.1)]),startPoint:  .bottom, endPoint: .top)
+                LinearGradient(gradient: Gradient(colors: [Color(.white), Color(.white).opacity(0.1)]),startPoint:  .bottom, endPoint: .top)
                     .frame(width: 250, height: 80)
                 
-            }.offset(y: isAnimating ? 300 : -300)
-            .frame(width: 250, height: 250)
+            }.offset(y: isAnimating ? 250 : -250)
+            .frame(width: 200, height: 200)
             .clipShape(
                 RoundedRectangle(cornerRadius: 25)
             )
             .animation(Animation.linear(duration: 3).delay(3).repeatForever(autoreverses: false))
             
             LogoAsset()
-                .stroke(lineWidth: 8)
-                .frame(width: 60, height: 60)
-                .foregroundColor(Color(.systemBackground))
+                .stroke(lineWidth: 7)
+                .frame(width: 50, height: 50)
+                .foregroundColor(Color(.white))
                 
             
         }
         .clipped()
-        .shadow(color: Color(UIColor.black).opacity( 0.2), radius: 8, x: 5, y: 5)
-        .shadow(color: Color(.systemGray4).opacity(0.1), radius: 8, x: -5, y: -5)
+        .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 5, y: 5)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(colorScheme == .light ? .clear : Color(.white), lineWidth: 2)
+        )        
         .onAppear() {
             self.isAnimating = true
         }
-        .scaleEffect(0.70)
     }
     
 }
@@ -84,5 +88,6 @@ struct ScanPageView: View {
 struct ScanPageView_Previews: PreviewProvider {
     static var previews: some View {
         ScanPageView()
+            .preferredColorScheme(.dark)
     }
 }

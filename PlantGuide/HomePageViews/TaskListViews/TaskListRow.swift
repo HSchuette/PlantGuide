@@ -57,6 +57,7 @@ struct TaskListRow: View {
                     .font(.caption2)
                     .foregroundColor(Color(isOverdue ?? false ? .red : .systemGray))                    
             }.opacity(finishedTasks.contains{ $0 == plantID } ? 0.5 : 1)
+            Spacer()
         }
     }
 }
