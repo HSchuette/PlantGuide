@@ -13,25 +13,12 @@ struct WaterReminderDateHelper {
     static func calculateWaterReminder(waterFactor: Double, lastWaterDate: Date?) -> Date {
         
         var nextOccurrence = Date()
+        let lastDate = lastWaterDate ?? Date()
         
         if 0.0 ... 2.0 ~= waterFactor {
-            let lastDate = lastWaterDate ?? Date()
-            let calendar = Calendar.current
-            let components = DateComponents(weekday: 2)
-            nextOccurrence = calendar.nextDate(after: lastDate, matching: components, matchingPolicy: .nextTime)!
-            
+            nextOccurrence = Calendar.current.date(byAdding: .day, value: 5, to: lastDate)!
         } else {
-            let lastDate = lastWaterDate ?? Date()
-            let calendar = Calendar.current
-            let currentWeekday = calendar.component(.weekday, from: lastDate)
-            let nextWeekdays = 3...4 ~= currentWeekday ? [6, 2] : [2, 6]
-            
-            _ = nextWeekdays.map { weekday -> Date in
-                let components = DateComponents(weekday: weekday)
-                nextOccurrence = calendar.nextDate(after: lastDate, matching: components, matchingPolicy: .nextTime)!
-                
-                return nextOccurrence
-            }
+            nextOccurrence = Calendar.current.date(byAdding: .day, value: 3, to: lastDate)!
         }
         
         return nextOccurrence
@@ -46,11 +33,14 @@ struct WaterReminderDateHelper {
         var nextWaterDate = Date()
         
         nextWaterDate = calculateWaterReminder(waterFactor: waterFactor, lastWaterDate: nil)
+        print("\(nextWaterDate)")
         
         do {
             let updateContext = try viewContext.fetch(fetchRequest)
             let dateUpdate = updateContext[0] as! NSManagedObject
             dateUpdate.setValue(nextWaterDate, forKey: "dateNextWatering")
+            
+            NotificationHelper.setNotification(plant: dateUpdate as! StorePlantEntity, waterFactor: waterFactor, lastWaterDate: dateUpdate.value(forKey: "dateLastWatering") as? Date)
         } catch {
             print(error)
         }

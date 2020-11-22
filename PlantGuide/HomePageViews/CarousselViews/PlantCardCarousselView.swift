@@ -50,7 +50,7 @@ struct PlantCardCarousselView: View {
             ScrollView(.horizontal, showsIndicators: true) {
                 HStack {
                     completeGridView()
-                }
+                }.padding(.leading, 25)
             }
         }
     }
@@ -79,8 +79,7 @@ struct PlantCardCarousselView: View {
     private func completeGridView() -> some View {
         ForEach(storePlants, id: \.self) { plant in
             ZStack {
-                CardView(plantName: plant.name!, plantType: plant.type!, plantID: plant.id!)                   
-                
+                CardView(plantName: plant.name!, plantType: plant.type!, plantID: plant.id!)
                 if onEdit == true {
                     DeleteButton()
                         .onTapGesture(perform: {
@@ -93,9 +92,8 @@ struct PlantCardCarousselView: View {
                         .actionSheet(isPresented: $showActionSheet, content: {
                                         self.actionSheet })
                 }
-            }.padding(.bottom, 5)
-            .padding(.leading, 15)
-            
+            }
+            .padding(.bottom, 5)
         }
     }
 }

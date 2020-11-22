@@ -169,7 +169,7 @@ struct AddNewPlantSheetView: View {
                         newPlant.waterCategory = plantData[selectedPlantTypeIndex].waterCategory
                         newPlant.isHumidityReminder = self.humidityBool
                         newPlant.dateAdded = Date()
-                        NotificationHelper.setNotification(plant: newPlant, waterFactor: plantData[selectedPlantTypeIndex].waterFactor)
+                        NotificationHelper.setNotification(plant: newPlant, waterFactor: plantData[selectedPlantTypeIndex].waterFactor, lastWaterDate: waterDate)
                         do {
                             try viewContext.save()
                             print("Plant saved.")
