@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ResultPreview: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     @Binding var selected: Int?
     
@@ -64,7 +65,11 @@ struct ResultPreview: View {
         .clipped()
         .cornerRadius(10)
         .frame(width: 325, height: 100)
-        .shadow(radius: 5)
+        .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 5, y: 5)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)
+        )    
         .padding(5)
         .offset(y: switchOn ? 0 : +1000)
         .animation(Animation.easeInOut(duration: 1.3).delay(0.8))

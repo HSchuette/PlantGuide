@@ -42,7 +42,7 @@ struct NavigationBarView: View {
 
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBarView().environmentObject(NavigationRouter())
+        NavigationBarView().preferredColorScheme(.dark).environmentObject(NavigationRouter())
     }
 }
 
@@ -63,15 +63,15 @@ struct NavigationItemView: View {
                 .cornerRadius(25)
                 .opacity(navigationRouter.currentPage != inputCase ? 0 : 0.2)
             
-            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+            RoundedRectangle(cornerRadius: 25.0)
                 .frame(width: navigationRouter.currentPage != inputCase ? 60 : 120, height: 50, alignment: .center)
                 .foregroundColor(color).opacity(0.2)
                 .transition(.opacity)
                 .opacity(navigationRouter.currentPage != inputCase ? 0 : 1)
                 .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 5, y: 5)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(colorScheme == .light ? .clear : Color(.white), lineWidth: 2)
+                    RoundedRectangle(cornerRadius: 25.0)
+                        .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)
                         .opacity(navigationRouter.currentPage != inputCase ? 0 : 1)
                 )
             

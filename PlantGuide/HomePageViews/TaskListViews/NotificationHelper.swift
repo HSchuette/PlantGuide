@@ -43,7 +43,7 @@ struct NotificationHelper {
 
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request)
-            print("Notification added for \(notificationDate)")
+            print("Notification added for \(triggerDate)")
         }
 
         center.getNotificationSettings { settings in

@@ -129,7 +129,7 @@ struct PlantDetail: View {
                                 }.padding()
                                 
                                 Divider()
-                                    .background(Color(.label))
+                                    .background(Color(.label).opacity(0.1))
                                     .padding(.horizontal)
                                 
                             }
@@ -141,7 +141,7 @@ struct PlantDetail: View {
                                 }.padding()
                                 
                                 Divider()
-                                    .background(Color(.label))
+                                    .background(Color(.label).opacity(0))
                                     .padding(.horizontal)
                                 
                             }
@@ -153,7 +153,7 @@ struct PlantDetail: View {
                                 }.padding()
                                 
                                 Divider()
-                                    .background(Color(.label))
+                                    .background(Color(.label).opacity(0.1))
                                     .padding(.horizontal)
                                 
                             }
@@ -166,7 +166,7 @@ struct PlantDetail: View {
                                 }.padding()
                                 
                                 Divider()
-                                    .background(Color(.label))
+                                    .background(Color(.label).opacity(0.1))
                                     .padding(.horizontal)
                                 
                             }
@@ -179,7 +179,7 @@ struct PlantDetail: View {
                                 }.padding()
                                 
                                 Divider()
-                                    .background(Color(.label))
+                                    .background(Color(.label).opacity(0.1))
                                     .padding(.horizontal)
                             }
                             
@@ -191,7 +191,7 @@ struct PlantDetail: View {
                                 }.padding()
                                 
                                 Divider()
-                                    .background(Color(.label))
+                                    .background(Color(.label).opacity(0.1))
                                     .padding(.horizontal)
                                 
                             }
@@ -204,7 +204,7 @@ struct PlantDetail: View {
                                 }.padding()
                                 
                                 Divider()
-                                    .background(Color(.label))
+                                    .background(Color(.label).opacity(0.1))
                                     .padding(.horizontal)
                             }
                             
@@ -221,7 +221,7 @@ struct PlantDetail: View {
                     .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 5, y: 5)
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
-                            .stroke(colorScheme == .light ? .clear : Color(.white), lineWidth: 2)
+                            .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)
                     )
                 }.padding(25)
                 .lineLimit(nil)
@@ -234,7 +234,7 @@ struct PlantDetail: View {
 struct PlantDetail_Previews: PreviewProvider {
     static var previews: some View {
         PlantDetail()
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(.light)
             .environmentObject(SelectedPlant())
     }
 }

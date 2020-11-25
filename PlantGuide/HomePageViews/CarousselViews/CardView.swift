@@ -56,11 +56,11 @@ struct CardView: View {
         .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 3, y: 3)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
-                .stroke(colorScheme == .light ? .clear : Color(.white))
+                .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)                
         )
         .padding(8)
         .onAppear() {
-            print("\(plantID!).jpg")
+            print("Succcesfully loaded image: \(plantID!).jpg")
         }
     }
 }
@@ -68,6 +68,7 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView(plantName: "Testy", plantType: "Prayer Plant", plantID: "fztguiopiuhig")
+            
             
         
     }

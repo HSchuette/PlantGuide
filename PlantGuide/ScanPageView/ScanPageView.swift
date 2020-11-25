@@ -13,9 +13,11 @@ struct ScanPageView: View {
     
     @State private var isAnimating: Bool = false
     
+    @Binding var image: UIImage?
+    
     var body: some View {
         ZStack {
-            Image("placeHolder")
+            Image(uiImage: image ?? UIImage(named: "placeHolder")!)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 250, height: 250)
@@ -75,7 +77,7 @@ struct ScanPageView: View {
         .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 5, y: 5)
         .overlay(
             RoundedRectangle(cornerRadius: 20)
-                .stroke(colorScheme == .light ? .clear : Color(.white), lineWidth: 2)
+                .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)
         )        
         .onAppear() {
             self.isAnimating = true
@@ -87,7 +89,7 @@ struct ScanPageView: View {
 
 struct ScanPageView_Previews: PreviewProvider {
     static var previews: some View {
-        ScanPageView()
+        ScanPageView(image: Binding.constant(UIImage(named: "test")))
             .preferredColorScheme(.dark)
     }
 }

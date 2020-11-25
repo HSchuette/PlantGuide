@@ -13,8 +13,6 @@ struct TaskListRow: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State private var finishedTasks = [String()]
-        
-    let feedback = UIImpactFeedbackGenerator(style: .light)
     
     var plantID: String
     var plantName: String
@@ -29,7 +27,7 @@ struct TaskListRow: View {
                 } else {
                     finishedTasks.append(plantID)
                     
-                    self.feedback.impactOccurred()
+                    simpleSuccess()
                     
                     AudioServicesPlaySystemSound(SystemSoundID(1407))
                 }
@@ -59,6 +57,10 @@ struct TaskListRow: View {
             }.opacity(finishedTasks.contains{ $0 == plantID } ? 0.5 : 1)
             Spacer()
         }
+    }
+    func simpleSuccess() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
     }
 }
 

@@ -59,7 +59,7 @@ struct NavigationHomeView: View {
                                     .padding(.top, 25)
                                     
                             case .scanPage:
-                                NavigationScanView()
+                                NavigationScanView(plantID: Binding.constant("scan"), imagePath: Binding.constant(""))
                             case .overViewPage:
                                 NavigationOverviewView(showLearnMoreSheet: $showLearnMoreSheet)
                 }                                

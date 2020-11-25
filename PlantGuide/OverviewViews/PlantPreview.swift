@@ -26,7 +26,7 @@ struct PlantPreview: View {
                 .cornerRadius(20)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
-                        .stroke(colorScheme == .light ? .clear : Color(.white), lineWidth: 2)
+                        .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)
                 )
             
             VStack() {
