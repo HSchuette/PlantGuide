@@ -13,6 +13,7 @@ struct PlantGuideApp: App {
     
     @StateObject var navigationRouter = NavigationRouter()
     @StateObject var selectedPlant = SelectedPlant()
+    @StateObject var detailPlant = DetailPlant()
     
     var body: some Scene {
         WindowGroup {
@@ -20,6 +21,7 @@ struct PlantGuideApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(navigationRouter)
                 .environmentObject(selectedPlant)
+                .environmentObject(DetailPlant())
                 
         }
     }

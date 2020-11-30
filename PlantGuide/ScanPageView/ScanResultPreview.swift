@@ -16,16 +16,9 @@ struct ScanResultPreview: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("Here are your results:")
-                    .font(.callout)
-                    .fontWeight(.regular)
-                    .foregroundColor(Color(.systemGray))
-                
-                
-                Spacer()
-            }.padding()
-            
+            if classificationLabel.isEmpty {
+                ResultPreview(selected: Binding.constant(999))
+            } else {
             
             ForEach(classificationLabel, id: \.self) {x in
                 ResultPreview(selected: Binding.constant(x))
@@ -36,9 +29,10 @@ struct ScanResultPreview: View {
                             showDetails = true
                         }
                     }
-            }.sheet(isPresented: $showDetails, content: {
-                PlantDetail()
-            })
+                }.sheet(isPresented: $showDetails, content: {
+                    PlantDetail()
+                })
+            }
         }
     }
     func updateAllValues(id: Int) {

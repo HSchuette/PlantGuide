@@ -19,6 +19,7 @@
 		B180930C25602DA300FC4B92 /* CardCarousselSeeAllButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B180930B25602DA300FC4B92 /* CardCarousselSeeAllButton.swift */; };
 		B180931325603D5B00FC4B92 /* GetStartedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B180931225603D5B00FC4B92 /* GetStartedButton.swift */; };
 		B18093172561693400FC4B92 /* AddNewPlantSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18093162561693400FC4B92 /* AddNewPlantSheetView.swift */; };
+		B1864FD3256F08690041F028 /* HomePageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1864FD2256F08690041F028 /* HomePageDetailView.swift */; };
 		B187FEA9255A643A00F5D266 /* CarousselToppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187FEA8255A643A00F5D266 /* CarousselToppingView.swift */; };
 		B187FEB1255B142900F5D266 /* ScanPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187FEB0255B142900F5D266 /* ScanPageView.swift */; };
 		B187FEBC255B28C700F5D266 /* CompleteScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187FEBB255B28C700F5D266 /* CompleteScanView.swift */; };
@@ -82,6 +83,7 @@
 		B1E7788A2538E740007A6440 /* SunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E778812538E740007A6440 /* SunView.swift */; };
 		B1E7788B2538E740007A6440 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E778822538E740007A6440 /* GalleryView.swift */; };
 		B1E7788C2538E740007A6440 /* PlantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E778832538E740007A6440 /* PlantDetail.swift */; };
+		B1E84C4A2570D55900383754 /* DetailPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E84C492570D55900383754 /* DetailPlant.swift */; };
 		B1EADCA12562567700CB0F74 /* TaskNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */; };
 		B1EADCA52563A19500CB0F74 /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA42563A19500CB0F74 /* TaskListRow.swift */; };
 		B1EADCA82563A3F500CB0F74 /* TodayTaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */; };
@@ -101,6 +103,7 @@
 		B180930B25602DA300FC4B92 /* CardCarousselSeeAllButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCarousselSeeAllButton.swift; sourceTree = "<group>"; };
 		B180931225603D5B00FC4B92 /* GetStartedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedButton.swift; sourceTree = "<group>"; };
 		B18093162561693400FC4B92 /* AddNewPlantSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlantSheetView.swift; sourceTree = "<group>"; };
+		B1864FD2256F08690041F028 /* HomePageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageDetailView.swift; sourceTree = "<group>"; };
 		B187FEA8255A643A00F5D266 /* CarousselToppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarousselToppingView.swift; sourceTree = "<group>"; };
 		B187FEB0255B142900F5D266 /* ScanPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPageView.swift; sourceTree = "<group>"; };
 		B187FEBB255B28C700F5D266 /* CompleteScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteScanView.swift; sourceTree = "<group>"; };
@@ -170,6 +173,7 @@
 		B1E778812538E740007A6440 /* SunView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunView.swift; sourceTree = "<group>"; };
 		B1E778822538E740007A6440 /* GalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		B1E778832538E740007A6440 /* PlantDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetail.swift; sourceTree = "<group>"; };
+		B1E84C492570D55900383754 /* DetailPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlant.swift; sourceTree = "<group>"; };
 		B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNotificationCenter.swift; sourceTree = "<group>"; };
 		B1EADCA42563A19500CB0F74 /* TaskListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
 		B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTaskList.swift; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 		B187FED2255B431300F5D266 /* HomePageViews */ = {
 			isa = PBXGroup;
 			children = (
+				B1864FD2256F08690041F028 /* HomePageDetailView.swift */,
+				B1E84C492570D55900383754 /* DetailPlant.swift */,
 				B1D72D0B256863AC00C58D63 /* TaskListViews */,
 				B1D72D0C256863CB00C58D63 /* CarousselViews */,
 			);
@@ -492,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B17CB6F32559175C004A3751 /* SelectedPlant.swift in Sources */,
+				B1E84C4A2570D55900383754 /* DetailPlant.swift in Sources */,
 				B1A1D24E2538F08C006BEB9D /* PlantGuide.mlmodel in Sources */,
 				B1B260862538D90B00841FBB /* ContentView.swift in Sources */,
 				B187FEBC255B28C700F5D266 /* CompleteScanView.swift in Sources */,
@@ -552,6 +559,7 @@
 				B187FEB1255B142900F5D266 /* ScanPageView.swift in Sources */,
 				B180931325603D5B00FC4B92 /* GetStartedButton.swift in Sources */,
 				B1B260C12538D9DB00841FBB /* MailHandler.swift in Sources */,
+				B1864FD3256F08690041F028 /* HomePageDetailView.swift in Sources */,
 				B187FEA9255A643A00F5D266 /* CarousselToppingView.swift in Sources */,
 				B1EADCA52563A19500CB0F74 /* TaskListRow.swift in Sources */,
 				B187FEEB255E5A1000F5D266 /* CardCarousselOnEditButton.swift in Sources */,

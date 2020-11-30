@@ -48,7 +48,7 @@ struct ScanPageView: View {
             .clipShape(
                 RoundedRectangle(cornerRadius: 25)
             )
-            .animation(Animation.linear(duration: 3).delay(6).repeatForever(autoreverses: false))
+            .animation(Animation.linear(duration: 3).delay(6))
             
             ZStack(alignment: .bottom) {
                 
@@ -64,7 +64,7 @@ struct ScanPageView: View {
             .clipShape(
                 RoundedRectangle(cornerRadius: 25)
             )
-            .animation(Animation.linear(duration: 3).delay(3).repeatForever(autoreverses: false))
+            .animation(Animation.linear(duration: 3).delay(3))
             
             LogoAsset()
                 .stroke(lineWidth: 7)
@@ -80,10 +80,9 @@ struct ScanPageView: View {
                 .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)
         )        
         .onAppear() {
-            self.isAnimating = true
+            self.isAnimating = true            
         }
     }
-    
 }
 
 

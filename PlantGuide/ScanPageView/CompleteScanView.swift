@@ -94,7 +94,37 @@ struct NavigationScanView: View {
                                     
                 }
             } else {
-                ScanResultPreview(classificationLabel: $classificationLabel)
+                VStack {
+                    HStack {
+                        Text("Here are your results:")
+                            .font(.callout)
+                            .fontWeight(.regular)
+                            .foregroundColor(Color(.systemGray))
+                        
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            withAnimation(.default) {
+                                showClassificationResult = false
+                                image = nil
+                                classificationLabel = [999]
+                            }
+                            
+                        }, label: {
+                            Text("Restart")
+                                .font(.subheadline)
+                            
+                            Image(systemName: "arrow.uturn.backward")
+                                .font(.subheadline)
+                        })
+                        
+                    }.padding()
+                    
+                    ScrollView {
+                        ScanResultPreview(classificationLabel: $classificationLabel)
+                    }.frame(height: 210)
+                }
             }
             Spacer()
             

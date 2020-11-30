@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NavigationListView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var detailPlant: DetailPlant
     
     @Binding var onEdit: Bool
     @Binding var seeAll: Bool
@@ -48,5 +49,6 @@ struct NavigationListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationListView(onEdit: Binding.constant(true), seeAll: Binding.constant(true))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environmentObject(DetailPlant())
     }
 }
