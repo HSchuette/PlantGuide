@@ -39,10 +39,18 @@ struct WaterReminderDateHelper {
             let updateContext = try viewContext.fetch(fetchRequest)
             let dateUpdate = updateContext[0] as! NSManagedObject
             dateUpdate.setValue(nextWaterDate, forKey: "dateNextWatering")
+            dateUpdate.setValue(Date(), forKey: "dateLastWatering")
             
             NotificationHelper.setNotification(plant: dateUpdate as! StorePlantEntity, waterFactor: waterFactor, lastWaterDate: dateUpdate.value(forKey: "dateLastWatering") as? Date)
         } catch {
             print(error)
         }
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print("Saving failed \(error)")
+        }
+        
     }
 }
