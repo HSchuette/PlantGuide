@@ -84,6 +84,8 @@
 		B1E7788B2538E740007A6440 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E778822538E740007A6440 /* GalleryView.swift */; };
 		B1E7788C2538E740007A6440 /* PlantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E778832538E740007A6440 /* PlantDetail.swift */; };
 		B1E84C4A2570D55900383754 /* DetailPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E84C492570D55900383754 /* DetailPlant.swift */; };
+		B1E84C4F257618D200383754 /* DetailBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E84C4E257618D200383754 /* DetailBox.swift */; };
+		B1E84C5325761C7200383754 /* DetailStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E84C5225761C7200383754 /* DetailStack.swift */; };
 		B1EADCA12562567700CB0F74 /* TaskNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */; };
 		B1EADCA52563A19500CB0F74 /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA42563A19500CB0F74 /* TaskListRow.swift */; };
 		B1EADCA82563A3F500CB0F74 /* TodayTaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */; };
@@ -174,6 +176,8 @@
 		B1E778822538E740007A6440 /* GalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		B1E778832538E740007A6440 /* PlantDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetail.swift; sourceTree = "<group>"; };
 		B1E84C492570D55900383754 /* DetailPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlant.swift; sourceTree = "<group>"; };
+		B1E84C4E257618D200383754 /* DetailBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBox.swift; sourceTree = "<group>"; };
+		B1E84C5225761C7200383754 /* DetailStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStack.swift; sourceTree = "<group>"; };
 		B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNotificationCenter.swift; sourceTree = "<group>"; };
 		B1EADCA42563A19500CB0F74 /* TaskListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
 		B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTaskList.swift; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				B1864FD2256F08690041F028 /* HomePageDetailView.swift */,
+				B1E84C4E257618D200383754 /* DetailBox.swift */,
+				B1E84C5225761C7200383754 /* DetailStack.swift */,
 				B1E84C492570D55900383754 /* DetailPlant.swift */,
 				B1D72D0B256863AC00C58D63 /* TaskListViews */,
 				B1D72D0C256863CB00C58D63 /* CarousselViews */,
@@ -511,6 +517,8 @@
 				B180930C25602DA300FC4B92 /* CardCarousselSeeAllButton.swift in Sources */,
 				B1B260CB2538DA1700841FBB /* IdleScanView.swift in Sources */,
 				B187FEDB255BBE3300F5D266 /* CardCarousselToppingView.swift in Sources */,
+				B1E84C4F257618D200383754 /* DetailBox.swift in Sources */,
+				B1E84C5325761C7200383754 /* DetailStack.swift in Sources */,
 				B17A1D0B256867CD00FF76A9 /* TaskList.swift in Sources */,
 				B1AC9FF22557E9EA001BF9EE /* StorePlantEntity.xcdatamodeld in Sources */,
 				B1FF58592566444A00F79E50 /* NotificationHelper.swift in Sources */,

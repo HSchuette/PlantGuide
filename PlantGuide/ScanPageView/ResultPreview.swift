@@ -75,7 +75,7 @@ struct ResultPreview: View {
         }
         .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 5, y: 5)
         .overlay(
-            RoundedRectangle(cornerRadius: 20)
+            RoundedRectangle(cornerRadius: 10)
                 .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)
         )    
          
@@ -85,5 +85,6 @@ struct ResultPreview: View {
 struct ResultPreview_Previews: PreviewProvider {
     static var previews: some View {
         ResultPreview(selected: Binding.constant(2), animate: true)
+            
     }
 }
