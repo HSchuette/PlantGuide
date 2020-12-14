@@ -67,7 +67,6 @@ struct ResultPreview: View {
         .clipped()
         .cornerRadius(10)
         .frame(width: 325, height: 100)
-        .padding(5)
         .offset(y: switchOn ? 0 : +1000)
         .animation(Animation.easeInOut(duration: animate ? 1.3 : 0).delay(animate ? 0.8 : 0))
         .onAppear() {
@@ -77,7 +76,8 @@ struct ResultPreview: View {
         .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)
-        )    
+        )
+        .padding(5)
          
         }
 }

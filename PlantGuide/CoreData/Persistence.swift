@@ -16,7 +16,7 @@ struct PersistenceController {
         let viewContext = result.container.viewContext
         for _ in 0..<5 {
             let newPlant = StorePlantEntity(context: viewContext)
-            newPlant.id = UUID().uuidString
+            newPlant.id = String("ID123")
             newPlant.name = String("Pflanziska")
             newPlant.type = String("Monstera Deliciosa")
             newPlant.imagePath = String()

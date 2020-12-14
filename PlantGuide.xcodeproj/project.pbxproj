@@ -83,9 +83,9 @@
 		B1E7788A2538E740007A6440 /* SunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E778812538E740007A6440 /* SunView.swift */; };
 		B1E7788B2538E740007A6440 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E778822538E740007A6440 /* GalleryView.swift */; };
 		B1E7788C2538E740007A6440 /* PlantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E778832538E740007A6440 /* PlantDetail.swift */; };
-		B1E84C4A2570D55900383754 /* DetailPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E84C492570D55900383754 /* DetailPlant.swift */; };
 		B1E84C4F257618D200383754 /* DetailBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E84C4E257618D200383754 /* DetailBox.swift */; };
 		B1E84C5325761C7200383754 /* DetailStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E84C5225761C7200383754 /* DetailStack.swift */; };
+		B1EAB248257A0BE600ED8213 /* HomePageEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAB247257A0BE500ED8213 /* HomePageEditView.swift */; };
 		B1EADCA12562567700CB0F74 /* TaskNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */; };
 		B1EADCA52563A19500CB0F74 /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA42563A19500CB0F74 /* TaskListRow.swift */; };
 		B1EADCA82563A3F500CB0F74 /* TodayTaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */; };
@@ -175,9 +175,9 @@
 		B1E778812538E740007A6440 /* SunView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunView.swift; sourceTree = "<group>"; };
 		B1E778822538E740007A6440 /* GalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		B1E778832538E740007A6440 /* PlantDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetail.swift; sourceTree = "<group>"; };
-		B1E84C492570D55900383754 /* DetailPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlant.swift; sourceTree = "<group>"; };
 		B1E84C4E257618D200383754 /* DetailBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBox.swift; sourceTree = "<group>"; };
 		B1E84C5225761C7200383754 /* DetailStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStack.swift; sourceTree = "<group>"; };
+		B1EAB247257A0BE500ED8213 /* HomePageEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageEditView.swift; sourceTree = "<group>"; };
 		B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNotificationCenter.swift; sourceTree = "<group>"; };
 		B1EADCA42563A19500CB0F74 /* TaskListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
 		B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTaskList.swift; sourceTree = "<group>"; };
@@ -225,9 +225,9 @@
 			isa = PBXGroup;
 			children = (
 				B1864FD2256F08690041F028 /* HomePageDetailView.swift */,
+				B1EAB247257A0BE500ED8213 /* HomePageEditView.swift */,
 				B1E84C4E257618D200383754 /* DetailBox.swift */,
 				B1E84C5225761C7200383754 /* DetailStack.swift */,
-				B1E84C492570D55900383754 /* DetailPlant.swift */,
 				B1D72D0B256863AC00C58D63 /* TaskListViews */,
 				B1D72D0C256863CB00C58D63 /* CarousselViews */,
 			);
@@ -504,7 +504,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B17CB6F32559175C004A3751 /* SelectedPlant.swift in Sources */,
-				B1E84C4A2570D55900383754 /* DetailPlant.swift in Sources */,
 				B1A1D24E2538F08C006BEB9D /* PlantGuide.mlmodel in Sources */,
 				B1B260862538D90B00841FBB /* ContentView.swift in Sources */,
 				B187FEBC255B28C700F5D266 /* CompleteScanView.swift in Sources */,
@@ -540,6 +539,7 @@
 				B172BE5F253F1AD300FB6CDB /* WikipediaView.swift in Sources */,
 				B1E7788A2538E740007A6440 /* SunView.swift in Sources */,
 				B1E778652538E6B0007A6440 /* PicturePreview.swift in Sources */,
+				B1EAB248257A0BE600ED8213 /* HomePageEditView.swift in Sources */,
 				B18093172561693400FC4B92 /* AddNewPlantSheetView.swift in Sources */,
 				B1AC9FF52557EF7D001BF9EE /* StoreImagePicker.swift in Sources */,
 				B1D9408A256E3154001AC396 /* ScanResultPreview.swift in Sources */,

@@ -11,7 +11,6 @@ import CoreData
 struct NavigationHomeView: View {
     @EnvironmentObject var navigationRouter: NavigationRouter
     @EnvironmentObject var selectedPlant: SelectedPlant
-    @EnvironmentObject var detailPlant: DetailPlant
     @Environment(\.managedObjectContext) private var viewContext
     
     
@@ -93,7 +92,6 @@ struct NavigationHomeView_Previews: PreviewProvider {
             .environmentObject(NavigationRouter())
             .environmentObject(SelectedPlant())
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(DetailPlant())
     }
 }
 

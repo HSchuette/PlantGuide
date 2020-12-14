@@ -6,22 +6,38 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct HomePageDetailView: View {
-    @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @EnvironmentObject var detailPlant: DetailPlant
+    @Environment(\.managedObjectContext) private var viewContext
     
-    var plant: DetailPlant
+    @Binding var detailPlantID: String
+    
+    @State var showEditView: Bool = false
+    @State private var load: Bool = false
+    
+    @State var plant: StorePlantEntity?
+    
     let plantLight = ["smoke.fill", "cloud.sun.fill", "sun.max.fill"]
     
     let plantTypes = plantData.map { $0.name }
     
+    @State private var onEdit = false
+    
     var body: some View {
-        
         ScrollView {
+            if plant == nil {
+                Button(action: {
+                    load.toggle()
+                }, label: {
+                    Text("Button")
+                })
+                
+            } else {
+            
             ZStack {
-                Image(uiImage: ImageStore.retrieve(imageNamed: "\(plant.id).jpg") ?? UIImage(imageLiteralResourceName: "placeHolder"))
+                Image(uiImage: ImageStore.retrieve(imageNamed: "\(plant!.id!).jpg") ?? UIImage(imageLiteralResourceName: "placeHolder"))
                     .resizable()
                     .scaledToFill()
                     .frame(height: 200.0)
@@ -42,7 +58,7 @@ struct HomePageDetailView: View {
                     
                     Spacer()
                     
-                    Image(uiImage: ImageStore.retrieve(imageNamed: "\(plant.id).jpg") ?? UIImage(imageLiteralResourceName: "placeHolder"))
+                    Image(uiImage: ImageStore.retrieve(imageNamed: "\(plant!.id!).jpg") ?? UIImage(imageLiteralResourceName: "placeHolder"))
                         .resizable()
                         .scaledToFill()
                         .frame(width: 120)
@@ -58,33 +74,73 @@ struct HomePageDetailView: View {
                 
             }.frame(height: 200.0)
             .padding(.bottom, 50)
-                        
-            Text(plant.name)
+            
+            
+            HStack {
+                Spacer()
+           
+                Button(action: {
+                    print("\(plant!.name!)")
+                    onEdit = true
+                }, label: {
+                    CircleIcon(color: Color(.systemGray), image: "pencil")
+                        .padding(.trailing, 30)
+                })
+            }
+            .padding(.top, -40)
+            
+            
+            Text(plant!.name!)
                 .font(.system(size: 35))
                 .fontWeight(.bold)
                 .kerning(-2)
-                .padding(25)
+                .padding(.top, 25)
             
-            ResultPreview(selected: Binding.constant(plantTypes.firstIndex(of: plant.type)), animate: false)
+            ResultPreview(selected: Binding.constant(plantTypes.firstIndex(of: plant!.type!)), animate: false)
                 .padding(.bottom)
             
-            DetailBox(leftText: "LIGHT DETAILS", leftIconName: "\(plant.lightCategory)", leftInfoText: "\(String(format: "%.0f%%",  plant.lightFactor/4*100))", rightText: "DATE ADDED", rightIconName: "calendar.badge.plus", rightInfoText: "\(DateHelper.getDateString(date: plant.dateAdded))")
+                DetailBox(leftText: "LIGHT DETAILS", leftIconName: "\(plant!.lightCategory!)", leftInfoText: "\(String(format: "%.0f%%",  plant!.lightFactor/4*100))", rightText: "DATE ADDED", rightIconName: "calendar.badge.plus", rightInfoText: "\(DateHelper.getDateString(date: plant!.dateAdded!))")
             
-            DetailBox(leftText: "LAST WATERING", leftIconName: "cloud.rain", leftInfoText: "\(DateHelper.getDateString(date: plant.dateLastWatering))", rightText: "NEXT WATERING", rightIconName: "cloud.rain.fill", rightInfoText: "\(DateHelper.getDateString(date: plant.dateNextWatering))")
+            DetailBox(leftText: "LAST WATERING", leftIconName: "cloud.rain", leftInfoText: "\(DateHelper.getDateString(date: plant!.dateLastWatering!))", rightText: "NEXT WATERING", rightIconName: "cloud.rain.fill", rightInfoText: "\(DateHelper.getDateString(date: plant!.dateNextWatering!))")
             
-            DetailBox(leftText: "WATER REMINDER", leftIconName: plant.isWaterReminder ? "checkmark.circle.fill": "xmark.circle", leftInfoText: plant.isWaterReminder ? "Active" : "Inactive", rightText: "HUMIDITY REMINDER", rightIconName: plant.isHumidityReminder ? "checkmark.circle.fill": "xmark.circle", rightInfoText: plant.isHumidityReminder ? "Active" : "Inactive")
+                DetailBox(leftText: "WATER REMINDER", leftIconName: plant!.isWaterReminder ? "checkmark.circle.fill": "xmark.circle", leftInfoText: plant!.isWaterReminder ? "Active" : "Inactive", rightText: "HUMIDITY REMINDER", rightIconName: plant!.isHumidityReminder ? "checkmark.circle.fill": "xmark.circle", rightInfoText: plant!.isHumidityReminder ? "Active" : "Inactive")
             
             Spacer()
+            }
         }.background(Color(.systemGray6))
+        .sheet(isPresented: $onEdit, content: {
+            HomePageEditView(detailPlant: plant!)
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        })
+        .onChange(of: load) { newValue in
+            print("change\(detailPlantID)")
+            guard self.detailPlantID != "" else {return}
+            
+            do {
+                let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "StorePlantEntity")
+                fetchRequest.predicate = NSPredicate(format: "id == %@", detailPlantID)
+                fetchRequest.fetchLimit = 1
+                
+                let updateContext = try viewContext.fetch(fetchRequest)
+                plant = updateContext[0] as? StorePlantEntity
+                
+                print("\(String(describing: plant))")
+            } catch {
+                print(error)
+            }
+        }
+        .onChange(of: showEditView) { newValue in
+            load.toggle()
+        }
+        .onAppear {
+            load.toggle()
+        }
     }
 }
 
 struct HomePageDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        HomePageDetailView(plant: DetailPlant())
-            .preferredColorScheme(.dark)
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(DetailPlant())
+        HomePageDetailView(detailPlantID: Binding.constant("ID123"))
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
-

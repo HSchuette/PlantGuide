@@ -9,16 +9,16 @@ import SwiftUI
 
 struct PlantCardCarousselView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @EnvironmentObject var detailPlant: DetailPlant
     
     @FetchRequest(
         entity: StorePlantEntity.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \StorePlantEntity.name, ascending: false)],
         animation: .default)
     
-    private var storePlants: FetchedResults<StorePlantEntity>
+    var storePlants: FetchedResults<StorePlantEntity>
     
-    @State private var showDetailSheet: Bool = false
+    @State var showDetailSheet = false
+    @State var detailPlantID: String = ""
     
     @State private var deleteEntitiy: StorePlantEntity? = nil
     @State private var showActionSheet: Bool = false
@@ -58,8 +58,7 @@ struct PlantCardCarousselView: View {
                 }
             }
         }.sheet(isPresented: $showDetailSheet, content: {
-            HomePageDetailView(plant: detailPlant)
-                .environmentObject(DetailPlant())
+            HomePageDetailView(detailPlantID: $detailPlantID)
         })
     }
     private func deleteItems(toDelete: StorePlantEntity) {
@@ -89,11 +88,11 @@ struct PlantCardCarousselView: View {
             ZStack {
                 CardView(plantName: plant.name!, plantType: plant.type!, plantID: plant.id!)
                     .onTapGesture {
-                        withAnimation(.easeInOut(duration: 0.4)) {
-                            updateAllValues(plant: plant)
-                            self.showDetailSheet = true
-                                }
+                        detailPlantID = plant.id!
+                        
+                        showDetailSheet.toggle()
                     }
+                    
                 if onEdit == true {
                     DeleteButton()
                         .onTapGesture(perform: {
@@ -110,27 +109,12 @@ struct PlantCardCarousselView: View {
             .padding(.bottom, 5)
         }
     }
-    func updateAllValues(plant: StorePlantEntity) {
-        detailPlant.id = plant.id!
-        detailPlant.name = plant.name!
-        detailPlant.type = plant.type!
-        detailPlant.imagePath = plant.imagePath!
-        detailPlant.lightCategory = plant.lightCategory!
-        detailPlant.lightFactor = plant.lightFactor
-        detailPlant.isWaterReminder = plant.isWaterReminder
-        detailPlant.dateLastWatering = plant.dateLastWatering!
-        detailPlant.dateNextWatering = plant.dateNextWatering!
-        detailPlant.waterCategory = plant.waterCategory!
-        detailPlant.isHumidityReminder = plant.isHumidityReminder
-        detailPlant.dateAdded = plant.dateAdded!
-    }
 }
 
 struct PlantCardCarousselView_Previews: PreviewProvider {
     static var previews: some View {
         PlantCardCarousselView(onEdit: Binding.constant(true), seeAll: Binding.constant(false))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(DetailPlant())
     }
 }
 
