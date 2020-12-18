@@ -10,7 +10,7 @@ import CoreData
 
 struct HomePageDetailView: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext)  var viewContext
     
     @Binding var detailPlantID: String
     
@@ -83,14 +83,14 @@ struct HomePageDetailView: View {
                     print("\(plant!.name!)")
                     onEdit = true
                 }, label: {
-                    CircleIcon(color: Color(.systemGray), image: "pencil")
+                    CircleIcon(color: Color(.systemGray4), image: "pencil")
                         .padding(.trailing, 30)
                 })
             }
-            .padding(.top, -40)
+            .padding(.top, -30)
             
             
-            Text(plant!.name!)
+            Text("\(plant!.name!)")
                 .font(.system(size: 35))
                 .fontWeight(.bold)
                 .kerning(-2)
@@ -107,17 +107,17 @@ struct HomePageDetailView: View {
             
             Spacer()
             }
-        }.background(Color(.systemGray6))
+        }
         .sheet(isPresented: $onEdit, content: {
             HomePageEditView(detailPlant: plant!)
-                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         })
         .onChange(of: load) { newValue in
             print("change\(detailPlantID)")
             guard self.detailPlantID != "" else {return}
             
             do {
-                let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "StorePlantEntity")
+                let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest()
+                fetchRequest.entity = StorePlantEntity.entity()
                 fetchRequest.predicate = NSPredicate(format: "id == %@", detailPlantID)
                 fetchRequest.fetchLimit = 1
                 
@@ -134,13 +134,14 @@ struct HomePageDetailView: View {
         }
         .onAppear {
             load.toggle()
+            showEditView = false
         }
+        .background(Color(.systemGray6))
     }
 }
 
 struct HomePageDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        HomePageDetailView(detailPlantID: Binding.constant("ID123"))
-                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        HomePageDetailView(detailPlantID: Binding.constant("ID123"))            
     }
 }

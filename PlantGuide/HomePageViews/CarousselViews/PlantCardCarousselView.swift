@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlantCardCarousselView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) var viewContext
     
     @FetchRequest(
         entity: StorePlantEntity.entity(),
@@ -89,7 +89,7 @@ struct PlantCardCarousselView: View {
                 CardView(plantName: plant.name!, plantType: plant.type!, plantID: plant.id!)
                     .onTapGesture {
                         detailPlantID = plant.id!
-                        
+                        print("\(plant)")
                         showDetailSheet.toggle()
                     }
                     

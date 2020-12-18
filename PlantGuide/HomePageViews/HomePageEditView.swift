@@ -16,7 +16,7 @@ struct HomePageEditView: View {
     
     let plantLight = ["smoke.fill", "cloud.sun.fill", "sun.max.fill"]
     
-    var detailPlant: StorePlantEntity
+    @ObservedObject var detailPlant: StorePlantEntity
     
     @State var plantID: String = UUID().uuidString
     @State var plantName = ""
@@ -93,7 +93,7 @@ struct HomePageEditView: View {
                     }
                     
                     Section(header: Text("Photo")) {
-                        storeImagePickerView(plantID: $plantID, imagePath: $selectedPhotoPath)
+                        storeImagePickerView(image: UIImage(contentsOfFile: selectedPhotoPath), plantID: $plantID, imagePath: $selectedPhotoPath)
                     }
                     
                     Section(header: Text("Light Details")) {
@@ -184,28 +184,43 @@ struct HomePageEditView: View {
     }
     func savePlant(plant: StorePlantEntity) {
         guard self.plantName != "" else {return}
-        viewContext.performAndWait {
+        
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest()
+        fetchRequest.entity = StorePlantEntity.entity()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", detailPlant.id!)
+        fetchRequest.fetchLimit = 1
+        
+        do {
+            let updateContext = try viewContext.fetch(fetchRequest) as! [StorePlantEntity]
+            let updateObject = updateContext[0] 
             
+            print("\(updateObject)")
             
-            plant.id = self.plantID
-            plant.name = self.plantName
-            plant.type = self.plantTypes[self.selectedPlantTypeIndex]
-            plant.imagePath = self.selectedPhotoPath
-            plant.lightCategory = self.plantLight[self.selectedLightIndex]
-            plant.lightFactor = self.sliderLightIndex
-            plant.isWaterReminder = self.waterBool
-            plant.dateLastWatering = self.waterDate
-            plant.dateNextWatering = WaterReminderDateHelper.calculateWaterReminder(waterFactor: plantData[selectedPlantTypeIndex].waterFactor, lastWaterDate: waterDate)
-            plant.waterCategory = plantData[selectedPlantTypeIndex].waterCategory
-            plant.isHumidityReminder = self.humidityBool
-            plant.dateAdded = Date()
+            updateObject.setValue(plantName, forKey: "name")
+            updateObject.setValue(plantTypes[self.selectedPlantTypeIndex], forKey: "type")
+            updateObject.setValue(selectedPhotoPath, forKey: "imagePath")
+            updateObject.setValue(plantLight[self.selectedLightIndex], forKey: "lightCategory")
+            updateObject.setValue(sliderLightIndex, forKey: "lightFactor")
+            updateObject.setValue(waterBool, forKey: "isWaterReminder")
+            updateObject.setValue(waterDate, forKey: "dateLastWatering")
+            updateObject.setValue(WaterReminderDateHelper.calculateWaterReminder(waterFactor: plantData[selectedPlantTypeIndex].waterFactor, lastWaterDate: waterDate), forKey: "dateNextWatering")
+            updateObject.setValue(plantData[selectedPlantTypeIndex].waterCategory, forKey: "waterCategory")
+            updateObject.setValue(humidityBool, forKey: "isHumidityReminder")
+            
             NotificationHelper.setNotification(plant: plant, waterFactor: plantData[selectedPlantTypeIndex].waterFactor, lastWaterDate: waterDate)
-            
-            try? viewContext.save()
+        
+        } catch {
+            print(error)
+        }        
+        do {
+            try viewContext.save()
             print("Plant saved.")
             print("\(plant)")
             presentationMode.wrappedValue.dismiss()
+        } catch {
+            print(error.localizedDescription)
         }
+        
     }
 }
 
@@ -229,6 +244,5 @@ struct HomePageEditView_Previews: PreviewProvider {
         
         return HomePageEditView(detailPlant: plant)
             .preferredColorScheme(.dark)
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

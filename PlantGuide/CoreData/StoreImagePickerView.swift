@@ -57,7 +57,6 @@ struct storeImagePickerView: View {
                 .cornerRadius(25)
                 .frame(width: 100, height: 100)
         }
-            
     }
 }
 
