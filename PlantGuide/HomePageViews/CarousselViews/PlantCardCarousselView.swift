@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlantCardCarousselView: View {
     @Environment(\.managedObjectContext) var viewContext
+    @EnvironmentObject var selectedPlant: SelectedPlant
     
     @FetchRequest(
         entity: StorePlantEntity.entity(),
@@ -59,6 +60,7 @@ struct PlantCardCarousselView: View {
             }
         }.sheet(isPresented: $showDetailSheet, content: {
             HomePageDetailView(detailPlantID: $detailPlantID)
+                .environmentObject(SelectedPlant())
         })
     }
     private func deleteItems(toDelete: StorePlantEntity) {

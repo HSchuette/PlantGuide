@@ -26,6 +26,8 @@ struct AddNewPlantSheetView: View {
     @State var waterDate = Date()
     @State var humidityBool = false
     
+    @State var isRecursive = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -82,7 +84,7 @@ struct AddNewPlantSheetView: View {
                     }
                     
                     Section(header: Text("Photo")) {
-                        storeImagePickerView(plantID: $plantID, imagePath: $selectedPhotoPath)
+                        storeImagePickerView(plantID: $plantID, imagePath: $selectedPhotoPath, isRecursive: $isRecursive)
                     }
                     
                     Section(header: Text("Light Details")) {
@@ -146,12 +148,12 @@ struct AddNewPlantSheetView: View {
                                     .accentColor(Color("blue"))
                             }.padding(.vertical, 5)
                         }
-                        
-                        HStack {
-                            Toggle(isOn: $humidityBool) {
-                                Text("Do you want a humidification reminder?")
-                            }
-                        }
+//                        Leave this out until I refactore the notifications
+//                        HStack {
+//                            Toggle(isOn: $humidityBool) {
+//                                Text("Do you want a humidification reminder?")
+//                            }
+//                        }
                     }
                     
                     Button(action: {

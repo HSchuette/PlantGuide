@@ -25,8 +25,10 @@ struct TaskList: View {
             
             Divider()
             
-            TodayTaskList()
-            
+            ScrollView(.vertical) {
+                TodayTaskList()
+            }
+                
         }.padding(.horizontal, 25)
     }
 }

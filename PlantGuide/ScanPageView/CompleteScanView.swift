@@ -22,6 +22,8 @@ struct NavigationScanView: View {
     @Binding var plantID: String
     @Binding var imagePath: String
     
+    @State var isRecursive: Bool = true
+    
     var body: some View {
         VStack {
             Spacer()
@@ -33,16 +35,16 @@ struct NavigationScanView: View {
             
             Spacer()
             
-            Text("Identify your favourite plant by snapping a picture with your phone.")
-                .font(.callout)
-                .lineLimit(nil)
-                .multilineTextAlignment(.leading)
-                .padding(.horizontal)
-            
-            Spacer()
-            
             
             if showClassificationResult == false {
+                Text("Identify your favourite plant by snapping a picture with your phone.")
+                    .font(.callout)
+                    .lineLimit(nil)
+                    .multilineTextAlignment(.leading)
+                    .padding(.horizontal)
+                
+                Spacer()
+                
                 HStack {
                     Text("Choose your input:")
                         .font(.callout)
@@ -89,7 +91,7 @@ struct NavigationScanView: View {
                     )
                     .padding(5)
                     .sheet(isPresented: $showImageSelector) {
-                        ImagePicker(image: self.$image, isStoreImagePickerVisible: self.$showImageSelector, plantID: $plantID, imagePath: $imagePath, sourceType: self.sourceType).edgesIgnoringSafeArea(.all)
+                        ImagePicker(image: self.$image, isStoreImagePickerVisible: self.$showImageSelector, plantID: $plantID, imagePath: $imagePath, isRecursive: $isRecursive, sourceType: self.sourceType).edgesIgnoringSafeArea(.all)
                 }
                                     
                 }

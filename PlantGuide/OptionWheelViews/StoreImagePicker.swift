@@ -14,12 +14,14 @@ class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImageP
     @Binding var isStoreImagePickerVisible: Bool
     @Binding var plantID: String
     @Binding var imagePath: String
+    @Binding var isRecursive: Bool
     
-    init(image: Binding<UIImage?>, isStoreImagePickerVisible: Binding<Bool>, plantID: Binding<String>, imagePath: Binding<String>) {
+    init(image: Binding<UIImage?>, isStoreImagePickerVisible: Binding<Bool>, plantID: Binding<String>, imagePath: Binding<String>, isRecursive: Binding<Bool>) {
         _image = image
         _isStoreImagePickerVisible = isStoreImagePickerVisible
         _plantID = plantID
         _imagePath = imagePath
+        _isRecursive = isRecursive
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -30,7 +32,7 @@ class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImageP
         }
         
         do {
-            try imagePath = ImageStore.store(image: image!, name: "\(plantID)", filepath: imagePath)
+            try imagePath = ImageStore.store(image: image!, name: "\(plantID)", filepath: imagePath, recursive: isRecursive)
             
             print(imagePath)
         } catch {
@@ -53,6 +55,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     @Binding var isStoreImagePickerVisible: Bool
     @Binding var plantID: String
     @Binding var imagePath: String
+    @Binding var isRecursive: Bool
     
     var sourceType: UIImagePickerController.SourceType = .camera
     
@@ -60,7 +63,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> ImagePicker.Coordinator {
-        return ImagePickerCoordinator(image: $image, isStoreImagePickerVisible: $isStoreImagePickerVisible, plantID: $plantID, imagePath: $imagePath)
+        return ImagePickerCoordinator(image: $image, isStoreImagePickerVisible: $isStoreImagePickerVisible, plantID: $plantID, imagePath: $imagePath, isRecursive: $isRecursive)
     }
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {

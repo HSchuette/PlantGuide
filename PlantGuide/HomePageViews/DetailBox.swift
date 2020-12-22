@@ -32,10 +32,13 @@ struct DetailBox: View {
                 
                 DetailStack(text: leftText, iconName: leftIconName, infoText: leftInfoText)
                 
+                if rightText == "" {
+                    
+                } else {
                 Divider()
                 
-                DetailStack(text: rightText, iconName: rightIconName, infoText: rightInfoText)
-                
+                    DetailStack(text: rightText, iconName: rightIconName, infoText: rightInfoText)
+                }
                 Spacer()
             }
         }.frame(height: 120)

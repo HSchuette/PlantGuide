@@ -28,6 +28,8 @@ struct HomePageEditView: View {
     @State var waterDate = Date()
     @State var humidityBool = false
     
+    @State var isRecursive = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -93,7 +95,7 @@ struct HomePageEditView: View {
                     }
                     
                     Section(header: Text("Photo")) {
-                        storeImagePickerView(image: UIImage(contentsOfFile: selectedPhotoPath), plantID: $plantID, imagePath: $selectedPhotoPath)
+                        storeImagePickerView(image: UIImage(contentsOfFile: selectedPhotoPath), plantID: $plantID, imagePath: $selectedPhotoPath, isRecursive: $isRecursive)
                     }
                     
                     Section(header: Text("Light Details")) {
@@ -158,11 +160,11 @@ struct HomePageEditView: View {
                             }.padding(.vertical, 5)
                         }
                         
-                        HStack {
-                            Toggle(isOn: $humidityBool) {
-                                Text("Do you want a humidification reminder?")
-                            }
-                        }
+//                        HStack {
+//                            Toggle(isOn: $humidityBool) {
+//                                Text("Do you want a humidification reminder?")
+//                            }
+//                        }
                     }
                 }
                 .onAppear {

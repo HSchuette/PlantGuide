@@ -17,6 +17,7 @@ struct storeImagePickerView: View {
     @State var image: UIImage?
     @Binding var plantID: String
     @Binding var imagePath: String
+    @Binding var isRecursive: Bool
     
     var actionSheet: ActionSheet {
         ActionSheet(
@@ -47,12 +48,12 @@ struct storeImagePickerView: View {
                     }.actionSheet(isPresented: $showActionSheet, content: {
                     self.actionSheet })
                     .sheet(isPresented: $showImageSelector) {
-                        ImagePicker(image: self.$image, isStoreImagePickerVisible: self.$showImageSelector, plantID: $plantID, imagePath: $imagePath, sourceType: self.sourceType).edgesIgnoringSafeArea(.all)
+                        ImagePicker(image: self.$image, isStoreImagePickerVisible: self.$showImageSelector, plantID: $plantID, imagePath: $imagePath, isRecursive: $isRecursive, sourceType: self.sourceType).edgesIgnoringSafeArea(.all)
                 }
             
             Spacer()
             
-            Image(uiImage: image ?? UIImage(named: "placeHolder")!)
+            Image(uiImage: ImageStore.retrieve(imageNamed: "\(plantID).jpg") ?? UIImage(named: "placeHolder")!)
                 .resizable()
                 .cornerRadius(25)
                 .frame(width: 100, height: 100)
@@ -62,6 +63,6 @@ struct storeImagePickerView: View {
 
 struct storeImagePickerView_Previews: PreviewProvider {
     static var previews: some View {
-        storeImagePickerView(plantID: Binding.constant("placeHolder"), imagePath: Binding.constant(""))
+        storeImagePickerView(plantID: Binding.constant("placeHolder"), imagePath: Binding.constant(""), isRecursive: Binding.constant(false))
     }
 }

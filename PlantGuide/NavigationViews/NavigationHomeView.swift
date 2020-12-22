@@ -76,7 +76,7 @@ struct NavigationHomeView: View {
                                     case .homePage:
                                         NavigationBarTitleView(title: "Plant Room")
                                     case .scanPage:
-                                        NavigationBarTitleView(title: "Identify your Plant")
+                                        NavigationBarTitleView(title: "Scan")
                                     case .overViewPage:
                                         NavigationBarTitleView(title: "Overview")
                         }

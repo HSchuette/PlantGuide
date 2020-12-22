@@ -30,25 +30,27 @@ struct ImageStore {
     }
     
     // store an image
-    static func store(image: UIImage, name: String, filepath: String) throws -> String {
+    static func store(image: UIImage, name: String, filepath: String, recursive: Bool) throws -> String {
         
         guard let imageData = image.jpegData(compressionQuality: 0.8) else {
             throw NSError(domain: "com.thecodedself.imagestore", code: 0, userInfo: [NSLocalizedDescriptionKey: "The image could not be created"])
         }
-        
-        var counter = 0
         var newFileName = name
         
-        while FileManager.default.fileExists(atPath: ImageStore.path(for: newFileName, fileExtension: "jpg")!.path) {
-            counter += 1
-            newFileName =  "\(name)_\(counter)"
+        if recursive == true {
+            var counter = 0
+        
+            while FileManager.default.fileExists(atPath: ImageStore.path(for: newFileName, fileExtension: "jpg")!.path) {
+                counter += 1
+                newFileName =  "\(name)_\(counter)"
+            }
         }
         
         guard let finalImagePath = ImageStore.path(for: newFileName) else {
             throw NSError(domain: "com.thecodedself.imagestore", code: 0, userInfo: [NSLocalizedDescriptionKey: "The image path could not be retrieved"])
         }
     
-        try imageData.write(to: finalImagePath)
+        try imageData.write(to: finalImagePath, options: Data.WritingOptions.atomic)
         
         return finalImagePath.absoluteString
     }
