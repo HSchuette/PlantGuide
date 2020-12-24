@@ -74,7 +74,7 @@ struct OptionWheel: View {
                 }
                     
             }.rotationEffect(Angle(degrees:  isMenuOpen ? 0 : -90))
-            .shadow(color: Color(UIColor.black).opacity(0.15), radius: 4)
+            .shadow(color: Color(UIColor.black).opacity(0.1), radius: 4)
             .frame(width: 200, height: 200)
             
         }
@@ -106,12 +106,12 @@ func GearView2() -> some View {
             }.padding(.leading, 8)
             
         }
-        .shadow(color: Color(UIColor.systemGray).opacity(0.25), radius: 4)
+        .shadow(color: Color(UIColor.systemGray).opacity(0.1), radius: 4)
         
         Image(systemName: "gear")
             .padding(.leading, 13.5)
         
     }.frame(width: 100, height: 50)
-    .shadow(color: Color(UIColor.black).opacity(0.25), radius: 1)
+    .shadow(color: Color(UIColor.black).opacity(0.1), radius: 1)
 }
 

@@ -16,7 +16,7 @@ struct IllustrationView: View {
             
             Image("welcomeScreenIllustration")
                 .resizable()
-                .shadow(color: Color(.systemBackground).opacity(0.2), radius: 4, x: 5, y: 5)
+                .shadow(color: Color(.systemBackground).opacity(0.1), radius: 4, x: 5, y: 5)
                 .frame(width: 250, height: 250)
                 .scaledToFit()
                 .padding()

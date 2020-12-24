@@ -41,7 +41,7 @@ struct NotificationHelper {
             
 //            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
 
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            let request = UNNotificationRequest(identifier: plant.id!, content: content, trigger: trigger)
             center.add(request)
             print("Notification added for \(triggerDate)")
         }
@@ -65,10 +65,36 @@ struct NotificationHelper {
     
     static func setNotification(plant: StorePlantEntity, waterFactor: Double, lastWaterDate: Date?) {
         let nextWaterDate = WaterReminderDateHelper.calculateWaterReminder(waterFactor: waterFactor, lastWaterDate: lastWaterDate)
-        
+    
+        try? cancelNotification(plant: plant)
+
         addNotification(for: plant, nextWaterDate: nextWaterDate, setHour: 10, setMinute: 0)
         
         print("\(nextWaterDate)")
+        
+        getAllNotifications()
+    }
+    
+    static func cancelNotification(plant: StorePlantEntity) {
+        let id = plant.id!
+        let center = UNUserNotificationCenter.current()
+        
+        center.removePendingNotificationRequests(withIdentifiers: [id])
+        center.removeDeliveredNotifications(withIdentifiers: [id])
+        
+        print("Deleted notification for \(plant.name!), id = \(plant.id!)")
+        
+        getAllNotifications()
+    }
+    
+    static func getAllNotifications() {
+        let center = UNUserNotificationCenter.current()
+        
+        center.getPendingNotificationRequests(completionHandler: { requests in
+            print("\(requests.count)")
+            
+        })
     }
 }
+
 

@@ -91,7 +91,7 @@ struct HomePageEditView: View {
                                     Text(plant.name)
                                 }
                             }
-                        }
+                        }.id(UUID())
                     }
                     
                     Section(header: Text("Photo")) {
@@ -139,25 +139,33 @@ struct HomePageEditView: View {
                     }
                     
                     Section(header: Text("Reminders")) {
-                        Toggle(isOn: $waterBool) {
-                            Text("Do you want a water reminder?")
-                        }.padding(.vertical, 5)
-                        
-                        if waterBool == false {
-                        } else {
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    CircleIcon(color: Color("blue"), image: "cloud.rain.fill")
-                                        .padding(.trailing, 5)
-                                    
-                                    
-                                    Text("When was the last time you watered your plant?")
-                                }
-                                
-                                DatePicker("Select Date", selection: $waterDate, displayedComponents: .date)
-                                    .datePickerStyle(GraphicalDatePickerStyle())
-                                    .accentColor(Color("blue"))
+                        VStack(alignment: .leading) {
+                            Toggle(isOn: $waterBool) {
+                                Text("Do you want a water reminder?")
                             }.padding(.vertical, 5)
+                            .onChange(of: waterBool, perform: { value in
+                                print("reminder = \(waterBool)")
+                            })
+                       
+                            if waterBool {
+                                Divider()
+                                    HStack {
+                                        CircleIcon(color: Color("blue"), image: "cloud.rain.fill")
+                                            .padding(.trailing, 5)
+                                        
+                                        
+                                        Text("When was the last time you watered your plant?")
+                                    }
+                                    
+                                    DatePicker("Select Date", selection: $waterDate, displayedComponents: .date)
+                                        .datePickerStyle(GraphicalDatePickerStyle())
+                                        .accentColor(Color("blue"))
+                                        .frame(maxHeight: 400)
+                                .padding(.vertical, 5)
+                                .animation(.none)
+                                
+                            } else {
+                            }
                         }
                         
 //                        HStack {

@@ -68,6 +68,7 @@ struct PlantCardCarousselView: View {
             let imagePaths = toDelete.imagePath
             
             print(imagePaths!)
+            NotificationHelper.cancelNotification(plant: toDelete)
             
             ImageStore.delete(imageNamed: imagePaths!)
             
@@ -94,7 +95,7 @@ struct PlantCardCarousselView: View {
                         print("\(plant)")
                         showDetailSheet.toggle()
                     }
-                    
+
                 if onEdit == true {
                     DeleteButton()
                         .onTapGesture(perform: {
@@ -106,6 +107,8 @@ struct PlantCardCarousselView: View {
                         })
                         .actionSheet(isPresented: $showActionSheet, content: {
                                         self.actionSheet })
+                        .padding(.top, -16)
+                        .padding(.trailing, seeAll ? 0 : -4)
                 }
             }
             .padding(.bottom, 5)

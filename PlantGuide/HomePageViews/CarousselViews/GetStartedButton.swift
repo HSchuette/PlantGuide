@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct GetStartedButton: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
     @State var showAddFirstSheet = false
+    
     let feedback = UIImpactFeedbackGenerator(style: .light)
-    let colorSelected = [Color(.systemBackground),  Color(.systemGray5)]
+    let colorSelected = [Color(.systemBackground),  Color(.systemBackground)]
     
     var body: some View {
         Button(action: {
@@ -41,7 +44,7 @@ struct GetStartedButton: View {
                     Spacer()
                     
                     HStack {
-                        Text("Get Started!")
+                        Text("Add Plant")
                             .font(.system(size: 20))
                             .bold()
                             
@@ -63,7 +66,11 @@ struct GetStartedButton: View {
             .clipped()
             .cornerRadius(10)
             .frame(width: 325, height: 100)
-            .shadow(radius: 5)
+            .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.1 : 0), radius: 4, x: 3, y: 3)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)
+            )
             .padding(.vertical, 50)
 
             
@@ -76,5 +83,6 @@ struct GetStartedButton: View {
 struct GetStartedButton_Previews: PreviewProvider {
     static var previews: some View {
         GetStartedButton()
+            
     }
 }

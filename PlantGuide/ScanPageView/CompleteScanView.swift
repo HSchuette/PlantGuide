@@ -181,6 +181,6 @@ struct CustomButtonStyle: ButtonStyle {
             .foregroundColor(configuration.isPressed ? Color(.systemBackground) : /*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
             .background(Color(configuration.isPressed ? .systemBlue : .systemBackground))
             .cornerRadius(10)
-            .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 3, y: 3)
+            .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.1 : 0), radius: 4, x: 3, y: 3)
     }
 }

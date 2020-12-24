@@ -13,8 +13,7 @@ struct CardCarousselOnEditButton: View {
     var body: some View {
             
         Button(action: {
-            
-            onEdit.toggle()
+            onEdit.toggle()            
         
         }, label: {
             Text(onEdit ? "Done" : "Edit")

@@ -55,7 +55,7 @@ struct PlantPreview: View {
         .clipped()
         .scaleEffect(selectedPlant.id == plants.id ? 1.0 : 0.9)
         .clipped()
-        .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 3, y: 3)
+        .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.1 : 0), radius: 4, x: 3, y: 3)
         
     }
 }

@@ -24,7 +24,7 @@ struct DetailBox: View {
             .foregroundColor(Color(.systemBackground))
             .cornerRadius(10.0)
             .padding(.horizontal, 30)
-            .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 5, y: 5)
+            .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.1 : 0), radius: 4, x: 5, y: 5)
             
             
             HStack {

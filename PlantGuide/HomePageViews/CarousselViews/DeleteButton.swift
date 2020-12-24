@@ -25,6 +25,7 @@ struct DeleteButton: View {
                         .scaledToFill()
                         
                 }.frame(width: 25, height: 25)
+                .padding(8)
             }
             
             Spacer()

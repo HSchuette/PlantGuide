@@ -67,7 +67,7 @@ struct ResultPreview: View {
         .clipped()
         .cornerRadius(10)
         .frame(width: 325, height: 100)
-        .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 5, y: 5)
+        .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.1 : 0), radius: 4, x: 5, y: 5)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)

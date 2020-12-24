@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GalleryView: View {
-    
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject var selectedPlant: SelectedPlant
     
     @Binding var moreInfo: String?
@@ -29,7 +29,11 @@ struct GalleryView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 125, height: 125)
                         .cornerRadius(25)
-                        .shadow(color: Color(UIColor.black).opacity( 0.25), radius: 2, x: 2, y: 4)
+                        .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.1 : 0), radius: 4, x: 5, y: 5)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 25)
+                                .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)
+                        )
                     
                     RoundedRectangle(cornerRadius: 25)
                         .stroke(style: StrokeStyle(lineWidth: 5))
@@ -85,6 +89,7 @@ struct GalleryView_Previews: PreviewProvider {
             GalleryView(moreInfo: Binding.constant(nil))
                 .environmentObject(SelectedPlant())
             GalleryView(moreInfo: Binding.constant("moreGallery"))
+                .preferredColorScheme(.dark)
                 .environmentObject(SelectedPlant())
         }
     }

@@ -53,7 +53,7 @@ struct CardView: View {
             }.frame(width: 120, height: 140)
         }.frame(width: 120, height: 140)
         .cornerRadius(15)
-        .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.2 : 0), radius: 4, x: 3, y: 3)
+        .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.1 : 0), radius: 4, x: 3, y: 3)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
                 .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)                
