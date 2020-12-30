@@ -22,8 +22,9 @@ struct NavigationBarTitleView: View {
                 .stroke(lineWidth: 5)
                 .frame(width: 35, height: 35)
                 .offset(y: -5)
-        
+            
             Spacer()
+            
         }.offset(y:45)
     }
 }

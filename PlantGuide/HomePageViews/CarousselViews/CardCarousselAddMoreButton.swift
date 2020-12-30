@@ -11,7 +11,7 @@ struct CardCarousselAddMoreButton: View {
     @State var showAddNewSheet = false
     let feedback = UIImpactFeedbackGenerator(style: .light)
     
-    var body: some View {
+    var body: some View {                 
         Button(action: {
             withAnimation(.easeInOut) {
                 self.showAddNewSheet.toggle()

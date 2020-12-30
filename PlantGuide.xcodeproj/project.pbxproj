@@ -30,6 +30,9 @@
 		B187FEDB255BBE3300F5D266 /* CardCarousselToppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187FEDA255BBE3300F5D266 /* CardCarousselToppingView.swift */; };
 		B187FEE2255D0C2300F5D266 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187FEE1255D0C2300F5D266 /* DeleteButton.swift */; };
 		B187FEEB255E5A1000F5D266 /* CardCarousselOnEditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B187FEEA255E5A1000F5D266 /* CardCarousselOnEditButton.swift */; };
+		B19A3E1B259B034600DB2B08 /* UpgradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A3E1A259B034600DB2B08 /* UpgradeView.swift */; };
+		B19A3E21259C563B00DB2B08 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19A3E20259C563B00DB2B08 /* StoreKit.framework */; };
+		B19A3E23259C567200DB2B08 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A3E22259C567200DB2B08 /* StoreManager.swift */; };
 		B1A1D24E2538F08C006BEB9D /* PlantGuide.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B1E7786A2538E6B3007A6440 /* PlantGuide.mlmodel */; };
 		B1A1D2512538F112006BEB9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A1D2502538F111006BEB9D /* LaunchScreen.storyboard */; };
 		B1A1D2592538F5FA006BEB9D /* Screenshot3.png in Resources */ = {isa = PBXBuildFile; fileRef = B1A1D2542538F5FA006BEB9D /* Screenshot3.png */; };
@@ -89,6 +92,7 @@
 		B1EADCA12562567700CB0F74 /* TaskNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */; };
 		B1EADCA52563A19500CB0F74 /* TaskListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA42563A19500CB0F74 /* TaskListRow.swift */; };
 		B1EADCA82563A3F500CB0F74 /* TodayTaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */; };
+		B1EDB9752595E6D500721E4A /* NavigationAboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EDB9742595E6D400721E4A /* NavigationAboutScreen.swift */; };
 		B1FF58592566444A00F79E50 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FF58582566444A00F79E50 /* NotificationHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +120,9 @@
 		B187FEDA255BBE3300F5D266 /* CardCarousselToppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCarousselToppingView.swift; sourceTree = "<group>"; };
 		B187FEE1255D0C2300F5D266 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		B187FEEA255E5A1000F5D266 /* CardCarousselOnEditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCarousselOnEditButton.swift; sourceTree = "<group>"; };
+		B19A3E1A259B034600DB2B08 /* UpgradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeView.swift; sourceTree = "<group>"; };
+		B19A3E20259C563B00DB2B08 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B19A3E22259C567200DB2B08 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		B1A1D2502538F111006BEB9D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1A1D2542538F5FA006BEB9D /* Screenshot3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot3.png; sourceTree = SOURCE_ROOT; };
 		B1A1D2552538F5FA006BEB9D /* Screenshot0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot0.png; sourceTree = SOURCE_ROOT; };
@@ -181,6 +188,7 @@
 		B1EADCA02562567700CB0F74 /* TaskNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNotificationCenter.swift; sourceTree = "<group>"; };
 		B1EADCA42563A19500CB0F74 /* TaskListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListRow.swift; sourceTree = "<group>"; };
 		B1EADCA72563A3F500CB0F74 /* TodayTaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTaskList.swift; sourceTree = "<group>"; };
+		B1EDB9742595E6D400721E4A /* NavigationAboutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAboutScreen.swift; sourceTree = "<group>"; };
 		B1FF58582566444A00F79E50 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B19A3E21259C563B00DB2B08 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +239,26 @@
 				B1E84C5225761C7200383754 /* DetailStack.swift */,
 				B1D72D0B256863AC00C58D63 /* TaskListViews */,
 				B1D72D0C256863CB00C58D63 /* CarousselViews */,
+				B19A3E1D259B035200DB2B08 /* UpgradeViews */,
 			);
 			path = HomePageViews;
+			sourceTree = "<group>";
+		};
+		B19A3E1D259B035200DB2B08 /* UpgradeViews */ = {
+			isa = PBXGroup;
+			children = (
+				B19A3E1A259B034600DB2B08 /* UpgradeView.swift */,
+				B19A3E22259C567200DB2B08 /* StoreManager.swift */,
+			);
+			path = UpgradeViews;
+			sourceTree = "<group>";
+		};
+		B19A3E1F259C563B00DB2B08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B19A3E20259C563B00DB2B08 /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B1AC9FE12557E8BA001BF9EE /* CoreData */ = {
@@ -260,6 +287,7 @@
 				B1B260942538D90C00841FBB /* PlantGuideTests */,
 				B1B2609F2538D90C00841FBB /* PlantGuideUITests */,
 				B1B260812538D90B00841FBB /* Products */,
+				B19A3E1F259C563B00DB2B08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -357,6 +385,7 @@
 			children = (
 				B1DF4C95255810C10029FD03 /* NavigationHomeView.swift */,
 				B187FEC3255B3DC900F5D266 /* NavigationBarTitleView.swift */,
+				B1EDB9742595E6D400721E4A /* NavigationAboutScreen.swift */,
 				B187FEC7255B41BC00F5D266 /* NavigationListView.swift */,
 				B1DF4C9C255817A10029FD03 /* NavigationOverviewView.swift */,
 				B17CB6EB255910AE004A3751 /* NavigationRouter.swift */,
@@ -522,6 +551,7 @@
 				B1AC9FF22557E9EA001BF9EE /* StorePlantEntity.xcdatamodeld in Sources */,
 				B1FF58592566444A00F79E50 /* NotificationHelper.swift in Sources */,
 				B1E778862538E740007A6440 /* WaterView.swift in Sources */,
+				B1EDB9752595E6D500721E4A /* NavigationAboutScreen.swift in Sources */,
 				B1B260B72538D99400841FBB /* PlantPreview.swift in Sources */,
 				B1B260B22538D97800841FBB /* PlantOverview.swift in Sources */,
 				B15D52E32569C0800098248D /* ListHeader.swift in Sources */,
@@ -531,6 +561,7 @@
 				B1E778772538E71A007A6440 /* Data.swift in Sources */,
 				B1E778842538E740007A6440 /* BarMeter.swift in Sources */,
 				B1EADCA82563A3F500CB0F74 /* TodayTaskList.swift in Sources */,
+				B19A3E23259C567200DB2B08 /* StoreManager.swift in Sources */,
 				B1E778682538E6B0007A6440 /* ResultPreview.swift in Sources */,
 				B1E778742538E71A007A6440 /* Plant.swift in Sources */,
 				B17CB6EF2559173E004A3751 /* CarousselView.swift in Sources */,
@@ -569,6 +600,7 @@
 				B1B260C12538D9DB00841FBB /* MailHandler.swift in Sources */,
 				B1864FD3256F08690041F028 /* HomePageDetailView.swift in Sources */,
 				B187FEA9255A643A00F5D266 /* CarousselToppingView.swift in Sources */,
+				B19A3E1B259B034600DB2B08 /* UpgradeView.swift in Sources */,
 				B1EADCA52563A19500CB0F74 /* TaskListRow.swift in Sources */,
 				B187FEEB255E5A1000F5D266 /* CardCarousselOnEditButton.swift in Sources */,
 				B1EADCA12562567700CB0F74 /* TaskNotificationCenter.swift in Sources */,

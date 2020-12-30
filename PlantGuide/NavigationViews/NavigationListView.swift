@@ -12,6 +12,7 @@ struct NavigationListView: View {
     
     @Binding var onEdit: Bool
     @Binding var seeAll: Bool
+    @Binding var showUpgradeView: Bool
     
     @FetchRequest(
         entity: StorePlantEntity.entity(),
@@ -20,12 +21,14 @@ struct NavigationListView: View {
     
     private var storePlants: FetchedResults<StorePlantEntity>
     
+    @StateObject var storeManager: StoreManager
+    
     var body: some View {
         VStack {
             
             if seeAll == true {
             } else {
-                TaskList()
+                TaskList(storeManager: storeManager, showUpgradeView: $showUpgradeView)
             }
             
             if storePlants.isEmpty {
@@ -40,13 +43,13 @@ struct NavigationListView: View {
                 
                 PlantCardCarousselView(onEdit: $onEdit, seeAll: $seeAll)                                 
             }
-        }
+        }.padding(.top, 25)
     }
 }
 
 struct NavigationListView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationListView(onEdit: Binding.constant(true), seeAll: Binding.constant(true))
+        NavigationListView(onEdit: Binding.constant(true), seeAll: Binding.constant(true), showUpgradeView: Binding.constant(false),storeManager: StoreManager())
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

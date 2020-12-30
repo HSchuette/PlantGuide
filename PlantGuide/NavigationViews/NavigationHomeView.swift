@@ -23,8 +23,12 @@ struct NavigationHomeView: View {
     
     private var storePlants: FetchedResults<StorePlantEntity>
     
+    @StateObject var storeManager: StoreManager
+    
     @State var onEdit: Bool = false
     @State var seeAll: Bool = false
+    @State var isAboutVisible: Bool = false
+    @State var showUpgradeView = false
     
 //    init() {
 //            // this is not the same as manipulating the proxy directly
@@ -56,11 +60,11 @@ struct NavigationHomeView: View {
             VStack {
                 switch navigationRouter.currentPage {
                             case .homePage:
-                                NavigationListView(onEdit: $onEdit, seeAll: $seeAll)
-                                    .padding(.top, 25)
+                                NavigationListView(onEdit: $onEdit, seeAll: $seeAll, showUpgradeView: $showUpgradeView, storeManager: storeManager)
                                     
                             case .scanPage:
                                 NavigationScanView(plantID: Binding.constant("scan"), imagePath: Binding.constant(""))
+                                
                             case .overViewPage:
                                 NavigationOverviewView(showLearnMoreSheet: $showLearnMoreSheet)
                 }                                
@@ -68,27 +72,34 @@ struct NavigationHomeView: View {
                 Spacer()
                 
                 NavigationBarView()
-            
-            }.navigationBarTitleDisplayMode(.large)
+                
+            }
             .toolbar{
                 ToolbarItem(placement: .navigationBarLeading) {
-                        switch navigationRouter.currentPage {
-                                    case .homePage:
-                                        NavigationBarTitleView(title: "Plant Room")
-                                    case .scanPage:
-                                        NavigationBarTitleView(title: "Scan")
-                                    case .overViewPage:
-                                        NavigationBarTitleView(title: "Overview")
-                        }
+                    switch navigationRouter.currentPage {
+                                case .homePage:
+                                    NavigationBarTitleView(title: "Plant Room")
+                                case .scanPage:
+                                    NavigationBarTitleView(title: "Scan")
+                                case .overViewPage:
+                                    NavigationBarTitleView(title: "Overview")
+                    }
+                }
+            
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationAboutScreen(isAboutVisible: $isAboutVisible)
                 }
             }
+            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitle("")
+            .navigationBarItems(trailing: NavigationAboutScreen(isAboutVisible: $isAboutVisible))
         }
     }
 }
 
 struct NavigationHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationHomeView()
+        NavigationHomeView(storeManager: StoreManager())
             .environmentObject(NavigationRouter())
             .environmentObject(SelectedPlant())
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
