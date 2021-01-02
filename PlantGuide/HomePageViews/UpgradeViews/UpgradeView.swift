@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct UpgradeView: View {
     @StateObject var storeManager: StoreManager
@@ -32,23 +33,33 @@ struct UpgradeView: View {
                 
                 Spacer()
                 
-                if UserDefaults.standard.bool(forKey: "*ID of IAP Product*") {
-                        Text("Thank your for your purchase")
-                            .foregroundColor(.green)
-                    } else {
-                        Button(action: {
-                            //Purchase particular IAO product
-                        }) {
-                            Text("Buy for 1.09 $")
+                List(storeManager.myProducts, id: \.self) { product in
+                    if UserDefaults.standard.bool(forKey: "com.example.PlantGuide.IAP.plantRoomPlus") {
+                            Text("Thank your for your purchase")
+                                .foregroundColor(.green)
+                        } else {
+                            Button(action: {
+                                storeManager.purchaseProduct(product: product)
+                            }) {
+                                Text("Buy for \(product.price) $")
+                            }.foregroundColor(.blue)
                         }
-                            .foregroundColor(.blue)
-                    }
+                }
+                
+                Button(action: {
+                    storeManager.restoreProducts()
+                }) {
+                    Text ("Restore Purchases")
+                }
                 
                 Spacer()
                 
             }.navigationBarTitle("")
             .navigationBarHidden(true)
-        }
+        }.onAppear(perform: {
+            SKPaymentQueue.default().add(storeManager)
+            storeManager.getProducts(productIDs: ["com.example.PlantGuide.IAP.plantRoomPlus"])
+        })
     }
 }
 
