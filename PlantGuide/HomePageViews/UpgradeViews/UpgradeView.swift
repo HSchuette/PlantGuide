@@ -31,20 +31,32 @@ struct UpgradeView: View {
                     
                 }.frame(height: 100)
                 
+                Image("watering_plant_isometric")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 300)
+                
                 Spacer()
                 
-                List(storeManager.myProducts, id: \.self) { product in
+                Text("Plant Room Plus")
+                    .font(.title)
+                    .fontWeight(.heavy)
+                
+                InformationDetailView(title: "Identify", subTitle: "Instantly identify your plant at home by taking a picture of it.", imageName: "viewfinder")
+                
+//                List(storeManager.myProducts, id: \.self) { product in
                     if UserDefaults.standard.bool(forKey: "com.example.PlantGuide.IAP.plantRoomPlus") {
                             Text("Thank your for your purchase")
                                 .foregroundColor(.green)
                         } else {
                             Button(action: {
-                                storeManager.purchaseProduct(product: product)
+//                                storeManager.purchaseProduct(product: product)
                             }) {
-                                Text("Buy for \(product.price) $")
+//                                Text("Buy for \(product.price) $")
+                                Text("Buy for 1,99 $")
                             }.foregroundColor(.blue)
                         }
-                }
+//                }
                 
                 Button(action: {
                     storeManager.restoreProducts()
