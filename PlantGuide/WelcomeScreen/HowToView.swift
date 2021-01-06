@@ -18,15 +18,14 @@ struct HowToView: View {
                     .font(.system(size: 35))
                     .fontWeight(.bold)
                     .kerning(-2)
-                    .foregroundColor(Color(.white))
+                    .foregroundColor(Color(.label))
                     .padding(.leading)
                 
                 LogoAsset()
                     .stroke(lineWidth: 5)
                     .frame(width: 35, height: 35)
                     .offset(y: -5)
-
-                    .foregroundColor(Color(.white))
+                    .foregroundColor(Color(.label))
                 
                 Spacer()
             }.padding()
@@ -60,19 +59,20 @@ struct InformationDetailView: View {
         HStack(alignment: .center) {
             Image(systemName: imageName)
                 .font(.largeTitle)
-                .foregroundColor(Color(.white))
+                .foregroundColor(Color(.label))
                 .padding()
                 .accessibility(hidden: true)
 
             VStack(alignment: .leading) {
                 Text(title)
                     .bold()
-                    .foregroundColor(Color(.white))
+                    .foregroundColor(Color(.label))
+                    .opacity(0.9)
                     .accessibility(addTraits: .isHeader)
 
                 Text(subTitle)
                     .font(.body)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color(.label))
                     .fixedSize(horizontal: false, vertical: true)
             }
         }

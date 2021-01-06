@@ -9,6 +9,7 @@ import SwiftUI
 import StoreKit
 
 struct UpgradeView: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @StateObject var storeManager: StoreManager
     
     var body: some View {
@@ -30,48 +31,76 @@ struct UpgradeView: View {
                     }
                     
                 }.frame(height: 100)
+                                
+                
+                Spacer()
                 
                 Image("watering_plant_isometric")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 300)
+                    .frame(width: 200)
                 
                 Spacer()
                 
-                Text("Plant Room Plus")
-                    .font(.title)
-                    .fontWeight(.heavy)
+                HStack {
+                    Text("Features")
+                        .font(.system(size: 25))
+                        .fontWeight(.bold)
+                        .kerning(-1)
+                        .foregroundColor(Color(.label))
+                        .padding(.leading)
+                    
+                    Spacer()
+                }.padding()
                 
-                InformationDetailView(title: "Identify", subTitle: "Instantly identify your plant at home by taking a picture of it.", imageName: "viewfinder")
+                InformationDetailView(title: "Unlimited Access", subTitle: "Add every plant you want to your Plant Room.", imageName: "calendar.badge.plus")
                 
-//                List(storeManager.myProducts, id: \.self) { product in
+                InformationDetailView(title: "Support", subTitle: "Get new features first and support the developement.", imageName: "heart.text.square")
+                
+                Spacer()
+                
+                ForEach(storeManager.myProducts, id: \.self) { product in
                     if UserDefaults.standard.bool(forKey: "com.example.PlantGuide.IAP.plantRoomPlus") {
                             Text("Thank your for your purchase")
                                 .foregroundColor(.green)
                         } else {
-                            Button(action: {
-//                                storeManager.purchaseProduct(product: product)
-                            }) {
-//                                Text("Buy for \(product.price) $")
-                                Text("Buy for 1,99 $")
-                            }.foregroundColor(.blue)
+                            if product.productIdentifier == "com.example.PlantGuide.IAP.plantRoomPlus" {
+                                Button(action: {
+                                    storeManager.purchaseProduct(product: product)
+                                }, label: {
+                                    
+    //                                    Text("Buy for 1,99 $")
+                                        Text("Buy for \(product.localizedPrice)")
+                                })
+                                .buttonStyle(CustomButtonStyle())
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)
+                                )
+                            }
                         }
-//                }
+                }
                 
                 Button(action: {
                     storeManager.restoreProducts()
                 }) {
                     Text ("Restore Purchases")
-                }
+                }.padding()
+                               
                 
-                Spacer()
+                
                 
             }.navigationBarTitle("")
             .navigationBarHidden(true)
-        }.onAppear(perform: {
-            SKPaymentQueue.default().add(storeManager)
-            storeManager.getProducts(productIDs: ["com.example.PlantGuide.IAP.plantRoomPlus"])
-        })
+        }.onAppear(
+            perform: {
+                if storeManager.myProducts.contains(where: { $0.productIdentifier == "com.example.PlantGuide.IAP.plantRoomPlus"}) {
+                    
+                } else {
+                    SKPaymentQueue.default().add(storeManager)
+                    storeManager.getProducts(productIDs: ["com.example.PlantGuide.IAP.plantRoomPlus"])
+                }
+            })
     }
 }
 
