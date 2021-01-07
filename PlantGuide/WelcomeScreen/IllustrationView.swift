@@ -22,7 +22,7 @@ struct IllustrationView: View {
                 .padding()
             
             Text("Welcome!")
-                .font(.system(size: 40))
+                .font(.system(size: 35))
                 .fontWeight(.bold)
                 .kerning(-2)
                 .multilineTextAlignment(.leading)
