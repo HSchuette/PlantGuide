@@ -17,7 +17,7 @@ struct IllustrationView: View {
             Image("welcomeScreenIllustration")
                 .resizable()
                 .shadow(color: Color(.systemBackground).opacity(0.1), radius: 4, x: 5, y: 5)
-                .frame(width: 250, height: 250)
+                .frame(width: 200, height: 200)
                 .scaledToFit()
                 .padding()
             
@@ -27,11 +27,6 @@ struct IllustrationView: View {
                 .kerning(-2)
                 .multilineTextAlignment(.leading)
                 .foregroundColor(Color(.white))
-                .padding()
-            
-            Text("Plant Room helps you to keep track of the needs of your beloved house plants. Dive right in!")
-                .multilineTextAlignment(.center)
-                .lineLimit(nil)
                 .padding()
             
             Spacer()

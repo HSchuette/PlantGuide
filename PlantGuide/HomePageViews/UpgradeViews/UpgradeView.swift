@@ -12,6 +12,8 @@ struct UpgradeView: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @StateObject var storeManager: StoreManager
     
+    var isLimitReached: Bool
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -34,7 +36,7 @@ struct UpgradeView: View {
                                 
                 
                 Spacer()
-                
+                       
                 Image("watering_plant_isometric")
                     .resizable()
                     .scaledToFit()
@@ -42,20 +44,36 @@ struct UpgradeView: View {
                 
                 Spacer()
                 
-                HStack {
-                    Text("Features")
-                        .font(.system(size: 25))
-                        .fontWeight(.bold)
-                        .kerning(-1)
-                        .foregroundColor(Color(.label))
-                        .padding(.leading)
+                if isLimitReached == true {
+                    VStack(alignment: .leading) {
+                        Text("Thank you for using Plant Room!")
+                            .bold()
+                            .padding(.bottom, 5)
+                        
+                        Text("You have reached your limit of 5 plants. Feel free to upgrade to add more.")
+                            
+                    }.padding(.horizontal, 20)
+                }
+                
+                
+                Spacer()
+                
+                Group {
+                    HStack {
+                        Text("Features")
+                            .font(.system(size: 25))
+                            .fontWeight(.bold)
+                            .kerning(-1)
+                            .foregroundColor(Color(.label))
+                            .padding(.leading)
+                        
+                        Spacer()
+                    }.padding([.leading, .top])
                     
-                    Spacer()
-                }.padding()
-                
-                InformationDetailView(title: "Unlimited Access", subTitle: "Add every plant you want to your Plant Room.", imageName: "calendar.badge.plus")
-                
-                InformationDetailView(title: "Support", subTitle: "Get new features first and support the developement.", imageName: "heart.text.square")
+                    InformationDetailView(title: "Unlimited Access", subTitle: "Add every plant you want to your Plant Room.", imageName: "calendar.badge.plus")
+                    
+                    InformationDetailView(title: "Support", subTitle: "Get new features first and support the developement.", imageName: "heart.text.square")
+                }
                 
                 Spacer()
                 
@@ -106,6 +124,6 @@ struct UpgradeView: View {
 
 struct UpgradeView_Previews: PreviewProvider {
     static var previews: some View {
-        UpgradeView(storeManager: StoreManager())
+        UpgradeView(storeManager: StoreManager(), isLimitReached: true)
     }
 }

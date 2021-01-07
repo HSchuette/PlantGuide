@@ -56,23 +56,30 @@ struct NavigationHomeView: View {
     
     var body: some View {        
         NavigationView {
-                                            
-            VStack {
-                switch navigationRouter.currentPage {
-                            case .homePage:
-                                NavigationListView(onEdit: $onEdit, seeAll: $seeAll, showUpgradeView: $showUpgradeView, storeManager: storeManager)
+            
+            ZStack {
+                
+                VStack {
+                    switch navigationRouter.currentPage {
+                                case .homePage:
+                                    NavigationListView(onEdit: $onEdit, seeAll: $seeAll, showUpgradeView: $showUpgradeView, storeManager: storeManager)
+                                        
+                                case .scanPage:
+                                    NavigationScanView(plantID: Binding.constant("scan"), imagePath: Binding.constant(""))
                                     
-                            case .scanPage:
-                                NavigationScanView(plantID: Binding.constant("scan"), imagePath: Binding.constant(""))
-                                
-                            case .overViewPage:
-                                NavigationOverviewView(showLearnMoreSheet: $showLearnMoreSheet)
-                }                                
-                
-                Spacer()
-                
-                NavigationBarView()
-                
+                                case .overViewPage:
+                                    NavigationOverviewView(showLearnMoreSheet: $showLearnMoreSheet)
+                    }
+                    
+                    Spacer()
+                    
+                    NavigationBarView()
+                }
+                VStack {
+                    Spacer()
+                    
+                    WelcomeView()                    
+                }
             }
             .toolbar{
                 ToolbarItem(placement: .navigationBarLeading) {

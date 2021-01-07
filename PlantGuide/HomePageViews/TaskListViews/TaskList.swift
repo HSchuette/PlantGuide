@@ -21,7 +21,6 @@ struct TaskList: View {
     @StateObject var storeManager: StoreManager
     
     @Binding var showUpgradeView: Bool
-    var isPremium = true
     
     var body: some View {
         VStack {
@@ -33,7 +32,7 @@ struct TaskList: View {
                 Spacer()
                 
                 // correct this statement later
-                if storePlants.count >= 3 || !isPremium {
+                if storePlants.count >= 2 && !UserDefaults.standard.bool(forKey: "com.example.PlantGuide.IAP.plantRoomPlus") {
                     Button(action: {
                         print("buy botton clicked")
                         showUpgradeView.toggle()
@@ -50,7 +49,7 @@ struct TaskList: View {
                     })
                 }
             }.sheet(isPresented: $showUpgradeView, content: {
-                UpgradeView(storeManager: storeManager)
+                UpgradeView(storeManager: storeManager, isLimitReached: storePlants.count == 5)
             })
             
             Divider()

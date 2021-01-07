@@ -21,6 +21,7 @@ struct WelcomeView: View {
             Rectangle()
                 .foregroundColor(blue)
                 .edgesIgnoringSafeArea(.all)
+                .cornerRadius(15)
             
             VStack {
                 HStack {
@@ -83,7 +84,8 @@ struct WelcomeView: View {
 
                 Spacer()
             }
-        }
+            Spacer()
+        }.frame(height: 450)
         
     }
 }

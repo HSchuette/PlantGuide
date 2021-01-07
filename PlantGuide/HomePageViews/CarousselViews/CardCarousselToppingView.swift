@@ -10,17 +10,20 @@ import CoreData
 
 struct CardCarousselToppingView: View {
     
+    @StateObject var storeManager: StoreManager
+    
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
         entity: StorePlantEntity.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \StorePlantEntity.name, ascending: false)],
         animation: .default)
-    
+
     private var storePlants: FetchedResults<StorePlantEntity>
     
     @Binding var onEdit: Bool
     @Binding var seeAll: Bool
+    @Binding var showUpgradeView: Bool
     
     var body: some View {
         VStack {
@@ -32,9 +35,27 @@ struct CardCarousselToppingView: View {
                 
                 Spacer()
                 
-                CardCarousselAddMoreButton()
+                if storePlants.count >= 5 && !UserDefaults.standard.bool(forKey: "com.example.PlantGuide.IAP.plantRoomPlus") {
+                    Button(action: {
+                        print("buy botton clicked")
+                        showUpgradeView.toggle()
+                        
+                    }, label: {
+                        HStack {
+                            Text("Add more")
+                                .font(.subheadline)
+                            
+                            Image(systemName: "plus.circle")
+                                .font(.subheadline)
+                        }
+                        
+                    })
+                } else {
+                    CardCarousselAddMoreButton()
+                }
                 
             }.padding(.bottom, 5)
+            
             
             Divider()
             
@@ -47,7 +68,9 @@ struct CardCarousselToppingView: View {
                 } else {
                     CardCarousselSeeAllButton(seeAll: $seeAll)
                 }
-            }
+            }.sheet(isPresented: $showUpgradeView, content: {
+                UpgradeView(storeManager: storeManager, isLimitReached: storePlants.count == 5)
+            })
             
         }.padding(.horizontal, 25)
     }
@@ -55,7 +78,7 @@ struct CardCarousselToppingView: View {
 
 struct CardCarousselToppingView_Previews: PreviewProvider {
     static var previews: some View {
-        CardCarousselToppingView(onEdit: Binding.constant(false), seeAll: Binding.constant(false))
+        CardCarousselToppingView(storeManager: StoreManager(), onEdit: Binding.constant(false), seeAll: Binding.constant(false), showUpgradeView: Binding.constant(false))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

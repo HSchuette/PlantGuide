@@ -39,7 +39,7 @@ struct NavigationListView: View {
                 
             } else {
             
-                CardCarousselToppingView(onEdit: $onEdit, seeAll: $seeAll)                              
+                CardCarousselToppingView(storeManager: storeManager, onEdit: $onEdit, seeAll: $seeAll, showUpgradeView: $showUpgradeView)
                 
                 PlantCardCarousselView(onEdit: $onEdit, seeAll: $seeAll)                                 
             }
