@@ -50,7 +50,7 @@ struct UpgradeView: View {
                             .bold()
                             .padding(.bottom, 5)
                         
-                        Text("You have reached your limit of 5 plants. Feel free to upgrade to add more.")
+                        Text("You have reached your limit of 3 plants. Feel free to upgrade to add more.")
                             
                     }.padding(.horizontal, 20)
                 }

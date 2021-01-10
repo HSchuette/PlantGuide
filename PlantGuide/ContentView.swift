@@ -125,8 +125,9 @@ struct ContentView: View {
                         
                         OptionWheel(isMenuOpen: self.$isMenuOpen)
                             .offset(x: 100, y: 60)
-                    }.sheet(isPresented: $showWelcome, content: { WelcomeView() })
-                    .onAppear(perform: checkForUpdate)
+                    }
+//                    .sheet(isPresented: $showWelcome, content: { WelcomeView() })
+//                    .onAppear(perform: checkForUpdate)
                     
                 }.navigationBarTitleDisplayMode(.large)
                 .toolbar{

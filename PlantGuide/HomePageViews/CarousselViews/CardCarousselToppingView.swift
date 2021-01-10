@@ -35,7 +35,7 @@ struct CardCarousselToppingView: View {
                 
                 Spacer()
                 
-                if storePlants.count >= 5 && !UserDefaults.standard.bool(forKey: "com.example.PlantGuide.IAP.plantRoomPlus") {
+                if storePlants.count >= 3 && !UserDefaults.standard.bool(forKey: "com.example.PlantGuide.IAP.plantRoomPlus") {
                     Button(action: {
                         print("buy botton clicked")
                         showUpgradeView.toggle()
