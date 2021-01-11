@@ -30,6 +30,7 @@ struct NavigationHomeView: View {
     @State var isAboutVisible: Bool = false
     @State var showUpgradeView = false
     @State var isTutorialVisible = false
+    @State var isSettingsVisible = false
     
 //    init() {
 //            // this is not the same as manipulating the proxy directly
@@ -82,11 +83,12 @@ struct NavigationHomeView: View {
             }
             .overlay(WelcomeView(isTutorialVisible: $isTutorialVisible))
             .overlay(AboutView(isAboutVisible: $isAboutVisible))
+            .overlay(SettingsView(isSettingsVisible: $isSettingsVisible))
             .toolbar{
                 ToolbarItem(placement: .navigationBarLeading) {
                     switch navigationRouter.currentPage {
                                 case .homePage:
-                                    NavigationBarTitleView(title: "Plant Room")
+                                    NavigationBarTitleView(title: "Home")
                                 case .scanPage:
                                     NavigationBarTitleView(title: "Scan")
                                 case .overViewPage:
@@ -96,7 +98,7 @@ struct NavigationHomeView: View {
             }
             .navigationBarTitleDisplayMode(.large)
             .navigationBarTitle("")
-            .navigationBarItems(trailing: NavigationHeaderBar(isAboutVisible: $isAboutVisible, isTutorialVisible: $isTutorialVisible))
+            .navigationBarItems(trailing: NavigationHeaderBar(isAboutVisible: $isAboutVisible, isTutorialVisible: $isTutorialVisible, isSettingsVisible: $isSettingsVisible))
         }
     }
 }

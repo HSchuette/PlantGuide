@@ -1,5 +1,5 @@
 //
-//  AboutScreen.swift
+//  SettingsView.swift
 //  PlantGuide
 //
 //  Created by (non work) on 10.01.21.
@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-struct AboutView: View {
-    @Binding var isAboutVisible: Bool
-    
+struct SettingsView: View {
+    @Binding var isSettingsVisible: Bool
     @State private var onAppear: Bool = false
     
     var blue = Color("welcomeBlue")
@@ -17,7 +16,7 @@ struct AboutView: View {
     let feedback = UIImpactFeedbackGenerator(style: .light)
     
     var body: some View {
-        if isAboutVisible == false {
+        if isSettingsVisible == false {
             EmptyView()
         } else {
             ZStack {
@@ -40,9 +39,10 @@ struct AboutView: View {
                                 
                                 Button(action: {
                                     withAnimation(.easeIn(duration: 0.2)) {
-                                        isAboutVisible.toggle()
+                                        isSettingsVisible.toggle()
                                         self.feedback.impactOccurred()
                                         onAppear = false
+                                        
                                     }
                                     
                                 }, label: {
@@ -59,39 +59,8 @@ struct AboutView: View {
                         }
                         
                         VStack {
-                            
-                            Spacer()
-                                ZStack {
-                                    
-                                    Rectangle()
-                                        .foregroundColor(.white)
-                                        .cornerRadius(25)
-                                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                                                                
-                                    VStack(alignment: .center) {
-                                        Image("qr-code")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 160, height: 160)
-                                        
-                                        
-                                        Text("Sharing is caring!")
-                                            .font(.body)
-                                            .multilineTextAlignment(.center)
-                                            .foregroundColor(.black)
-                                            
-                                    }
-                                    
-                                }.frame(width: 200, height: 250)
-                                
-                                Spacer()
-                                
-                                Group {
-                                    Text("Made with ♥")
-                                    Text("by Hendrik Schuette, 2021")
-                                }.foregroundColor(.white)
-                            }.padding(.bottom, 35)
-                                                    
+                            SettingsDisplayView()
+                        }
                     }.frame(height: 400)
                     .clipped()
                     .shadow(radius: 10)
@@ -109,8 +78,8 @@ struct AboutView: View {
     }
 }
 
-struct AboutScreen_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutView(isAboutVisible: Binding.constant(true))
+        SettingsView(isSettingsVisible: Binding.constant(true))
     }
 }

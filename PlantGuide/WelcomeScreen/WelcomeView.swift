@@ -11,6 +11,7 @@ struct WelcomeView: View {
     @Binding var isTutorialVisible: Bool
 
     @State var stage: Int = 0
+    @State private var onAppear: Bool = false
     
     var blue = Color("welcomeBlue")
     let feedback = UIImpactFeedbackGenerator(style: .light)
@@ -23,6 +24,7 @@ struct WelcomeView: View {
             ZStack {
                 Rectangle()
                     .opacity(0.6)
+                    .foregroundColor(.black)
                 
                 VStack {
                     
@@ -44,7 +46,7 @@ struct WelcomeView: View {
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                             self.stage = 0
                                               }
-                                       
+                                        onAppear = false
                                     }
                                     
                                 }, label: {
@@ -59,7 +61,7 @@ struct WelcomeView: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    withAnimation(.easeIn(duration: 0.8)) {
+                                    withAnimation(.easeIn(duration: 0.6)) {
                                         if self.stage <= 2 {
                                             self.stage = stage + 1
                                         } else {
@@ -101,8 +103,16 @@ struct WelcomeView: View {
                     }.frame(height: 400)
                     .clipped()
                     .shadow(radius: 10)
+                    .offset(y: onAppear ? 0 : 500)
+                    .animation(.easeIn)
                 }
             }.edgesIgnoringSafeArea(.all)
+            .onAppear() {
+                onAppear = true
+            }
+            .onDisappear() {
+                onAppear = false
+            }
         }
     }
 }
@@ -122,7 +132,7 @@ struct WelcomeView_Previews: PreviewProvider {
 extension AnyTransition {
     static var moveInOut: AnyTransition {
         let insertion = AnyTransition.move(edge: .trailing)
-        let removal = AnyTransition.move(edge: .leading)
+        let removal = AnyTransition.move(edge: .leading).combined(with: .opacity)
         return .asymmetric(insertion: insertion, removal: removal)
     }
 }
