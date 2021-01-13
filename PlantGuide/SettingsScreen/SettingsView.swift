@@ -60,6 +60,7 @@ struct SettingsView: View {
                         
                         VStack {
                             SettingsDisplayView()
+                            Spacer()
                         }
                     }.frame(height: 400)
                     .clipped()

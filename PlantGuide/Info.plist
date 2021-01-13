@@ -39,6 +39,36 @@
 			<key>UIPrerenderedIcon</key>
 			<false/>
 		</dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>Artsy</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Artsy</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+            <key>3D</key>
+            <dict>
+                <key>CFBundleIconFiles</key>
+                <array>
+                    <string>3D</string>
+                </array>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+            </dict>
+            <key>Zoomed</key>
+            <dict>
+                <key>CFBundleIconFiles</key>
+                <array>
+                    <string>Zoomed</string>
+                </array>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+            </dict>
+		</dict>
 		<key>UINewsstandIcon</key>
 		<dict>
 			<key>CFBundleIconFiles</key>
