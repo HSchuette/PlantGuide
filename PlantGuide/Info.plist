@@ -59,6 +59,33 @@
                 <key>UIPrerenderedIcon</key>
                 <false/>
             </dict>
+            <key>Knowledge</key>
+            <dict>
+                <key>CFBundleIconFiles</key>
+                <array>
+                    <string>Knowledge</string>
+                </array>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+            </dict>
+            <key>Inverse</key>
+            <dict>
+                <key>CFBundleIconFiles</key>
+                <array>
+                    <string>Inverse</string>
+                </array>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+            </dict>
+            <key>Pandemic</key>
+            <dict>
+                <key>CFBundleIconFiles</key>
+                <array>
+                    <string>Pandemic</string>
+                </array>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+            </dict>
             <key>Zoomed</key>
             <dict>
                 <key>CFBundleIconFiles</key>

@@ -97,7 +97,7 @@ struct PlantCardCarousselView: View {
                     }
 
                 if onEdit == true {
-                    DeleteButton()
+                    DeleteButton()                        
                         .onTapGesture(perform: {
                             self.deleteEntitiy = plant
                             withAnimation(Animation.easeInOut.delay(1)) {

@@ -99,7 +99,7 @@ struct NavigationHomeView: View {
             .navigationBarTitleDisplayMode(.large)
             .navigationBarTitle("")
             .navigationBarItems(trailing: NavigationHeaderBar(isAboutVisible: $isAboutVisible, isTutorialVisible: $isTutorialVisible, isSettingsVisible: $isSettingsVisible))
-        }
+        }.accentColor(Color("welcomeBlue"))
     }
 }
 

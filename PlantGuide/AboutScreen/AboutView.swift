@@ -96,7 +96,7 @@ struct AboutView: View {
                     .clipped()
                     .shadow(radius: 10)
                     .offset(y: onAppear ? 0 : 500)
-                    .animation(.easeIn)
+                    .animation(.easeInOut)
                 }
             }.edgesIgnoringSafeArea(.all)
             .onAppear() {

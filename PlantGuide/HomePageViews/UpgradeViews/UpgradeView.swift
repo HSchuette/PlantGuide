@@ -119,6 +119,7 @@ struct UpgradeView: View {
                     storeManager.getProducts(productIDs: ["com.example.PlantGuide.IAP.plantRoomPlus"])
                 }
             })
+        .accentColor(Color("welcomeBlue"))
     }
 }
 

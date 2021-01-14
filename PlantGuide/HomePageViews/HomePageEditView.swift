@@ -190,7 +190,7 @@ struct HomePageEditView: View {
             .navigationBarTitle("")
             .navigationBarHidden(true)
             .background(Color(.systemGray6))
-        }
+        }.accentColor(Color("welcomeBlue"))
     }
     func savePlant(plant: StorePlantEntity) {
         guard self.plantName != "" else {return}

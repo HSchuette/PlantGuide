@@ -77,6 +77,7 @@ struct GetStartedButton: View {
         }).sheet(isPresented: $showAddFirstSheet, content: {
             AddNewPlantSheetView()
         })
+        .accentColor(Color("welcomeBlue"))
     }
 }
 

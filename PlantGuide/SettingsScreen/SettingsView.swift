@@ -30,9 +30,15 @@ struct SettingsView: View {
                     
                     ZStack {
                         Rectangle()
-                            .foregroundColor(blue)
+                            .foregroundColor(Color(.systemGray6))
                             .edgesIgnoringSafeArea(.all)
                             .cornerRadius(15)
+                        
+                        VStack {
+                            Spacer()
+                            SettingsDisplayView()
+                                .frame(height: 350)
+                        }
                         
                         VStack {
                             HStack {
@@ -57,16 +63,11 @@ struct SettingsView: View {
                             }
                             Spacer()
                         }
-                        
-                        VStack {
-                            SettingsDisplayView()
-                            Spacer()
-                        }
                     }.frame(height: 400)
                     .clipped()
                     .shadow(radius: 10)
                     .offset(y: onAppear ? 0 : 500)
-                    .animation(.easeIn)
+                    .animation(.easeInOut)
                 }
             }.edgesIgnoringSafeArea(.all)
             .onAppear() {

@@ -131,6 +131,7 @@ struct NavigationScanView: View {
             Spacer()
             
         }.padding(.horizontal, 25)
+        .accentColor(Color("welcomeBlue"))
     }
     private func performImageClassification(image: UIImage?) {
         
@@ -178,8 +179,8 @@ struct CustomButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .frame(width: 250, height: 50)
-            .foregroundColor(configuration.isPressed ? Color(.systemBackground) : /*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-            .background(Color(configuration.isPressed ? .systemBlue : .systemBackground))
+            .foregroundColor(configuration.isPressed ? Color(.systemBackground) : Color("welcomeBlue"))
+            .background(configuration.isPressed ? Color("welcomeBlue") : Color(.systemBackground))
             .cornerRadius(10)
             .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.1 : 0), radius: 4, x: 3, y: 3)
     }

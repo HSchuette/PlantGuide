@@ -196,6 +196,7 @@ struct AddNewPlantSheetView: View {
             .navigationBarTitle("")
             .navigationBarHidden(true)
         }
+        .accentColor(Color("welcomeBlue"))
     }
 }
 
