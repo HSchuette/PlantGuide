@@ -81,9 +81,7 @@
 		B17D27C825B17F3A00FAA444 /* 3D@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27B925B17F3700FAA444 /* 3D@3x.png */; };
 		B17D27C925B17F3A00FAA444 /* 3D@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27BA25B17F3700FAA444 /* 3D@2x.png */; };
 		B17D27CA25B17F3A00FAA444 /* Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27BB25B17F3800FAA444 /* Inverse@2x.png */; };
-		B17D27CC25B17F3A00FAA444 /* Knowledge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27BD25B17F3800FAA444 /* Knowledge@2x.png */; };
 		B17D27CD25B17F3A00FAA444 /* Artsy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27BE25B17F3800FAA444 /* Artsy@2x.png */; };
-		B17D27CE25B17F3A00FAA444 /* Knowledge@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27BF25B17F3800FAA444 /* Knowledge@3x.png */; };
 		B17D27CF25B17F3A00FAA444 /* Pandemic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27C025B17F3800FAA444 /* Pandemic@2x.png */; };
 		B17D27D025B17F3A00FAA444 /* Zoomed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27C125B17F3900FAA444 /* Zoomed@2x.png */; };
 		B17D27D125B17F3A00FAA444 /* Pandemic@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27C225B17F3900FAA444 /* Pandemic@3x.png */; };
@@ -243,9 +241,7 @@
 		B17D27B925B17F3700FAA444 /* 3D@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3D@3x.png"; sourceTree = "<group>"; };
 		B17D27BA25B17F3700FAA444 /* 3D@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3D@2x.png"; sourceTree = "<group>"; };
 		B17D27BB25B17F3800FAA444 /* Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Inverse@2x.png"; sourceTree = "<group>"; };
-		B17D27BD25B17F3800FAA444 /* Knowledge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Knowledge@2x.png"; sourceTree = "<group>"; };
 		B17D27BE25B17F3800FAA444 /* Artsy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Artsy@2x.png"; sourceTree = "<group>"; };
-		B17D27BF25B17F3800FAA444 /* Knowledge@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Knowledge@3x.png"; sourceTree = "<group>"; };
 		B17D27C025B17F3800FAA444 /* Pandemic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pandemic@2x.png"; sourceTree = "<group>"; };
 		B17D27C125B17F3900FAA444 /* Zoomed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zoomed@2x.png"; sourceTree = "<group>"; };
 		B17D27C225B17F3900FAA444 /* Pandemic@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pandemic@3x.png"; sourceTree = "<group>"; };
@@ -427,9 +423,7 @@
 				B17D27B825B17F3700FAA444 /* Inverse@3x.png */,
 				B13E7E7B25B31D7F00534E91 /* KnockKnock@2x.png */,
 				B13E7E8C25B31D8400534E91 /* KnockKnock@3x.png */,
-				B17D27BD25B17F3800FAA444 /* Knowledge@2x.png */,
 				B13E7E7525B31D7E00534E91 /* Knowledge@2x.png */,
-				B17D27BF25B17F3800FAA444 /* Knowledge@3x.png */,
 				B13E7E8225B31D8000534E91 /* Knowledge@3x.png */,
 				B13E7E9425B31D8400534E91 /* Large@2x.png */,
 				B13E7E7C25B31D7F00534E91 /* Large@3x.png */,
@@ -806,7 +800,6 @@
 				B13E7EA825B31D8500534E91 /* Gradient@2x.png in Resources */,
 				B13E7EAF25B31D8500534E91 /* Gradient@3x.png in Resources */,
 				B13E7EC725B31D8500534E91 /* Green@2x.png in Resources */,
-				B17D27CE25B17F3A00FAA444 /* Knowledge@3x.png in Resources */,
 				B13E7EAB25B31D8500534E91 /* Experimental@2x.png in Resources */,
 				B1A1D2592538F5FA006BEB9D /* Screenshot3.png in Resources */,
 				B1A1D2512538F112006BEB9D /* LaunchScreen.storyboard in Resources */,
@@ -816,7 +809,6 @@
 				B13E7EC025B31D8500534E91 /* Shopping@2x.png in Resources */,
 				B13E7EB425B31D8500534E91 /* Palm@2x.png in Resources */,
 				B13E7ECA25B31D8500534E91 /* BlackAndWhite@3x.png in Resources */,
-				B17D27CC25B17F3A00FAA444 /* Knowledge@2x.png in Resources */,
 				B13E7EC625B31D8500534E91 /* Version2@2x.png in Resources */,
 				B13E7E9B25B31D8500534E91 /* Version1@3x.png in Resources */,
 				B17D27C725B17F3A00FAA444 /* Inverse@3x.png in Resources */,
