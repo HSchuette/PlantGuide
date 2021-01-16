@@ -26,7 +26,7 @@ struct SettingsDisplayView: View {
                         
                     
                     Spacer()
-                }.padding(.leading, 25)
+                }.padding([.leading, .top], 25)
                 
                 Form {
                     
@@ -43,25 +43,24 @@ struct SettingsDisplayView: View {
                                         }
                                         
                                     }
+                                    
                                 }.pickerStyle(DefaultPickerStyle())
-                                .onReceive([self.iconSettings.currentIndex].publisher.first()) { (value) in
-                                    if UserDefaults.standard.bool(forKey: "com.example.PlantGuide.IAP.plantRoomPlus") {
-                                        let index = self.iconSettings.iconNames.firstIndex(of: UIApplication.shared.alternateIconName) ?? 0
-                                        
-                                        if index != value{
-                                            UIApplication.shared.setAlternateIconName(self.iconSettings.iconNames[value]){ error in
-                                                if let error = error {
-                                                    print(error.localizedDescription)
-                                                } else {
-                                                    print("Alternate icon set!")
+                                .disabled(!UserDefaults.standard.bool(forKey: "com.example.PlantGuide.IAP.plantRoomPlus"))
+                        .onReceive([self.iconSettings.currentIndex].publisher.first()) { (value) in
+                                                
+                                                let index = self.iconSettings.iconNames.firstIndex(of: UIApplication.shared.alternateIconName) ?? 0
+                                                
+                                                if index != value{
+                                                    UIApplication.shared.setAlternateIconName(self.iconSettings.iconNames[value]){ error in
+                                                        if let error = error {
+                                                            print(error.localizedDescription)
+                                                        } else {
+                                                            print("Success!")
+                                                        }
+                                                    }
                                                 }
+                                                
                                             }
-                                        }
-                                    } else {
-                                        
-                                        showAlertUpgrade.toggle()
-                                    }
-                            }
                     }
                     Section(header: Text("Contact")) {
                         SettingsMailView(showAlertNoMail: $showAlertNoMail)
@@ -72,13 +71,11 @@ struct SettingsDisplayView: View {
                 Spacer()
                 
             }
-            
-            .navigationBarHidden(true)
             .edgesIgnoringSafeArea(.all)
             .background(Color(.systemGray6))
-            
+            .navigationBarHidden(true)
         }
-        .frame(height: 350)
+        .frame(height: 450)
         .alert(isPresented: self.$showAlertUpgrade, content: {
             Alert(title: Text("Error"), message: Text("Looks like you haven't upgraded to Plant Room Plus yet. Upgrade now and customize your App Icon!"))
         })

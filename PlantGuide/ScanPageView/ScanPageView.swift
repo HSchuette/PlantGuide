@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ScanPageView: View {
     
     @Environment(\.colorScheme) var colorScheme: ColorScheme
@@ -16,7 +17,9 @@ struct ScanPageView: View {
     @Binding var image: UIImage?
     
     var body: some View {
+        
         ZStack {
+            
             Image(uiImage: image ?? UIImage(named: "placeHolder")!)
                 .resizable()
                 .scaledToFill()

@@ -53,17 +53,19 @@ struct PlantOverView: View {
            
             Spacer()
             
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(selectedPlant.description).font(.caption)
+            if UIScreen.screenWidth > 400 {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(selectedPlant.description).font(.caption)
+                        
+                        Spacer()
+                    }
                     
                     Spacer()
-                }
-                
-                Spacer()
-            }.padding(.horizontal, 40)
-                .frame(width: UIScreen.main.bounds.width, height: 80)
-                .animation(nil)
+                }.padding(.horizontal, 40)
+                    .frame(width: UIScreen.main.bounds.width, height: 80)
+                    .animation(nil)
+            }
             
             
             

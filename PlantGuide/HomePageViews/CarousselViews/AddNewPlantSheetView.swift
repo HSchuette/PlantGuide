@@ -22,7 +22,7 @@ struct AddNewPlantSheetView: View {
     @State var selectedPhotoPath = ""
     @State var selectedLightIndex = 1
     @State var sliderLightIndex = 0.0
-    @State var waterBool = true
+    @State var waterBool = false
     @State var waterDate = Date()
     @State var humidityBool = false
     
@@ -80,7 +80,7 @@ struct AddNewPlantSheetView: View {
                                     Text(plant.name)
                                 }
                             }
-                        }
+                        }.navigationBarHidden(true)
                     }
                     
                     Section(header: Text("Photo")) {
@@ -148,7 +148,7 @@ struct AddNewPlantSheetView: View {
                                     
                                     DatePicker("Select Date", selection: $waterDate, displayedComponents: .date)
                                         .datePickerStyle(GraphicalDatePickerStyle())
-                                        .accentColor(Color("blue"))
+                                        .accentColor(Color("textBlue"))
                                         .frame(maxHeight: 400)
                                 .padding(.vertical, 5)
                                 .animation(.none)
@@ -196,7 +196,7 @@ struct AddNewPlantSheetView: View {
             .navigationBarTitle("")
             .navigationBarHidden(true)
         }
-        .accentColor(Color("welcomeBlue"))
+        .accentColor(Color("textBlue"))
     }
 }
 

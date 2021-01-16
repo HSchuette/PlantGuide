@@ -32,30 +32,6 @@ struct NavigationHomeView: View {
     @State var isTutorialVisible = false
     @State var isSettingsVisible = false
     
-//    init() {
-//            // this is not the same as manipulating the proxy directly
-//            let appearance = UINavigationBarAppearance()
-//            // this overrides everything you have set up earlier.
-//            appearance.configureWithTransparentBackground()
-//
-//            // this only applies to big titles
-//            appearance.largeTitleTextAttributes = [
-//                .font : UIFont.systemFont(ofSize: 35, weight: .bold),
-//                NSAttributedString.Key.kern: -2
-//            ]
-//            // this only applies to small titles
-//            appearance.titleTextAttributes = [
-//                .font : UIFont.systemFont(ofSize: 35, weight: .bold),
-//                NSAttributedString.Key.kern: -2
-//
-//            ]
-//
-//            //In the following two lines you make sure that you apply the style for good
-//            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-//            UINavigationBar.appearance().standardAppearance = appearance
-//
-//        }
-    
     var body: some View {        
         NavigationView {
             
@@ -99,7 +75,7 @@ struct NavigationHomeView: View {
             .navigationBarTitleDisplayMode(.large)
             .navigationBarTitle("")
             .navigationBarItems(trailing: NavigationHeaderBar(isAboutVisible: $isAboutVisible, isTutorialVisible: $isTutorialVisible, isSettingsVisible: $isSettingsVisible))
-        }.accentColor(Color("welcomeBlue"))
+        }.accentColor(Color("textBlue"))
     }
 }
 

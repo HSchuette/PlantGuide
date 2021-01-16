@@ -50,51 +50,51 @@
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
-            <key>3D</key>
-            <dict>
-                <key>CFBundleIconFiles</key>
-                <array>
-                    <string>3D</string>
-                </array>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-            </dict>
-            <key>Knowledge</key>
-            <dict>
-                <key>CFBundleIconFiles</key>
-                <array>
-                    <string>Knowledge</string>
-                </array>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-            </dict>
-            <key>Inverse</key>
-            <dict>
-                <key>CFBundleIconFiles</key>
-                <array>
-                    <string>Inverse</string>
-                </array>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-            </dict>
-            <key>Pandemic</key>
-            <dict>
-                <key>CFBundleIconFiles</key>
-                <array>
-                    <string>Pandemic</string>
-                </array>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-            </dict>
-            <key>Zoomed</key>
-            <dict>
-                <key>CFBundleIconFiles</key>
-                <array>
-                    <string>Zoomed</string>
-                </array>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-            </dict>
+			<key>3D</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>3D</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Knowledge</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Knowledge</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Inverse</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Inverse</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Pandemic</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Pandemic</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Zoomed</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Zoomed</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
 		</dict>
 		<key>UINewsstandIcon</key>
 		<dict>
@@ -124,9 +124,8 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>telephony</string>
 	</array>
-	<key></key>
-	<string></string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

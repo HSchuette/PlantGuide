@@ -159,7 +159,7 @@ struct HomePageEditView: View {
                                     
                                     DatePicker("Select Date", selection: $waterDate, displayedComponents: .date)
                                         .datePickerStyle(GraphicalDatePickerStyle())
-                                        .accentColor(Color("blue"))
+                                        .accentColor(Color("textBlue"))
                                         .frame(maxHeight: 400)
                                 .padding(.vertical, 5)
                                 .animation(.none)
@@ -190,7 +190,7 @@ struct HomePageEditView: View {
             .navigationBarTitle("")
             .navigationBarHidden(true)
             .background(Color(.systemGray6))
-        }.accentColor(Color("welcomeBlue"))
+        }.accentColor(Color("textBlue"))
     }
     func savePlant(plant: StorePlantEntity) {
         guard self.plantName != "" else {return}

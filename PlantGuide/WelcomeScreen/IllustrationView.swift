@@ -21,12 +21,13 @@ struct IllustrationView: View {
                 .foregroundColor(Color(.white))
                 .animation(.easeInOut)
             
-            Image("welcomeScreenIllustration")
+            Image("wavingHand")
                 .resizable()
                 .shadow(color: Color(.systemBackground).opacity(0.1), radius: 4, x: 5, y: 5)
-                .frame(width: 150, height: 150)
-                .scaledToFit()
+                .scaledToFill()
+                .frame(width: 200, height: 200)
                 .padding()
+                .offset(x: 15)
                 .shadow(radius: 5)
             
             Spacer()

@@ -32,13 +32,15 @@ struct NavigationScanView: View {
                 .onChange(of: image) { value in
                 performImageClassification(image: image)
                 }
+                .scaleEffect(UIScreen.screenWidth < 400 ? 0.5 : 1.0)
+                .padding(UIScreen.screenWidth < 400 ? -50 : 0)
             
             Spacer()
             
             
             if showClassificationResult == false {
                 Text("Identify your favourite plant by snapping a picture with your phone.")
-                    .font(.callout)
+                    .font(UIScreen.screenWidth < 400 ? .footnote : .callout)
                     .lineLimit(nil)
                     .multilineTextAlignment(.leading)
                     .padding(.horizontal)
@@ -50,6 +52,8 @@ struct NavigationScanView: View {
                         .font(.callout)
                         .fontWeight(.regular)
                         .foregroundColor(Color(.systemGray))
+                        .scaleEffect(UIScreen.screenWidth < 400 ? 0.8 : 1.0)
+                        .padding(.vertical, UIScreen.screenWidth < 400 ? -20 : 0)
                         
                     
                     Spacer()
@@ -125,13 +129,14 @@ struct NavigationScanView: View {
                     
                     ScrollView {
                         ScanResultPreview(classificationLabel: $classificationLabel)
-                    }.frame(height: 210)
+                    }.frame(height: UIScreen.screenWidth < 400 ? 180 : 210)
                 }
             }
             Spacer()
             
         }.padding(.horizontal, 25)
-        .accentColor(Color("welcomeBlue"))
+        .accentColor(Color("textBlue"))
+        .frame(minHeight: UIScreen.screenHeight-UIScreen.screenHeight/3)
     }
     private func performImageClassification(image: UIImage?) {
         
@@ -184,4 +189,10 @@ struct CustomButtonStyle: ButtonStyle {
             .cornerRadius(10)
             .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.1 : 0), radius: 4, x: 3, y: 3)
     }
+}
+
+extension UIScreen{
+   static let screenWidth = UIScreen.main.bounds.size.width
+   static let screenHeight = UIScreen.main.bounds.size.height
+   static let screenSize = UIScreen.main.bounds.size
 }

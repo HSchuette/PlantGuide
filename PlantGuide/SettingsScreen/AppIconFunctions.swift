@@ -20,6 +20,7 @@ class IconNames: ObservableObject {
         }
     }
 
+
     func getAlternateIconNames(){
             if let icons = Bundle.main.object(forInfoDictionaryKey: "CFBundleIcons") as? [String: Any],
                 let alternateIcons = icons["CFBundleAlternateIcons"] as? [String: Any]
@@ -37,4 +38,5 @@ class IconNames: ObservableObject {
                  }
             }
     }
+
 }

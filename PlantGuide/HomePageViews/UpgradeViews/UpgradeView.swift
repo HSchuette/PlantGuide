@@ -16,7 +16,7 @@ struct UpgradeView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            ScrollView {
                 ZStack {
                     NavigationBarTitleView(title: "Upgrade")
                         .offset(y: -30)
@@ -40,7 +40,7 @@ struct UpgradeView: View {
                 Image("watering_plant_isometric")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 200)
+                    .frame(width: 300)
                 
                 Spacer()
                 
@@ -55,9 +55,6 @@ struct UpgradeView: View {
                     }.padding(.horizontal, 20)
                 }
                 
-                
-                Spacer()
-                
                 Group {
                     HStack {
                         Text("Features")
@@ -71,6 +68,8 @@ struct UpgradeView: View {
                     }.padding([.leading, .top])
                     
                     InformationDetailView(title: "Unlimited Access", subTitle: "Add every plant you want to your Plant Room.", imageName: "calendar.badge.plus")
+                    
+                    InformationDetailView(title: "Custom App Icon", subTitle: "Change the App Icon to the logo you like.", imageName: "apps.iphone")
                     
                     InformationDetailView(title: "Support", subTitle: "Get new features first and support the developement.", imageName: "heart.text.square")
                 }
@@ -119,7 +118,7 @@ struct UpgradeView: View {
                     storeManager.getProducts(productIDs: ["com.example.PlantGuide.IAP.plantRoomPlus"])
                 }
             })
-        .accentColor(Color("welcomeBlue"))
+        .accentColor(Color("textBlue"))
     }
 }
 

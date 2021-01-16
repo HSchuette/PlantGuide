@@ -73,7 +73,7 @@ struct CardCarousselToppingView: View {
             })
             
         }.padding(.horizontal, 25)
-        .accentColor(Color("welcomeBlue"))
+        .accentColor(Color("textBlue"))
     }
 }
 

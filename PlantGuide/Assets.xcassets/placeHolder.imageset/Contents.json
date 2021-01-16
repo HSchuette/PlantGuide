@@ -5,11 +5,42 @@
       "scale" : "1x"
     },
     {
-      "filename" : "monsteraDeliciosa_1.heic",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "bart-zimny-W5XTTLpk1-I-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "bart-zimny-W5XTTLpk1-I-unsplash-1.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
       "idiom" : "universal",
       "scale" : "3x"
     }

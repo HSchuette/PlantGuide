@@ -22,7 +22,7 @@ struct NotificationHelper {
 
         let addRequest = {
             let content = UNMutableNotificationContent()
-            content.title = "🌱 Water Reminder"
+            content.title = "Water Reminder 🪴"
             content.body = "Check on \(plant.name!) and remember to only water \(plant.waterCategory!)."
             content.sound = UNNotificationSound.default
 

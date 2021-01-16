@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @Binding var isSettingsVisible: Bool
+
     @State private var onAppear: Bool = false
+    @Binding var isSettingsVisible: Bool
     
     var blue = Color("welcomeBlue")
     
@@ -37,7 +38,7 @@ struct SettingsView: View {
                         VStack {
                             Spacer()
                             SettingsDisplayView()
-                                .frame(height: 350)
+                                .frame(height: 450)
                         }
                         
                         VStack {
@@ -56,17 +57,17 @@ struct SettingsView: View {
                                         .resizable()
                                         .frame(width: 30, height: 30)
                                         .padding()
-                                        .foregroundColor(Color(.black))
+                                        .foregroundColor(Color(.label))
                                         .opacity(0.3)
                                 })
                                 Spacer()
                             }
                             Spacer()
                         }
-                    }.frame(height: 400)
+                    }.frame(height: 500)
                     .clipped()
                     .shadow(radius: 10)
-                    .offset(y: onAppear ? 0 : 500)
+                    .offset(y: onAppear ? 1 : 800)
                     .animation(.easeInOut)
                 }
             }.edgesIgnoringSafeArea(.all)

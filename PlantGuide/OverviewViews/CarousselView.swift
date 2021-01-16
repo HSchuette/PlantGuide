@@ -17,6 +17,7 @@ struct CarousselView: View {
                 HStack() {
                     ForEach(plantData, id: \.id) { plant in
                         PlantPreview(plants: plant)
+                            
                             .onTapGesture {
                                 withAnimation(.easeInOut(duration: 0.4)) {
                                         
