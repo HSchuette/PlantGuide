@@ -37,10 +37,10 @@ struct UpgradeView: View {
                 
                 Spacer()
                        
-                Image("watering_plant_isometric")
+                Image("upgradeIllustration")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 300)
+                    .frame(height: 200)
                 
                 Spacer()
                 
@@ -48,11 +48,11 @@ struct UpgradeView: View {
                     VStack(alignment: .leading) {
                         Text("Thank you for using Plant Room!")
                             .bold()
-                            .padding(.bottom, 5)
+                            .padding(.vertical, 5)
                         
                         Text("You have reached your limit of 3 plants. Feel free to upgrade to add more.")
                             
-                    }.padding(.horizontal, 20)
+                    }.padding(.horizontal, 22)
                 }
                 
                 Group {

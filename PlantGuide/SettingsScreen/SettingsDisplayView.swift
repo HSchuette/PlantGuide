@@ -35,8 +35,10 @@ struct SettingsDisplayView: View {
                                 {
                                     ForEach(0..<iconSettings.iconNames.count) { index in
                                         HStack {
-                                            Image(uiImage: UIImage(named: self.iconSettings.iconNames[index] ?? "Default") ?? UIImage())        .frame(width: 50, height: 50)
-                                            .cornerRadius(10)
+                                            Image(uiImage: UIImage(named: self.iconSettings.iconNames[index] ?? "AppIcon") ?? UIImage())
+                                                .resizable()                                            
+                                            .frame(width: 50, height: 50)
+                                            .cornerRadius(6)
                                                 .padding(.trailing)
                                             
                                             Text(self.iconSettings.iconNames[index] ?? "Default")

@@ -21,7 +21,7 @@ struct TutorialView: View {
                 TutorialText(textTitle: "Home", textBody: "Take a picture of you plant and add them to your collection. Get reminded about your watering schedule.")
                     
                 } else if stage == 2 {
-                    TutorialText(textTitle: "Scan", textBody: "Take a picture of your plant and let a self trained AI identify your house plant.")
+                    TutorialText(textTitle: "Scan", textBody: "Take a picture of your plant and let a machine learning algorithm identify your house plant.")
                         
                 } else if stage == 3 {
                     TutorialText(textTitle: "Overview", textBody: "Get a quick overview of the needs of your favourite plant or make a deep dive read the most important information.")

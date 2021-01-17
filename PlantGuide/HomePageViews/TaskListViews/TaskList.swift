@@ -49,7 +49,7 @@ struct TaskList: View {
                     })
                 }
             }.sheet(isPresented: $showUpgradeView, content: {
-                UpgradeView(storeManager: storeManager, isLimitReached: storePlants.count == 5)
+                UpgradeView(storeManager: storeManager, isLimitReached: storePlants.count == 3)
             })
             
             Divider()

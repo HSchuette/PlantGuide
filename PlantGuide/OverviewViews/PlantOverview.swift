@@ -53,7 +53,7 @@ struct PlantOverView: View {
            
             Spacer()
             
-            if UIScreen.screenWidth > 400 {
+            if UIScreen.screenHeight > 700 {
                 VStack(alignment: .leading) {
                     HStack {
                         Text(selectedPlant.description).font(.caption)

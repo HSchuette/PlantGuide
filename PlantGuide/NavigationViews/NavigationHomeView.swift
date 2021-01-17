@@ -57,6 +57,7 @@ struct NavigationHomeView: View {
                 
                 
             }
+            .onAppear(perform: {DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {checkForUpdate()}})
             .overlay(WelcomeView(isTutorialVisible: $isTutorialVisible))
             .overlay(AboutView(isAboutVisible: $isAboutVisible))
             .overlay(SettingsView(isSettingsVisible: $isSettingsVisible))
@@ -76,6 +77,29 @@ struct NavigationHomeView: View {
             .navigationBarTitle("")
             .navigationBarItems(trailing: NavigationHeaderBar(isAboutVisible: $isAboutVisible, isTutorialVisible: $isTutorialVisible, isSettingsVisible: $isSettingsVisible))
         }.accentColor(Color("textBlue"))
+    }
+    // I use this to display the onboarding screen
+    // Get current Version of the App
+    func getCurrentAppVersion() -> String {
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
+        let version = (appVersion as! String)
+
+        return version
+    }
+
+    // Check if app if app has been started after update
+    func checkForUpdate() {
+        let version = getCurrentAppVersion()
+        let savedVersion = UserDefaults.standard.string(forKey: "savedVersion")
+
+        if savedVersion == version {
+            print("App was already used")
+        } else {
+            print("App started the first time")
+            // Toogle to show Welcome Screen as Modal
+            self.isTutorialVisible.toggle()
+            UserDefaults.standard.set(version, forKey: "savedVersion")
+        }
     }
 }
 
