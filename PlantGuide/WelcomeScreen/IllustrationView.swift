@@ -10,37 +10,34 @@ import SwiftUI
 struct IllustrationView: View {
     var body: some View {
         
-        VStack {
-            
+        VStack {            
             Spacer()
             
-            Image("welcomeScreenIllustration")
-                .resizable()
-                .shadow(color: Color(.systemBackground).opacity(0.2), radius: 4, x: 5, y: 5)
-                .frame(width: 250, height: 250)
-                .scaledToFit()
-                .padding()
-            
-            Text("Welcome!")
-                .font(.system(size: 40))
+            Text("Hello there!")
+                .font(.system(size: 35))
                 .fontWeight(.bold)
                 .kerning(-2)
                 .multilineTextAlignment(.leading)
                 .foregroundColor(Color(.white))
-                .padding()
+                .animation(.easeInOut)
             
-            Text("Plant Room helps you to keep track of the needs of your beloved house plants. Dive right in!")
-                .multilineTextAlignment(.center)
-                .lineLimit(nil)
+            Image("wavingHand")
+                .resizable()
+                .shadow(color: Color(.systemBackground).opacity(0.1), radius: 4, x: 5, y: 5)
+                .scaledToFill()
+                .frame(width: 200, height: 200)
                 .padding()
+                .offset(x: 15)
+                .shadow(radius: 5)
             
             Spacer()
-        }
+        }.frame(height: 400)        
     }
 }
 
 struct IllustrationView_Previews: PreviewProvider {
     static var previews: some View {
         IllustrationView()
+            .preferredColorScheme(.dark)
     }
 }

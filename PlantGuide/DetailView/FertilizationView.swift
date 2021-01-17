@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct FertilizationView: View {
+
+    @EnvironmentObject var selectedPlant: SelectedPlant
     
     @State private var fertilizationValue: CGFloat = 0
     
-    @Binding var selected: Int?
     @Binding var moreInfo: String?
     
     var green = Color(red: 0.267, green: 0.451, blue: 0.216)
@@ -40,19 +41,19 @@ struct FertilizationView: View {
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    Text(plantData[selected!].name + "'s need:")
+                    Text(selectedPlant.name + "'s need:")
                     
                     HStack {
-                        Text(plantData[selected!].fertilizationCategory)
+                        Text(plantData[selectedPlant.id].fertilizationCategory)
                             .italic()
                         
                         Spacer()
                         
-                        BarMeter(width: self.fertilizationValue, color: green, image: "leaf.arrow.circlepath")
+                        BarMeter(width: self.fertilizationValue, color: green, image: "leaf.arrow.circlepath", isWide: false)
                             .onAppear() {
                                 withAnimation(Animation.easeInOut(duration:1).delay(0.4)) {
                                     self.fertilizationValue = 0
-                                    self.fertilizationValue = CGFloat(plantData[self.selected!].fertilizationFactor)
+                                    self.fertilizationValue = CGFloat(plantData[selectedPlant.id].fertilizationFactor)
                                 }
                             }
                             
@@ -79,8 +80,10 @@ struct FertilizationView: View {
 struct FertilizationView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            FertilizationView(selected: Binding.constant(2), moreInfo: Binding.constant(nil))
-            FertilizationView(selected: Binding.constant(2), moreInfo: Binding.constant("moreFertilization"))
+            FertilizationView(moreInfo: Binding.constant(nil))
+                .environmentObject(SelectedPlant())
+            FertilizationView(moreInfo: Binding.constant("moreFertilization"))
+                .environmentObject(SelectedPlant())
         }
     }
 }

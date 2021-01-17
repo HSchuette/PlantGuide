@@ -9,9 +9,10 @@ import SwiftUI
 
 struct WaterView: View {
     
+    @EnvironmentObject var selectedPlant: SelectedPlant
+    
     @State private var waterValue: CGFloat = 0
     
-    @Binding var selected: Int?
     @Binding var moreInfo: String?
 
     var blue = Color("blue")
@@ -40,20 +41,20 @@ struct WaterView: View {
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    Text(plantData[selected!].name + "'s need:")
+                    Text(selectedPlant.name + "'s need:")
                     
                     HStack {
-                        Text(plantData[selected!].waterCategory)
+                        Text(plantData[selectedPlant.id].waterCategory)
                             .italic()
                             .fixedSize(horizontal: false, vertical: true)
                         
                         Spacer()
                         
-                        BarMeter(width: self.waterValue, color: blue, image: "cloud.rain.fill")
+                        BarMeter(width: self.waterValue, color: blue, image: "cloud.rain.fill", isWide: false)
                             .onAppear() {
                                 withAnimation(Animation.easeInOut(duration:1).delay(0.4)) {
                                     self.waterValue = 0
-                                    self.waterValue = CGFloat(plantData[self.selected!].waterFactor)
+                                    self.waterValue = CGFloat(plantData[selectedPlant.id].waterFactor)
                                 }
                             }
                         
@@ -76,8 +77,10 @@ struct WaterView: View {
 struct WaterView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WaterView(selected: Binding.constant(2), moreInfo: Binding.constant(nil))
-            WaterView(selected: Binding.constant(2), moreInfo: Binding.constant("moreWater"))
+            WaterView(moreInfo: Binding.constant(nil))
+                .environmentObject(SelectedPlant())
+            WaterView(moreInfo: Binding.constant("moreWater"))
+                .environmentObject(SelectedPlant())
         }
     }
 }

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ToxicityView: View {
     
-    @Binding var selected: Int?
+    @EnvironmentObject var selectedPlant: SelectedPlant
+
     @Binding var moreInfo: String?
     
     var teal = Color(red: 57/256, green: 100/256, blue: 94/256)
@@ -29,7 +30,7 @@ struct ToxicityView: View {
             
             if self.moreInfo == "moreToxicity" {
                 VStack(alignment: .leading) {
-                    Text(plantData[selected!].toxicityText)
+                    Text(plantData[selectedPlant.id].toxicityText)
                      .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                 }
@@ -41,8 +42,10 @@ struct ToxicityView: View {
 struct ToxicityView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ToxicityView(selected: Binding.constant(2), moreInfo: Binding.constant(nil))
-            ToxicityView(selected: Binding.constant(2), moreInfo: Binding.constant("moreToxicity"))
+            ToxicityView(moreInfo: Binding.constant(nil))
+                .environmentObject(SelectedPlant())
+            ToxicityView(moreInfo: Binding.constant("moreToxicity"))
+                .environmentObject(SelectedPlant())
         }
     }
 }

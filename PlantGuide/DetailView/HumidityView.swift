@@ -9,11 +9,12 @@ import SwiftUI
 
 struct HumidityView: View {
     
+    @EnvironmentObject var selectedPlant: SelectedPlant
+    
     @State private var humidityValue: CGFloat = 0
     @State private var hygroValueMin: CGFloat = 0.5
     @State private var hygroValueMax: CGFloat = 0.5
     
-    @Binding var selected: Int?
     @Binding var moreInfo: String?
     
     var brightgreen = Color(red: 0.437, green: 0.746, blue: 0.359)
@@ -40,19 +41,19 @@ struct HumidityView: View {
                      .lineLimit(nil)
                      .fixedSize(horizontal: false, vertical: true)
                     
-                    Text(plantData[selected!].name + "'s need:")
+                    Text(selectedPlant.name + "'s need:")
                     
                     HStack {
-                        Text(plantData[selected!].humidityCategory)
+                        Text(plantData[selectedPlant.id].humidityCategory)
                             .italic()
                         
                         Spacer()
                         
-                        BarMeter(width: humidityValue, color: Color(.systemGray2), image: "cloud.fog.fill")
+                        BarMeter(width: humidityValue, color: Color(.systemGray2), image: "cloud.fog.fill", isWide: false)
                             .onAppear() {
                                 withAnimation(Animation.easeInOut(duration:1).delay(0.4)) {
                                     self.humidityValue = 0
-                                    self.humidityValue = CGFloat(plantData[self.selected!].humidityFactor)
+                                    self.humidityValue = CGFloat(plantData[selectedPlant.id].humidityFactor)
                                 }
                             }
                     }.padding(.bottom)
@@ -67,7 +68,7 @@ struct HumidityView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     
                     HStack(alignment: .top) {
-                        Text(plantData[selected!].name + " should feel comftable at a humidity of 50-60%.").lineLimit(nil)
+                        Text(selectedPlant.name + " should feel comftable at a humidity of 50-60%.").lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: true)
                         
                         Spacer()
@@ -98,7 +99,7 @@ struct HumidityView: View {
                                 .foregroundColor(brightgreen)
                                 
                             
-                            Text(plantData[self.selected!].hygroText)
+                            Text(plantData[selectedPlant.id].hygroText)
                                 .bold()
                                 .padding(.top, -10)
                         }.frame(width: 150)
@@ -107,10 +108,10 @@ struct HumidityView: View {
                         .onAppear {
                             withAnimation(Animation.easeInOut(duration:1).delay(0.4)){
                                 self.hygroValueMin = 0.5
-                                self.hygroValueMin = CGFloat(plantData[self.selected!].hygroValueMin)
+                                self.hygroValueMin = CGFloat(plantData[selectedPlant.id].hygroValueMin)
                                 
                                 self.hygroValueMax = 0.5
-                                self.hygroValueMax = CGFloat(plantData[self.selected!].hygroValueMax)
+                                self.hygroValueMax = CGFloat(plantData[selectedPlant.id].hygroValueMax)
                                 
                             }
                         }
@@ -173,8 +174,10 @@ struct HumidityView: View {
 struct HumidityView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HumidityView(selected: Binding.constant(2), moreInfo: Binding.constant(nil))
-            HumidityView(selected: Binding.constant(12), moreInfo: Binding.constant("moreHumidity"))
+            HumidityView(moreInfo: Binding.constant(nil))
+                .environmentObject(SelectedPlant())
+            HumidityView(moreInfo: Binding.constant("moreHumidity"))
+                .environmentObject(SelectedPlant())
         }
     }
 }

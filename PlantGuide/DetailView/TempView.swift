@@ -9,9 +9,10 @@ import SwiftUI
 
 struct TempView: View {
     
+    @EnvironmentObject var selectedPlant: SelectedPlant
+    
     @State private var tempValue: CGFloat = 0
     
-    @Binding var selected: Int?
     @Binding var moreInfo: String?
     
     var red = Color(red: 143/256, green: 43/256, blue: 45/256)
@@ -41,19 +42,19 @@ struct TempView: View {
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    Text(plantData[selected!].name + "'s need:")
+                    Text(selectedPlant.name + "'s need:")
                     
                     HStack {
-                        Text(plantData[selected!].tempCategory)
+                        Text(plantData[selectedPlant.id].tempCategory)
                             .italic()
                         
                         Spacer()
                         
-                        BarMeter(width: self.tempValue, color: red, image: "thermometer")
+                        BarMeter(width: self.tempValue, color: red, image: "thermometer", isWide: false)
                             .onAppear() {
                                 withAnimation(Animation.easeInOut(duration:1).delay(0.4)) {
                                     self.tempValue = 0
-                                    self.tempValue = CGFloat(plantData[self.selected!].tempFactor)
+                                    self.tempValue = CGFloat(plantData[selectedPlant.id].tempFactor)
                                 }
                             }
                     }.padding(.bottom)
@@ -67,8 +68,10 @@ struct TempView: View {
 struct TempView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TempView(selected: Binding.constant(2), moreInfo: Binding.constant(nil))
-            TempView(selected: Binding.constant(5), moreInfo: Binding.constant("moreTemp"))
+            TempView(moreInfo: Binding.constant(nil))
+                .environmentObject(SelectedPlant())
+            TempView(moreInfo: Binding.constant("moreTemp"))
+                .environmentObject(SelectedPlant())
         }
     }
 }

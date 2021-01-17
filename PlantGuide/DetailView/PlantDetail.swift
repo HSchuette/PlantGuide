@@ -10,9 +10,10 @@ import SafariServices
 
 struct PlantDetail: View {
     
-    @State private var moreInfo: String?
+    @EnvironmentObject var selectedPlant: SelectedPlant
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     
-    @Binding var selected: Int?
+    @State private var moreInfo: String?
     
     var green = Color(red: 0.267, green: 0.451, blue: 0.216)
     var yellow = Color("yellow")
@@ -22,8 +23,8 @@ struct PlantDetail: View {
     // MARK: - Show More Button
     // button for more or less info
     func InfoButton(moreString: String)
-        -> some View {
-            return VStack() {
+    -> some View {
+        return VStack() {
             VStack {
                 Button(action: {
                     withAnimation(.easeInOut) {
@@ -39,15 +40,15 @@ struct PlantDetail: View {
                     
                     HStack(alignment: .top) {
                         Spacer()
-            
+                        
                         Image(systemName: self.moreInfo == moreString ? "chevron.up.circle.fill" : "chevron.down.circle")
                             .font(.subheadline)
                             .scaleEffect(self.moreInfo == moreString ? 1.4 : 1.2)
-                            
+                        
                     }.padding(.top, 20)
-                    })
+                })
             }.padding(.trailing)
-            }
+        }
     }
     
     // MARK: - View
@@ -64,7 +65,7 @@ struct PlantDetail: View {
                     HStack {
                         Spacer()
                         
-                        Image(plantData[selected!].imageName)
+                        Image(selectedPlant.imageName)
                             .resizable()
                             .scaledToFit()
                             .rotationEffect(.degrees(-25))
@@ -76,17 +77,17 @@ struct PlantDetail: View {
                         Spacer()
                         
                         HStack {
-                            Text(plantData[selected!].name)
+                            Text(selectedPlant.name)
                                 .font(.system(size: 40))
                                 .fontWeight(.bold)
                                 .kerning(-2)
-                                
+                            
                             Spacer()
                         }.frame(width: 220.0)
-                            
+                        
                         
                         HStack {
-                            Text(plantData[selected!].latin)
+                            Text(selectedPlant.latin)
                                 .font(.subheadline)
                                 .italic()
                                 .opacity(0.7)
@@ -108,11 +109,11 @@ struct PlantDetail: View {
                 .cornerRadius(10)
                 .clipped()
                 .frame(height: 200.0)
-                                    
+                
                 // text body
                 VStack(alignment: .leading) {
                     // description
-                    Text(plantData[selected!].description).padding(.bottom)
+                    Text(selectedPlant.description).padding(.bottom)
                     
                     // list of atributes
                     ZStack {
@@ -122,85 +123,106 @@ struct PlantDetail: View {
                         VStack {
                             Group {
                                 ZStack(alignment: .top) {
-                                    GalleryView(selected: $selected, moreInfo: $moreInfo)
+                                    GalleryView(moreInfo: $moreInfo)
                                     
                                     InfoButton(moreString: "moreGallery")
                                 }.padding()
                                 
                                 Divider()
+                                    .background(Color(.label).opacity(0.1))
                                     .padding(.horizontal)
+                                
                             }
                             Group {
                                 ZStack(alignment: .top) {
-                                    SunView(selected: $selected, moreInfo: $moreInfo)
+                                    SunView(moreInfo: $moreInfo)
                                     
                                     InfoButton(moreString: "moreSun")
                                 }.padding()
                                 
                                 Divider()
+                                    .background(Color(.label).opacity(0))
                                     .padding(.horizontal)
+                                
                             }
                             Group {
                                 ZStack(alignment: .top) {
-                                    WaterView(selected: $selected, moreInfo: $moreInfo)
-                                
+                                    WaterView(moreInfo: $moreInfo)
+                                    
                                     InfoButton(moreString: "moreWater")
                                 }.padding()
                                 
-                                Divider().padding(.horizontal)
+                                Divider()
+                                    .background(Color(.label).opacity(0.1))
+                                    .padding(.horizontal)
+                                
                             }
                             
                             Group {
                                 ZStack(alignment: .top) {
-                                    HumidityView(selected: $selected, moreInfo: $moreInfo)
+                                    HumidityView(moreInfo: $moreInfo)
                                     
                                     InfoButton(moreString: "moreHumidity")
                                 }.padding()
                                 
-                                Divider().padding(.horizontal)
+                                Divider()
+                                    .background(Color(.label).opacity(0.1))
+                                    .padding(.horizontal)
+                                
                             }
                             
                             Group {
                                 ZStack(alignment: .top) {
-                                    TempView(selected: $selected, moreInfo: $moreInfo)
+                                    TempView(moreInfo: $moreInfo)
                                     
                                     InfoButton(moreString: "moreTemp")
                                 }.padding()
                                 
-                                Divider().padding(.horizontal)
+                                Divider()
+                                    .background(Color(.label).opacity(0.1))
+                                    .padding(.horizontal)
                             }
                             
                             Group {
                                 ZStack(alignment: .top) {
-                                    FertilizationView(selected: $selected, moreInfo: $moreInfo)
+                                    FertilizationView(moreInfo: $moreInfo)
                                     
                                     InfoButton(moreString: "moreFertilization")
                                 }.padding()
                                 
-                                Divider().padding(.horizontal)
+                                Divider()
+                                    .background(Color(.label).opacity(0.1))
+                                    .padding(.horizontal)
+                                
                             }
                             
                             Group {
                                 ZStack(alignment: .top) {
-                                    ToxicityView(selected: $selected, moreInfo: $moreInfo)
+                                    ToxicityView(moreInfo: $moreInfo)
                                     
                                     InfoButton(moreString: "moreToxicity")
                                 }.padding()
                                 
-                                Divider().padding(.horizontal)
+                                Divider()
+                                    .background(Color(.label).opacity(0.1))
+                                    .padding(.horizontal)
                             }
                             
                             Group {
                                 ZStack(alignment: .top) {
-                                    WikipediaView(selected: $selected, moreInfo: $moreInfo)
+                                    WikipediaView(moreInfo: $moreInfo)
                                 }.padding()
                             }
                             
                             Spacer()
                         }
                     }
-                .clipped()
-                .shadow(radius: 5)
+                    .clipped()
+                    .shadow(color: Color(UIColor.black).opacity(colorScheme == .light ? 0.1 : 0), radius: 4, x: 5, y: 5)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(colorScheme == .light ? .clear : Color(.systemGray), lineWidth: 1)
+                    )
                 }.padding(25)
                 .lineLimit(nil)
             }
@@ -211,7 +233,9 @@ struct PlantDetail: View {
 
 struct PlantDetail_Previews: PreviewProvider {
     static var previews: some View {
-        PlantDetail(selected: Binding.constant(0))
+        PlantDetail()
+            .preferredColorScheme(.light)
+            .environmentObject(SelectedPlant())
     }
 }
 
