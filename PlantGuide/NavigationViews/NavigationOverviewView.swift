@@ -21,6 +21,8 @@ struct NavigationOverviewView: View {
             CarousselToppingView(showLearnMoreSheet: $showLearnMoreSheet)
             
             CarousselView()
+                .scaleEffect(UIScreen.screenHeight < 600 ? 0.8 : 1.0)
+                .padding(UIScreen.screenHeight < 600 ? -20 : 0)
         }
     }
 }

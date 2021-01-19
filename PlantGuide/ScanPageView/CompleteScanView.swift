@@ -129,7 +129,9 @@ struct NavigationScanView: View {
                     
                     ScrollView {
                         ScanResultPreview(classificationLabel: $classificationLabel)
-                    }.frame(height: UIScreen.screenHeight < 700 ? 180 : 210)
+                            .scaleEffect(UIScreen.screenHeight < 600 ? 0.8 : 1.0)
+                            .padding(.vertical, UIScreen.screenHeight < 600 ? -10 : 0)
+                    }.frame(height: UIScreen.screenHeight * 0.21)
                 }
             }
             Spacer()

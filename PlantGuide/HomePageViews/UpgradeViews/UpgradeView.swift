@@ -67,11 +67,13 @@ struct UpgradeView: View {
                         Spacer()
                     }.padding([.leading, .top])
                     
-                    InformationDetailView(title: "Unlimited Access", subTitle: "Add every plant you want to your Plant Room.", imageName: "calendar.badge.plus")
-                    
-                    InformationDetailView(title: "Custom App Icon", subTitle: "Change the App Icon to the logo you like.", imageName: "apps.iphone")
-                    
-                    InformationDetailView(title: "Support", subTitle: "Get new features first and support the developement.", imageName: "heart.text.square")
+                    Group {
+                        InformationDetailView(title: "Unlimited Access", subTitle: "Add every plant you want to your Plant Room.", imageName: "calendar.badge.plus")
+                                        
+                        InformationDetailView(title: "Custom App Icon", subTitle: "Change the App Icon to the logo you like.", imageName: "apps.iphone")
+                        
+                        InformationDetailView(title: "Support", subTitle: "Get new features first and support the developement.", imageName: "heart.text.square")
+                    }.padding(.horizontal)
                 }
                 
                 Spacer()

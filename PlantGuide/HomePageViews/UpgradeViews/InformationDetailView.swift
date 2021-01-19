@@ -20,7 +20,7 @@ struct InformationDetailView: View {
                 .padding()
                 .accessibility(hidden: true)
 
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .bold()
                     .foregroundColor(Color(.label))
@@ -31,7 +31,8 @@ struct InformationDetailView: View {
                     .font(.body)
                     .foregroundColor(Color(.label))
                     .fixedSize(horizontal: false, vertical: true)
-            }
+            }.multilineTextAlignment(.leading)
+            .frame(width: UIScreen.screenWidth * 0.7, alignment: .leading)
         }
         .padding(.top)
     }

@@ -231,10 +231,10 @@
 		B17D275325A9ABDF00FAA444 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		B17D275725AAF55200FAA444 /* NavigationHeaderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHeaderBar.swift; sourceTree = "<group>"; };
 		B17D275C25AAFA5A00FAA444 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		B17D276325AB1CE600FAA444 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		B17D276725AB1DB700FAA444 /* SettingsDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDisplayView.swift; sourceTree = "<group>"; };
-		B17D278625AEC79B00FAA444 /* AppIconFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconFunctions.swift; sourceTree = "<group>"; };
-		B17D27AC25B02CCF00FAA444 /* SettingsMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMailView.swift; sourceTree = "<group>"; };
+		B17D276325AB1CE600FAA444 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = PlantGuide/SettingsScreen/SettingsView.swift; sourceTree = SOURCE_ROOT; };
+		B17D276725AB1DB700FAA444 /* SettingsDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsDisplayView.swift; path = PlantGuide/SettingsScreen/SettingsDisplayView.swift; sourceTree = SOURCE_ROOT; };
+		B17D278625AEC79B00FAA444 /* AppIconFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppIconFunctions.swift; path = PlantGuide/SettingsScreen/AppIconFunctions.swift; sourceTree = SOURCE_ROOT; };
+		B17D27AC25B02CCF00FAA444 /* SettingsMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsMailView.swift; path = PlantGuide/SettingsScreen/SettingsMailView.swift; sourceTree = SOURCE_ROOT; };
 		B17D27B825B17F3700FAA444 /* Inverse@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Inverse@3x.png"; sourceTree = "<group>"; };
 		B17D27B925B17F3700FAA444 /* 3D@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3D@3x.png"; sourceTree = "<group>"; };
 		B17D27BA25B17F3700FAA444 /* 3D@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3D@2x.png"; sourceTree = "<group>"; };
