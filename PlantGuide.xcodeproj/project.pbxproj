@@ -20,7 +20,6 @@
 		B13E7EA125B31D8500534E91 /* ComicSans@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E6A25B31D7D00534E91 /* ComicSans@3x.png */; };
 		B13E7EA225B31D8500534E91 /* AlexIdea@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E6B25B31D7D00534E91 /* AlexIdea@3x.png */; };
 		B13E7EA325B31D8500534E91 /* SocialGiant@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E6C25B31D7D00534E91 /* SocialGiant@2x.png */; };
-		B13E7EA425B31D8500534E91 /* Suss@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E6D25B31D7D00534E91 /* Suss@3x.png */; };
 		B13E7EA525B31D8500534E91 /* Chinese@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E6E25B31D7E00534E91 /* Chinese@3x.png */; };
 		B13E7EA625B31D8500534E91 /* HypeBeast@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E6F25B31D7E00534E91 /* HypeBeast@2x.png */; };
 		B13E7EA725B31D8500534E91 /* WavingHand@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E7025B31D7E00534E91 /* WavingHand@3x.png */; };
@@ -37,7 +36,6 @@
 		B13E7EB425B31D8500534E91 /* Palm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E7D25B31D7F00534E91 /* Palm@2x.png */; };
 		B13E7EB525B31D8500534E91 /* Green@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E7E25B31D7F00534E91 /* Green@3x.png */; };
 		B13E7EB625B31D8500534E91 /* Alpha@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E7F25B31D8000534E91 /* Alpha@2x.png */; };
-		B13E7EB725B31D8500534E91 /* Suss@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E8025B31D8000534E91 /* Suss@2x.png */; };
 		B13E7EB925B31D8500534E91 /* Knowledge@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E8225B31D8000534E91 /* Knowledge@3x.png */; };
 		B13E7EBA25B31D8500534E91 /* Darkmode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E8325B31D8000534E91 /* Darkmode@2x.png */; };
 		B13E7EBB25B31D8500534E91 /* ComicSans@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B13E7E8425B31D8000534E91 /* ComicSans@2x.png */; };
@@ -82,9 +80,7 @@
 		B17D27C925B17F3A00FAA444 /* 3D@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27BA25B17F3700FAA444 /* 3D@2x.png */; };
 		B17D27CA25B17F3A00FAA444 /* Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27BB25B17F3800FAA444 /* Inverse@2x.png */; };
 		B17D27CD25B17F3A00FAA444 /* Artsy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27BE25B17F3800FAA444 /* Artsy@2x.png */; };
-		B17D27CF25B17F3A00FAA444 /* Pandemic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27C025B17F3800FAA444 /* Pandemic@2x.png */; };
 		B17D27D025B17F3A00FAA444 /* Zoomed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27C125B17F3900FAA444 /* Zoomed@2x.png */; };
-		B17D27D125B17F3A00FAA444 /* Pandemic@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27C225B17F3900FAA444 /* Pandemic@3x.png */; };
 		B17D27D425B17F3A00FAA444 /* Artsy@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27C525B17F3900FAA444 /* Artsy@3x.png */; };
 		B17D27D525B17F3A00FAA444 /* Zoomed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D27C625B17F3A00FAA444 /* Zoomed@3x.png */; };
 		B18093012560197200FC4B92 /* CardCarousselAddMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18093002560197200FC4B92 /* CardCarousselAddMoreButton.swift */; };
@@ -178,7 +174,6 @@
 		B13E7E6A25B31D7D00534E91 /* ComicSans@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ComicSans@3x.png"; sourceTree = "<group>"; };
 		B13E7E6B25B31D7D00534E91 /* AlexIdea@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlexIdea@3x.png"; sourceTree = "<group>"; };
 		B13E7E6C25B31D7D00534E91 /* SocialGiant@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SocialGiant@2x.png"; sourceTree = "<group>"; };
-		B13E7E6D25B31D7D00534E91 /* Suss@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Suss@3x.png"; sourceTree = "<group>"; };
 		B13E7E6E25B31D7E00534E91 /* Chinese@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chinese@3x.png"; sourceTree = "<group>"; };
 		B13E7E6F25B31D7E00534E91 /* HypeBeast@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HypeBeast@2x.png"; sourceTree = "<group>"; };
 		B13E7E7025B31D7E00534E91 /* WavingHand@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WavingHand@3x.png"; sourceTree = "<group>"; };
@@ -195,7 +190,6 @@
 		B13E7E7D25B31D7F00534E91 /* Palm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Palm@2x.png"; sourceTree = "<group>"; };
 		B13E7E7E25B31D7F00534E91 /* Green@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green@3x.png"; sourceTree = "<group>"; };
 		B13E7E7F25B31D8000534E91 /* Alpha@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alpha@2x.png"; sourceTree = "<group>"; };
-		B13E7E8025B31D8000534E91 /* Suss@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Suss@2x.png"; sourceTree = "<group>"; };
 		B13E7E8225B31D8000534E91 /* Knowledge@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Knowledge@3x.png"; path = "../../../../hendrik/Library/Mobile Documents/com~apple~CloudDocs/Scribbles/plants/Knowledge@3x.png"; sourceTree = "<group>"; };
 		B13E7E8325B31D8000534E91 /* Darkmode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Darkmode@2x.png"; sourceTree = "<group>"; };
 		B13E7E8425B31D8000534E91 /* ComicSans@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ComicSans@2x.png"; sourceTree = "<group>"; };
@@ -240,9 +234,7 @@
 		B17D27BA25B17F3700FAA444 /* 3D@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3D@2x.png"; sourceTree = "<group>"; };
 		B17D27BB25B17F3800FAA444 /* Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Inverse@2x.png"; sourceTree = "<group>"; };
 		B17D27BE25B17F3800FAA444 /* Artsy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Artsy@2x.png"; sourceTree = "<group>"; };
-		B17D27C025B17F3800FAA444 /* Pandemic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pandemic@2x.png"; sourceTree = "<group>"; };
 		B17D27C125B17F3900FAA444 /* Zoomed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zoomed@2x.png"; sourceTree = "<group>"; };
-		B17D27C225B17F3900FAA444 /* Pandemic@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pandemic@3x.png"; sourceTree = "<group>"; };
 		B17D27C525B17F3900FAA444 /* Artsy@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Artsy@3x.png"; sourceTree = "<group>"; };
 		B17D27C625B17F3A00FAA444 /* Zoomed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zoomed@3x.png"; sourceTree = "<group>"; };
 		B18093002560197200FC4B92 /* CardCarousselAddMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCarousselAddMoreButton.swift; sourceTree = "<group>"; };
@@ -425,14 +417,10 @@
 				B13E7EDE25B4277C00534E91 /* Large@3x.png */,
 				B13E7E7D25B31D7F00534E91 /* Palm@2x.png */,
 				B13E7E6225B31D7C00534E91 /* Palm@3x.png */,
-				B17D27C025B17F3800FAA444 /* Pandemic@2x.png */,
-				B17D27C225B17F3900FAA444 /* Pandemic@3x.png */,
 				B13E7E8925B31D8300534E91 /* Shopping@2x.png */,
 				B13E7E9125B31D8400534E91 /* Shopping@3x.png */,
 				B13E7E6C25B31D7D00534E91 /* SocialGiant@2x.png */,
 				B13E7E6725B31D7C00534E91 /* SocialGiant@3x.png */,
-				B13E7E8025B31D8000534E91 /* Suss@2x.png */,
-				B13E7E6D25B31D7D00534E91 /* Suss@3x.png */,
 				B13E7E9525B31D8500534E91 /* Version1@2x.png */,
 				B13E7E6425B31D7C00534E91 /* Version1@3x.png */,
 				B13E7E8F25B31D8400534E91 /* Version2@2x.png */,
@@ -754,7 +742,6 @@
 				B13E7EC125B31D8500534E91 /* ChineseBold@3x.png in Resources */,
 				B17D27D525B17F3A00FAA444 /* Zoomed@3x.png in Resources */,
 				B17D27CD25B17F3A00FAA444 /* Artsy@2x.png in Resources */,
-				B17D27D125B17F3A00FAA444 /* Pandemic@3x.png in Resources */,
 				B13E7EBA25B31D8500534E91 /* Darkmode@2x.png in Resources */,
 				B13E7EAE25B31D8500534E91 /* dualColor@2x.png in Resources */,
 				B17D27C825B17F3A00FAA444 /* 3D@3x.png in Resources */,
@@ -778,12 +765,10 @@
 				B13E7EAC25B31D8500534E91 /* Knowledge@2x.png in Resources */,
 				B13E7EBC25B31D8500534E91 /* Classic@2x.png in Resources */,
 				B17D27D425B17F3A00FAA444 /* Artsy@3x.png in Resources */,
-				B17D27CF25B17F3A00FAA444 /* Pandemic@2x.png in Resources */,
 				B13E7EB925B31D8500534E91 /* Knowledge@3x.png in Resources */,
 				B13E7EA125B31D8500534E91 /* ComicSans@3x.png in Resources */,
 				B1B260882538D90C00841FBB /* Assets.xcassets in Resources */,
 				B13E7EA925B31D8500534E91 /* WavingHand@2x.png in Resources */,
-				B13E7EB725B31D8500534E91 /* Suss@2x.png in Resources */,
 				B17D27D025B17F3A00FAA444 /* Zoomed@2x.png in Resources */,
 				B13E7EC525B31D8500534E91 /* America@2x.png in Resources */,
 				B13E7EB125B31D8500534E91 /* America@3x.png in Resources */,
@@ -811,7 +796,6 @@
 				B13E7E9825B31D8500534E91 /* Finance@2x.png in Resources */,
 				B13E7EA025B31D8500534E91 /* Experimental@3x.png in Resources */,
 				B13E7EA325B31D8500534E91 /* SocialGiant@2x.png in Resources */,
-				B13E7EA425B31D8500534E91 /* Suss@3x.png in Resources */,
 				B13E7EC925B31D8500534E91 /* Classic@3x.png in Resources */,
 				B13E7EBE25B31D8500534E91 /* Ghost@3x.png in Resources */,
 			);
@@ -1032,7 +1016,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"PlantGuide/Preview Content\"";
 				DEVELOPMENT_TEAM = TJ34237V49;
 				ENABLE_PREVIEWS = YES;
@@ -1056,7 +1040,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"PlantGuide/Preview Content\"";
 				DEVELOPMENT_TEAM = TJ34237V49;
 				ENABLE_PREVIEWS = YES;

@@ -18,13 +18,13 @@ struct TutorialView: View {
             
             VStack {
                 if stage == 1 {
-                TutorialText(textTitle: "Home", textBody: "Take a picture of your plant and add them to your collection. Get reminded about your watering schedule.")
+                TutorialText(textTitle: "Home", textBody: "Take a picture of your plant and add them to your collection. Get reminders about your watering schedule.")
                     
                 } else if stage == 2 {
                     TutorialText(textTitle: "Scan", textBody: "Take a picture of your plant and let a machine learning algorithm identify your house plant.")
                         
                 } else if stage == 3 {
-                    TutorialText(textTitle: "Overview", textBody: "Get a quick overview of the needs of your favourite plant or make a deep dive read the most important information.")
+                    TutorialText(textTitle: "Overview", textBody: "Get a quick overview of the needs of your favourite plant or make a deep dive and read the most important information.")
                         
                 }
                 Spacer()

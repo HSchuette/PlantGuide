@@ -219,15 +219,6 @@
 				<key>UIPrerenderedIcon</key>
 				<false/>
 			</dict>
-			<key>Pandemic</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>Pandemic</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
 			<key>Shopping</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
@@ -242,15 +233,6 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>SocialGiant</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>Suss</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>Suss</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>
